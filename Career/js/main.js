@@ -6,7 +6,15 @@ startBtn.addEventListener("mousedown", () => {
   startBtn.setAttribute("src", "./img/start-active.png");
 });
 
+startBtn.addEventListener("touchstart", () => {
+  startBtn.setAttribute("src", "./img/start-active.png");
+});
+
 startBtn.addEventListener("mouseup", () => {
+  startBtn.setAttribute("src", "./img/start.png");
+});
+
+startBtn.addEventListener("touchend", () => {
   startBtn.setAttribute("src", "./img/start.png");
 });
 
