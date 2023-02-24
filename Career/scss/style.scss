@@ -11,7 +11,7 @@ body {
   background-image: url("../img/door.png");
   background-position: center;
   background-size: cover;
-  font-family: 'VT323', 'galmuri9', Arial, sans-serif;
+  font-family: "VT323", "galmuri9", Arial, sans-serif;
   color: #181818;
   text-align: center;
   .container-sm {
@@ -46,10 +46,12 @@ body {
       background-color: rgba(255, 255, 255, 0.5);
       border: 3px solid black;
       .anchor {
-
+        margin-top: 30px;
       }
       .intro {
-
+      }
+      .start {
+        margin-top: 20px;
       }
     }
     footer {

@@ -22,6 +22,14 @@ homeBtn.addEventListener("mousedown", () => {
   homeBtn.setAttribute("src", "./img/home-active.png");
 });
 
+homeBtn.addEventListener("touchstart", () => {
+  homeBtn.setAttribute("src", "./img/home-active.png");
+});
+
 homeBtn.addEventListener("mouseup", () => {
+  homeBtn.setAttribute("src", "./img/home.png");
+});
+
+homeBtn.addEventListener("touchend", () => {
   homeBtn.setAttribute("src", "./img/home.png");
 });
