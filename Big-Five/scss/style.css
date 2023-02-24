@@ -1,0 +1,66 @@
+body {
+  background-image: url(../img/back.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.container-sm {
+  height: 100vh;
+}
+.container-sm .status-bar {
+  height: 59px;
+  width: 100%;
+}
+.container-sm header {
+  background-color: rgba(255, 255, 255, 0.5);
+  border: 1px solid black;
+  height: 130px;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.container-sm img {
+  width: 30px;
+  height: 30px;
+}
+.container-sm .content {
+  background-color: rgba(255, 255, 255, 0.5);
+  border: 1px solid black;
+  width: 100%;
+  height: calc(100vh - 59px - 130px - 64px - 45px);
+}
+.container-sm .content .img {
+  display: flex;
+  justify-content: center;
+}
+.container-sm .content .img img {
+  width: 270px;
+  height: 180px;
+}
+.container-sm .content .inner {
+  color: black;
+  font-size: 30px;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  justify-content: center;
+  margin-top: 30px;
+}
+.container-sm .content .inner .text {
+  font-size: 30px;
+  margin-bottom: 20px;
+}
+.container-sm .content .inner .btn {
+  width: 100px;
+  margin-top: 30px;
+}
+.container-sm footer {
+  width: 100%;
+  height: 64px;
+}
+.container-sm .home-indicator {
+  width: 100%;
+  height: 45px;
+}/*# sourceMappingURL=style.css.map */
