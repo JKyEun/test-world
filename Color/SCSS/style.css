@@ -1,3 +1,7 @@
+
+@import url("https://cdn.jsdelivr.net/npm/galmuri@latest/dist/galmuri.css");
+@import url("https://fonts.googleapis.com/css2?family=VT323&display=swap");
+
 * {
   margin: 0px;
   padding: 0px;
@@ -11,4 +15,54 @@ ol {
 
 a {
   text-decoration: none;
+}
+
+.container-sm {
+  background-color: #181818;
+  height: 100vh;
+  background-image: url("../img/bg/bg-4.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.container-sm .status-bar {
+  height: 59px;
+  width: 100%;
+  opacity: 0.5;
+}
+.container-sm header {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 130px;
+  width: 100%;
+  font: 30px/1px "Galmuri9";
+}
+.container-sm header img {
+  width: 30px;
+}
+.container-sm .content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: calc(100vh - 59px - 130px - 64px - 45px);
+}
+.container-sm .content img {
+  position: absolute;
+  display: block;
+  margin-top: -30vh;
+  height: auto;
+  max-width: 100%;
+}
+.container-sm footer {
+  background-color: aquamarine;
+  width: 100%;
+  height: 64px;
+  opacity: 0.5;
+}
+.container-sm .home-indicator {
+  width: 100%;
+  background-color: orange;
+  height: 45px;
+  opacity: 0.5;
 }/*# sourceMappingURL=style.css.map */
