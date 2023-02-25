@@ -7,6 +7,11 @@
 // BUTTONS
 @import "btns";
 
+// HIDE
+.hide {
+  display: none;
+}
+
 body {
   background-image: url("../img/door.png");
   background-position: center;
@@ -31,6 +36,14 @@ body {
       .home {
         width: 30px;
         height: 30px;
+        transition: 0.2s;
+        &:hover {
+          transform: scale(1.1);
+        }
+        img {
+          width: 100%;
+          height: 100%;
+        }
       }
       h2 {
         font-size: 40px;
@@ -46,12 +59,16 @@ body {
       background-color: rgba(255, 255, 255, 0.5);
       border: 3px solid black;
       .anchor {
-        margin-top: 30px;
+        margin-top: 3vh;
       }
       .intro {
       }
       .start {
-        margin-top: 20px;
+        margin-top: 2vh;
+        transition: 0.2s;
+        &:hover {
+          transform: scale(1.1);
+        }
       }
     }
     footer {
@@ -67,6 +84,12 @@ body {
     .home-indicator {
       width: 100%;
       height: 45px;
+    }
+    canvas {
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: -1;
     }
   }
 }
