@@ -24,28 +24,110 @@
       crossorigin="anonymous"
     ></script>
     <!-- MAIN STYLE -->
-    <link rel="stylesheet" href="./scss/style.css" />
+    <link rel="stylesheet" href="./scss/career.css" />
     <!-- MAIN JS -->
     <script defer src="./js/main.js"></script>
   </head>
   <body>
     <div class="container-sm">
       <div class="status-bar"></div>
+
+      <!-- HEADER -->
       <header>
-        <img class="home" src="./img/home.png" alt="홈 버튼" />
+        <a class="home" href="../index.html"
+          ><img src="./img/homeBtn.png" alt="홈 버튼"
+        /></a>
+        <img
+          class="previous hide"
+          src="./img/previousBtn.png"
+          alt="뒤로가기 버튼"
+        />
         <h2>Career Anchor</h2>
         <img class="bar" src="./img/bar.png" alt="메뉴" />
       </header>
+
+      <!-- CONTENT -->
       <div class="content">
-        <img class="anchor" src="./img/anchor.png" alt="닻" />
-        <p class="intro">개인이 추구하는 경력 지향은 각자 다릅니다. 샤인(Schein)의 경력 닻 모형을 참고하여 본인의 경력을 디자인 해보세요!</p>
-        <img class="start" src="./img/start.png" alt="시작 버튼" />
+        <!-- INTRO -->
+        <section class="intro">
+          <img class="anchor" src="./img/anchor.png" alt="닻" />
+          <p>
+            개인이 추구하는 경력 지향은 각자 다릅니다. <br />샤인(Schein)의 경력
+            닻 모형을 참고하여 본인의 경력을 디자인 해보세요!
+          </p>
+          <img class="start" src="./img/startBtn.png" alt="시작 버튼" />
+        </section>
+        <!-- TEST PAGE -->
+        <!-- QUESTION 1 -->
+        <section class="test hide" id="question1">
+          <div class="question">나는 상상력이 풍부하다</div>
+          <div class="answer">
+            <input onclick="goNextPage()" type="radio" name="Choice" value="veryYes" />
+            <input onclick="goNextPage()" type="radio" name="Choice" value="yes" />
+            <input onclick="goNextPage()" type="radio" name="Choice" value="soso" />
+            <input onclick="goNextPage()" type="radio" name="Choice" value="no" />
+            <input onclick="goNextPage()" type="radio" name="Choice" value="veryNo" />
+          </div>
+          <div class="question-status">
+            <progress
+              class="progress-bar"
+              value="1"
+              min="0"
+              max="80"
+            ></progress>
+            <div class="question-count">1/80</div>
+          </div>
+        </section>
+        <!-- QUESTION 2 -->
+        <section class="test next" id="question2">
+          <div class="question">나는 짱이다</div>
+          <div class="answer">
+            <input onclick="goNextPage()" type="radio" name="Choice" value="veryYes" />
+            <input onclick="goNextPage()" type="radio" name="Choice" value="yes" />
+            <input onclick="goNextPage()" type="radio" name="Choice" value="soso" />
+            <input onclick="goNextPage()" type="radio" name="Choice" value="no" />
+            <input onclick="goNextPage()" type="radio" name="Choice" value="veryNo" />
+          </div>
+          <div class="question-status">
+            <progress
+              class="progress-bar"
+              value="1"
+              min="0"
+              max="80"
+            ></progress>
+            <div class="question-count">1/80</div>
+          </div>
+        </section>
+        <!-- QUESTION 3 -->
+        <section class="test hide" id="question3">
+          <div class="question">나는 최고다</div>
+          <div class="answer">
+            <input onclick="goNextPage()" type="radio" name="Choice" value="veryYes" />
+            <input onclick="goNextPage()" type="radio" name="Choice" value="yes" />
+            <input onclick="goNextPage()" type="radio" name="Choice" value="soso" />
+            <input onclick="goNextPage()" type="radio" name="Choice" value="no" />
+            <input onclick="goNextPage()" type="radio" name="Choice" value="veryNo" />
+          </div>
+          <div class="question-status">
+            <progress
+              class="progress-bar"
+              value="1"
+              min="0"
+              max="80"
+            ></progress>
+            <div class="question-count">1/80</div>
+          </div>
+        </section>
+        <section class="result hide"></section>
       </div>
       <footer>
-        <span>ⓒ 2023 Front-end Test-World Project.<br /> All Rights Reserved.</span>
+        <span
+          >ⓒ 2023 Front-end Test-World Project.<br />
+          All Rights Reserved.</span
+        >
       </footer>
-      <div class="home-indicator">
-      </div>
+      <div class="home-indicator"></div>
+      <canvas></canvas>
     </div>
   </body>
 </html>
