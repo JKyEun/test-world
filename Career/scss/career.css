@@ -14,6 +14,7 @@ body {
 }
 body .container-sm {
   height: 100vh;
+  max-width: 516px;
 }
 body .container-sm .status-bar {
   height: 59px;
@@ -26,6 +27,7 @@ body .container-sm header {
   align-items: center;
   height: 130px;
   width: 100%;
+  padding: 20px;
   background-color: rgba(255, 255, 255, 0.5);
 }
 body .container-sm header .home {
@@ -46,6 +48,7 @@ body .container-sm header .previous {
   transition: 0.2s;
 }
 body .container-sm header .previous:hover {
+  cursor: pointer;
   transform: scale(1.1);
 }
 body .container-sm header h2 {
@@ -54,6 +57,11 @@ body .container-sm header h2 {
 body .container-sm header .bar {
   width: 30px;
   height: 30px;
+  transition: 0.2s;
+}
+body .container-sm header .bar:hover {
+  cursor: pointer;
+  transform: scale(1.1);
 }
 body .container-sm .content {
   position: relative;
@@ -61,6 +69,7 @@ body .container-sm .content {
   height: calc(100vh - 59px - 130px - 64px - 45px);
   background-color: rgba(255, 255, 255, 0.5);
   border: 3px solid black;
+  overflow: hidden;
 }
 body .container-sm .content .intro {
   position: absolute;
@@ -70,6 +79,7 @@ body .container-sm .content .intro {
   align-items: center;
   width: 100%;
   height: 100%;
+  padding: 20px;
 }
 body .container-sm .content .intro p {
   margin: 0;
@@ -79,6 +89,7 @@ body .container-sm .content .intro .start {
   transition: 0.2s;
 }
 body .container-sm .content .intro .start:hover {
+  cursor: pointer;
   transform: scale(1.1);
 }
 body .container-sm .content .test {
@@ -115,12 +126,13 @@ body .container-sm .content .test .answer .choice .radio-wrap {
   background-color: #fff;
   border-radius: 50%;
 }
+body .container-sm .content .test .answer .choice .radio-wrap:hover {
+  background-color: red;
+  cursor: pointer;
+}
 body .container-sm .content .test .answer .choice .radio-wrap input[type=radio] {
   width: 100%;
   height: 100%;
-  opacity: 0;
-}
-body .container-sm .content .test .answer .choice .radio-wrap input[type=radio]:checked {
   display: none;
 }
 body .container-sm .content .test .answer .choice .radio-wrap input[type=radio]:checked + label {
@@ -153,7 +165,18 @@ body .container-sm .content .test .answer .choice .radio-wrap:nth-child(5) {
 }
 body .container-sm .content .test .answer .explain {
   display: flex;
+  padding: 10px 20px;
   justify-content: space-between;
+}
+body .container-sm .content .question-status {
+  position: absolute;
+  bottom: 7vh;
+  left: 50%;
+  transform: translateX(-50%);
+}
+body .container-sm .content .question-status .progress-bar {
+  width: 70vw;
+  max-width: 431px;
 }
 body .container-sm footer {
   display: flex;
