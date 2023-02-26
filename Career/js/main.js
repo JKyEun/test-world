@@ -71,7 +71,9 @@ function startTest() {
 }
 
 startBtn.addEventListener("mouseup", () => {
+  const intro = document.querySelector(".intro");
   const firstQuestion = document.querySelector(".intro+.hide");
+  const secondQuestion = document.querySelector(".intro+.hide+.hide");
   intro.classList.add("hide");
   canvas.style.zIndex = 1;
   for (let i = 0; i < 5000; i++) {
@@ -84,8 +86,12 @@ startBtn.addEventListener("mouseup", () => {
         ctx.clearRect(locateArr[i][0], locateArr[i][1], num, num);
       }, 10);
     }
+    homeBtn.classList.add("hide");
+    previousBtn.classList.remove("hide");
     firstQuestion.classList.add("on");
     firstQuestion.classList.remove("hide");
+    secondQuestion.classList.add("next");
+    secondQuestion.classList.remove("hide");
     setTimeout(() => {
       locateArr = [];
       canvas.style.zIndex = -1;
@@ -95,18 +101,11 @@ startBtn.addEventListener("mouseup", () => {
 });
 
 // 다음 페이지로 넘기기
-const intro = document.querySelector(".intro");
-
 function goNextPage() {
   const prev = document.querySelector(".prev");
   const on = document.querySelector(".on");
   const next = document.querySelector(".next");
   const nextNext = document.querySelector(".next+.hide");
-
-  if (previousBtn.classList.contains("hide")) {
-    homeBtn.classList.add("hide");
-    previousBtn.classList.remove("hide");
-  }
 
   if (prev !== null) {
     prev.classList.add("hide");
