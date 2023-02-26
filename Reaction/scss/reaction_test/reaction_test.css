@@ -42,6 +42,16 @@ body {
   height: calc(100vh - 59px - 130px - 64px - 45px);
   border: 1px solid black;
 }
+.container-sm .content .content__test-screen {
+  width: inherit;
+  height: 30vh;
+  background-color: greenyellow;
+}
+.container-sm .content .content__submit-btn {
+  width: 130px;
+  height: 130px;
+  border-radius: 50%;
+}
 .container-sm footer {
   width: 100%;
   height: 64px;

@@ -9,7 +9,6 @@ body {
 }
 
 .container-sm {
-  //   background-color: red;
   height: 100vh;
 
   .status-bar {
@@ -18,7 +17,6 @@ body {
     width: 100%;
   }
   header {
-    // background-color: bisque;
     display: flex;
     align-items: center;
     height: 130px;
@@ -48,9 +46,18 @@ body {
     width: 100%;
     height: calc(100vh - 59px - 130px - 64px - 45px);
     border: 1px solid black;
+    .content__test-screen {
+      width: inherit;
+      height: 30vh;
+      background-color: greenyellow;
+    }
+    .content__submit-btn {
+      width: 130px;
+      height: 130px;
+      border-radius: 50%;
+    }
   }
   footer {
-    // background-color: aquamarine;
     width: 100%;
     height: 64px;
     display: flex;
@@ -64,7 +71,6 @@ body {
   }
   .home-indicator {
     width: 100%;
-    // background-color: orange;
     height: 45px;
   }
 }
