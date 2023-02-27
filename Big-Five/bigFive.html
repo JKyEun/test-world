@@ -23,25 +23,226 @@
       integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
       crossorigin="anonymous"
     ></script>
+    <!-- MAIN  SCRIPT -->
+    <script defer src="./js/main.js"></script>
+    <!-- <script defer src="./js/start.js"></script> -->
     <!-- MAIN STYLE -->
     <link rel="stylesheet" href="./scss/style.css" />
   </head>
   <body>
-    <div class="container-sm">
-      <div class="status-bar"></div>
+    <div class="container-sm my-5">
+      <!-- HEADER -->
       <header>
-        <img src="./img/house.png" alt="홈" />
-        <h1 id="name">BIG5 성격검사</h1>
-        <img src="./img/bar.png" alt="목록" />
+        <img class="home" src="./img/house.png" alt="홈" />
+        <img class="back hide" src="./img/back.png" alt="뒤로가기" />
+        <h2 id="name">BIG5 Personality test</h2>
+        <img class="bar" src="./img/bar.png" alt="목록" />
       </header>
-      <div class="content">
-        <img src="./img/big5.png" alt="" />
 
-        <div class="text">개방성, 성실성, 외향성, 우호성, 신경증 알아보기</div>
-        <img src="./img/start.png" alt="시작버튼" />
+      <!-- CONTENT -->
+      <div class="all">
+        <section class="content">
+          <img class="bigfive" src="./img/big5.png" alt="빅5" />
+          <div class="text">
+            우리의 성격을 5가지의 상호 독립적인 요인으로 알아보아요!
+            <br /><span> (개방성, 성실성, 외향성, 우호성, 신경증) </span>
+          </div>
+          <img
+            class="start"
+            src="./img/start.png"
+            onclick="js:begin()"
+            alt="시작버튼"
+          />
+        </section>
+        <!-- QNA -->
+        <section class="qna hide" id="question1">
+          <div class="qBox">나는 ~~~이다</div>
+          <div class="aBox">
+            <div class="col-2">
+              <input
+                type="radio"
+                onclick="goNext(this)"
+                id="select1"
+                name="Choice"
+                value="매우그렇지않다"
+              />
+              <label for="select1">1</label>
+            </div>
+            <div class="col-2">
+              <input
+                type="radio"
+                onclick="goNext(this)"
+                id="select2"
+                name="Choice"
+                value="그렇지않다"
+              />
+              <label for="select2">2</label>
+            </div>
+            <div class="col-2">
+              <input
+                type="radio"
+                onclick="goNext(this)"
+                id="select3"
+                name="Choice"
+                value="보통이다"
+              />
+              <label for="select3">3</label>
+            </div>
+            <div class="col-2">
+              <input
+                type="radio"
+                onclick="goNext(this)"
+                id="select4"
+                name="Choice"
+                value="그렇다"
+              />
+              <label for="select4">4</label>
+            </div>
+            <div class="col-2">
+              <input
+                type="radio"
+                onclick="goNext(this)"
+                id="select5"
+                name="Choice"
+                value="매우그렇다"
+              />
+              <label for="select5">5</label>
+            </div>
+          </div>
+          <div class="question-status">
+            <progress
+              class="progress-bar"
+              value="10"
+              min="0"
+              max="120"
+            ></progress>
+            <div class="question-count">1/n</div>
+          </div>
+        </section>
+        <!-- QNA2 -->
+        <section class="qna next" id="question2">
+          <div class="qBox">
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Mollitia!
+          </div>
+          <div class="aBox">
+            <div class="col-2">
+              <input
+                type="radio"
+                id="select1"
+                name="Choice"
+                value="매우그렇지않다"
+              />
+              <label for="select1">1</label>
+            </div>
+            <div class="col-2">
+              <input
+                type="radio"
+                id="select2"
+                name="Choice"
+                value="그렇지않다"
+              />
+              <label for="select2">2</label>
+            </div>
+            <div class="col-2">
+              <input type="radio" id="select3" name="Choice" value="보통이다" />
+              <label for="select3">3</label>
+            </div>
+            <div class="col-2">
+              <input type="radio" id="select4" name="Choice" value="그렇다" />
+              <label for="select4">4</label>
+            </div>
+            <div class="col-2">
+              <input
+                type="radio"
+                id="select5"
+                name="Choice"
+                value="매우그렇다"
+              />
+              <label for="select5">5</label>
+            </div>
+          </div>
+          <div class="question-status">
+            <progress
+              class="progress-bar"
+              value="10"
+              min="0"
+              max="120"
+            ></progress>
+            <div class="question-count">1/n</div>
+          </div>
+        </section>
+        <!-- QNA3 -->
+        <section class="qna" id="question3">
+          <div class="qBox">나는 ~~~이다</div>
+          <div class="aBox">
+            <div class="col-2">
+              <input
+                type="radio"
+                onclick="goNext(this)"
+                id="select1"
+                name="Choice"
+                value="매우그렇지않다"
+              />
+              <label for="select1">1</label>
+            </div>
+            <div class="col-2">
+              <input
+                type="radio"
+                onclick="goNext(this)"
+                id="select2"
+                name="Choice"
+                value="그렇지않다"
+              />
+              <label for="select2">2</label>
+            </div>
+            <div class="col-2">
+              <input
+                type="radio"
+                onclick="goNext(this)"
+                id="select3"
+                name="Choice"
+                value="보통이다"
+              />
+              <label for="select3">3</label>
+            </div>
+            <div class="col-2">
+              <input
+                type="radio"
+                onclick="goNext(this)"
+                id="select4"
+                name="Choice"
+                value="그렇다"
+              />
+              <label for="select4">4</label>
+            </div>
+            <div class="col-2">
+              <input
+                type="radio"
+                onclick="goNext(this)"
+                id="select5"
+                name="Choice"
+                value="매우그렇다"
+              />
+              <label for="select5">5</label>
+            </div>
+          </div>
+          <div class="question-status">
+            <progress
+              class="progress-bar"
+              value="10"
+              min="0"
+              max="120"
+            ></progress>
+            <div class="question-count">1/n</div>
+          </div>
+        </section>
       </div>
+      <!-- STATUS -->
+      <!-- RESULT -->
+      <section id="result"></section>
+      <!-- FOOTER -->
+      <footer><div>ⓒ 2023 Front-end Test-World Project.</div></footer>
+      <div class="home-indicator"></div>
     </div>
-    <footer><div></div></footer>
-    <div class="home-indicator"></div>
   </body>
 </html>
