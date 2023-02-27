@@ -105,13 +105,14 @@ body {
         height: 100%;
         transition: 1s;
         &.prev {
-          transform: translateX(-100%);
+          transform: translateX(-150%);
         }
         &.next {
-          transform: translateX(100%);
+          transform: translateX(150%);
         }
         .question {
           font-size: 30px;
+          padding: 0 20px;
         }
         .answer {
           width: 100%;
@@ -124,19 +125,22 @@ body {
             align-items: center;
 
             .radio-wrap {
-              background-color: #fff;
+              background-image: url("../img/greenRadio.png");
+              background-size: cover;
               border-radius: 50%;
-              &:hover {
-                background-color: red;
-                cursor: pointer;
-              }
               input[type="radio"] {
                 width: 100%;
                 height: 100%;
-                display: none;
+                opacity: 0;
+                &:hover {
+                  cursor: pointer;
+                }
+                &:checked {
+                  display: none;
+                }
                 &:checked + label {
-                  background-color: #555;
-                  
+                  background-image: url("../img/redRadio.png");
+                  background-size: cover;
                 }
               }
               label {
@@ -177,10 +181,29 @@ body {
         position: absolute;
         bottom: 7vh;
         left: 50%;
+        width: 70vw;
+        max-width: 431px;
         transform: translateX(-50%);
         .progress-bar {
+          display: none;
+        }
+        .percentage {
+          position: absolute;
           width: 70vw;
+          height: 16px;
           max-width: 431px;
+          background-color: #777;
+        }
+        .current-percentage {
+          position: absolute;
+          transition: width 1s;
+          left: 0;
+          width: 0%;
+          height: 16px;
+          background-color: green;
+        }
+        .question-count {
+          transform: translateY(16px);
         }
       }
     }
