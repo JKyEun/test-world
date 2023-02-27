@@ -31,7 +31,6 @@
   <body>
     <div class="container-sm">
       <div class="status-bar"></div>
-
       <!-- HEADER -->
       <header>
         <a class="home" href="../index.html"
@@ -2586,7 +2585,70 @@
         </div>
         <!-- RESULT -->
         <section class="result hide">
-          
+          <h3 class="summary">당신은 "자율성 지향형" 입니다.</h3>
+          <div class="graph">
+            <div class="type">
+              <div class="type-name">관리자<br />지향</div>
+              <div class="type-graph"></div>
+            </div>
+            <div class="type">
+              <div class="type-name">전문능력<br />지향</div>
+              <div class="type-graph"></div>
+            </div>
+            <div class="type">
+              <div class="type-name">안전성<br />지향</div>
+              <div class="type-graph"></div>
+            </div>
+            <div class="type">
+              <div class="type-name">사업가적 <br />창의성 지향</div>
+              <div class="type-graph"></div>
+            </div>
+            <div class="type">
+              <div class="type-name">자율성<br />지향</div>
+              <div class="type-graph"></div>
+            </div>
+            <div class="type">
+              <div class="type-name">봉사<br />지향</div>
+              <div class="type-graph"></div>
+            </div>
+            <div class="type">
+              <div class="type-name">순수한 도전<br />지향</div>
+              <div class="type-graph"></div>
+            </div>
+            <div class="type">
+              <div class="type-name">라이프스타일<br />지향</div>
+              <div class="type-graph"></div>
+            </div>
+          </div>
+          <div>
+            <div class="more">
+              각 유형에 대한 정보가 궁금하다면?
+              <button onclick="getInfoOfType()" class="moreBtn">Click!</button>
+            </div>
+            <div class="restart">
+              다시 한 번 검사해보고 싶다면?
+              <button onclick="restartTest()" class="restartBtn">Click!</button>
+            </div>
+          </div>
+        </section>
+        <section class="more-info hide">
+          <h3>관리자 지향형</h3>
+          <p>관리자 지향형은 </p>
+          <h3>전문능력 지향형</h3>
+          <p></p>
+          <h3>안전성 지향형</h3>
+          <p></p>
+          <h3>사업가적 창의성 지향형</h3>
+          <p></p>
+          <h3>자율성 지향형</h3>
+          <p></p>
+          <h3>봉사 지향형</h3>
+          <p></p>
+          <h3>순수한 도전 지향형</h3>
+          <p></p>
+          <h3>라이프스타일 지향형</h3>
+          <p></p>
+          <button onclick="closeInfoOfType()" class="close-info">Close!</button>
         </section>
       </div>
       <footer>
@@ -2595,7 +2657,6 @@
           All Rights Reserved.</span
         >
       </footer>
-      <div class="home-indicator"></div>
       <canvas></canvas>
     </div>
   </body>

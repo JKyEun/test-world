@@ -52,7 +52,7 @@ for (let i = 1; i <= questions.length; i++) {
   }
 
   // 질문 내용 입력
-  questionDivs[i-1].innerText = questions[i-1];
+  questionDivs[i - 1].innerText = questions[i - 1];
 }
 
 // 버튼 활성화 이벤트
@@ -104,8 +104,8 @@ const canvas = document.querySelector("canvas");
 const ctx = canvas.getContext("2d");
 const questionStatus = document.querySelector(".question-status");
 const intro = document.querySelector(".intro");
-const firstQuestion = document.querySelector(".intro+.hide");
-const secondQuestion = document.querySelector(".intro+.hide+.hide");
+const firstQuestion = document.querySelector(".intro+.test");
+const secondQuestion = document.querySelector(".intro+.test+.test");
 const h2 = document.querySelector("header h2");
 let locateArr = [];
 let x = 0;
@@ -119,19 +119,17 @@ window.addEventListener("resize", () => {
 });
 ctx.fillStyle = "#181818";
 
-function draw() {
-  const num = 15;
-  x = Math.floor(Math.random() * (canvas.width / num)) * num;
-  y = Math.floor(Math.random() * (canvas.height / num)) * num;
-  locateArr.push([x, y]);
-  ctx.fillRect(x, y, num, num);
-}
-
-startBtn.addEventListener("mouseup", () => {
+function goTestPage() {
   intro.classList.add("hide");
   canvas.style.zIndex = 1;
   for (let i = 0; i < 5000; i++) {
-    setTimeout(draw, 10);
+    setTimeout(() => {
+      const num = 15;
+      x = Math.floor(Math.random() * (canvas.width / num)) * num;
+      y = Math.floor(Math.random() * (canvas.height / num)) * num;
+      locateArr.push([x, y]);
+      ctx.fillRect(x, y, num, num);
+    }, 10);
   }
   setTimeout(() => {
     for (let i = 0; i < 5000; i++) {
@@ -154,10 +152,47 @@ startBtn.addEventListener("mouseup", () => {
       ctx.reset();
     }, 1000);
   }, 1000);
-});
+}
+
+function goIntroPage() {
+  firstQuestion.classList.add("hide");
+  canvas.style.zIndex = 1;
+  for (let i = 0; i < 5000; i++) {
+    setTimeout(() => {
+      const num = 15;
+      x = Math.floor(Math.random() * (canvas.width / num)) * num;
+      y = Math.floor(Math.random() * (canvas.height / num)) * num;
+      locateArr.push([x, y]);
+      ctx.fillRect(x, y, num, num);
+    }, 10);
+  }
+  setTimeout(() => {
+    for (let i = 0; i < 5000; i++) {
+      setTimeout(() => {
+        const num = 15;
+        ctx.clearRect(locateArr[i][0], locateArr[i][1], num, num);
+      }, 10);
+    }
+    h2.innerText = "Qestion 1";
+    questionStatus.classList.add("hide");
+    homeBtn.classList.remove("hide");
+    previousBtn.classList.add("hide");
+    firstQuestion.classList.remove("on");
+    intro.classList.remove("hide");
+    secondQuestion.classList.remove("next");
+    secondQuestion.classList.add("hide");
+    setTimeout(() => {
+      locateArr = [];
+      canvas.style.zIndex = -1;
+      ctx.reset();
+    }, 1000);
+  }, 1000);
+}
+
+startBtn.addEventListener("mouseup", goTestPage);
 
 // 다음 페이지로 넘기기, 사용자 입력 값 받아오기
-let answerArr = new Array(40);
+let answerArr = new Array(questions.lenth).fill(0);
 let currentPage = 0;
 
 function goNextPage(t) {
@@ -185,16 +220,26 @@ function goNextPage(t) {
     nextNext.classList.remove("hide");
   }
 
+  // 프로그레스 바 애니메이션
   questionStatus.querySelector(".progress-bar").value++;
   currentPage = questionStatus.querySelector(".progress-bar").value;
   document.querySelector(".current-percentage").style.width = `${
     2.5 * currentPage
   }%`;
-  h2.innerText = `Qestion ${currentPage + 1}`;
-  answerArr[currentPage] = t.value;
   questionStatus.querySelector(
     ".question-count"
   ).innerText = `${currentPage}/${questions.length}`;
+
+  if (currentPage === 40) {
+    getResult();
+    return;
+  }
+
+  // 제목 변경
+  h2.innerText = `Qestion ${currentPage + 1}`;
+
+  // 배열에 사용자 입력 값 받아오기
+  answerArr[currentPage] = Number(t.value);
 }
 
 // 이전 페이지로 넘기기
@@ -204,8 +249,10 @@ function goPrevPage() {
   const on = document.querySelector(".on");
   const next = document.querySelector(".next");
 
+  // 첫번째 질문지일때
   if (currentPage === 0) {
-    console.log("d");
+    goIntroPage();
+    return;
   }
 
   if (prevPrev !== null) {
@@ -240,3 +287,97 @@ function goPrevPage() {
 }
 
 previousBtn.addEventListener("click", goPrevPage);
+
+// 검사 결과 만들기
+const result = document.querySelector(".result");
+
+function getResult() {
+  let eachScore = new Array(8).fill(0);
+  const summary = document.querySelector(".result .summary");
+
+  // 점수 할당
+  for (let i = 0; i < answerArr.length; i++) {
+    const index = i % 8;
+    eachScore[index] += (answerArr[i] * 5);
+  }
+
+  // SUMMARY 내용 입력
+  const userType = eachScore.indexOf(Math.max(...eachScore));
+  if (userType === 0) {
+    summary.innerText = `당신은 "관리자 지향형" 입니다.`;
+  } else if (userType === 1) {
+    summary.innerText = `당신은 "전문능력 지향형" 입니다.`;
+  } else if (userType === 2) {
+    summary.innerText = `당신은 "안전성 지향형" 입니다.`;
+  } else if (userType === 3) {
+    summary.innerText = `당신은 "사업가적 창의성 지향형" 입니다.`;
+  } else if (userType === 4) {
+    summary.innerText = `당신은 "자율성 지향형" 입니다.`;
+  } else if (userType === 5) {
+    summary.innerText = `당신은 "봉사 지향형" 입니다.`;
+  } else if (userType === 6) {
+    summary.innerText = `당신은 "순수한 도전 지향형" 입니다.`;
+  } else if (userType === 7) {
+    summary.innerText = `당신은 "라이프스타일 지향형" 입니다.`;
+  }
+
+  // 그래프 만들기
+  for (let i = 0; i < eachScore.length; i++) {
+    const typeGraph = document.querySelector(`.graph .type:nth-child(${i+1}) .type-graph`);
+    typeGraph.style.width = `${(eachScore[i] / 100) * 56}vw`;
+    typeGraph.innerText = `${eachScore[i]}점`;
+  }
+
+  const prev = document.querySelector(".prev");
+  prev.classList.add("hide");
+  prev.classList.remove("prev");
+  questionStatus.classList.add("hide");
+
+  canvas.style.zIndex = 1;
+  for (let i = 0; i < 5000; i++) {
+    setTimeout(() => {
+      const num = 15;
+      x = Math.floor(Math.random() * (canvas.width / num)) * num;
+      y = Math.floor(Math.random() * (canvas.height / num)) * num;
+      locateArr.push([x, y]);
+      ctx.fillRect(x, y, num, num);
+    }, 10);
+  }
+  setTimeout(() => {
+    for (let i = 0; i < 5000; i++) {
+      setTimeout(() => {
+        const num = 15;
+        ctx.clearRect(locateArr[i][0], locateArr[i][1], num, num);
+      }, 10);
+    }
+    h2.innerText = "Result";
+    result.classList.remove("hide");
+    homeBtn.classList.remove("hide");
+    previousBtn.classList.add("hide");
+    setTimeout(() => {
+      locateArr = [];
+      canvas.style.zIndex = -1;
+      ctx.reset();
+    }, 1000);
+  }, 1000);
+}
+
+// 각 유형 설명창 열어주는 함수
+const moreInfo = document.querySelector(".more-info");
+
+function getInfoOfType() {
+  moreInfo.classList.remove("hide");
+  result.classList.add("hide");
+}
+
+function closeInfoOfType() {
+  moreInfo.classList.add("hide");
+  result.classList.remove("hide");
+}
+
+// 테스트 다시 시작하는 함수
+function restartTest() {
+  result.classList.add("hide");
+  intro.classList.remove("hide");
+  h2.innerText = "Career Anchor";
+}
