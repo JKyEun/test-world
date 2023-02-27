@@ -24,28 +24,2579 @@
       crossorigin="anonymous"
     ></script>
     <!-- MAIN STYLE -->
-    <link rel="stylesheet" href="./scss/style.css" />
+    <link rel="stylesheet" href="./scss/career.css" />
     <!-- MAIN JS -->
     <script defer src="./js/main.js"></script>
   </head>
   <body>
     <div class="container-sm">
       <div class="status-bar"></div>
+
+      <!-- HEADER -->
       <header>
-        <img class="home" src="./img/home.png" alt="홈 버튼" />
+        <a class="home" href="../index.html"
+          ><img src="./img/homeBtn.png" alt="홈 버튼"
+        /></a>
+        <img
+          class="previous hide"
+          src="./img/previousBtn.png"
+          alt="뒤로가기 버튼"
+        />
         <h2>Career Anchor</h2>
         <img class="bar" src="./img/bar.png" alt="메뉴" />
       </header>
+
+      <!-- CONTENT -->
       <div class="content">
-        <img class="anchor" src="./img/anchor.png" alt="닻" />
-        <p class="intro">개인이 추구하는 경력 지향은 각자 다릅니다. 샤인(Schein)의 경력 닻 모형을 참고하여 본인의 경력을 디자인 해보세요!</p>
-        <img class="start" src="./img/start.png" alt="시작 버튼" />
+        <!-- INTRO -->
+        <section class="intro">
+          <img class="anchor" src="./img/anchor.png" alt="닻" />
+          <p>
+            개인이 추구하는 경력 지향은 각자 다릅니다. <br />샤인(Schein)의 경력
+            닻 모형을 참고하여 본인의 경력을 디자인 해보세요!
+          </p>
+          <img class="start" src="./img/startBtn.png" alt="시작 버튼" />
+        </section>
+        <!-- TEST PAGE -->
+        <!-- QUESTION 1 -->
+        <section class="test hide" id="question1">
+          <div class="question">나는 상상력이 풍부하다</div>
+          <div class="answer">
+            <div class="choice">
+              <div class="radio-wrap">
+                <input
+                  onclick="goNextPage(this)"
+                  type="radio"
+                  name="question1"
+                  id="select1"
+                  value="1"
+                />
+                <label for="select1"></label>
+              </div>
+              <div class="radio-wrap">
+                <input
+                  onclick="goNextPage(this)"
+                  type="radio"
+                  name="question1"
+                  id="select2"
+                  value="2"
+                />
+                <label for="select2"></label>
+              </div>
+              <div class="radio-wrap">
+                <input
+                  onclick="goNextPage(this)"
+                  type="radio"
+                  name="question1"
+                  id="select3"
+                  value="3"
+                />
+                <label for="select3"></label>
+              </div>
+              <div class="radio-wrap">
+                <input
+                  onclick="goNextPage(this)"
+                  type="radio"
+                  name="question1"
+                  id="select4"
+                  value="4"
+                />
+                <label for="select4"></label>
+              </div>
+              <div class="radio-wrap">
+                <input
+                  onclick="goNextPage(this)"
+                  type="radio"
+                  name="question1"
+                  id="select5"
+                  value="5"
+                />
+                <label for="select5"></label>
+              </div>
+            </div>
+            <div class="explain">
+              <span>전혀 그렇지 않다.</span>
+              <span>매우 그렇다.</span>
+            </div>
+          </div>
+          <div></div>
+        </section>
+        <!-- QUESTION 2 -->
+        <section class="test hide" id="question2">
+          <div class="question">나는 상상력이 풍부하다</div>
+          <div class="answer">
+            <div class="choice">
+              <div class="radio-wrap">
+                <input
+                  onclick="goNextPage(this)"
+                  type="radio"
+                  name="choice"
+                  id="select1"
+                  value="1"
+                />
+                <label for="select1"></label>
+              </div>
+              <div class="radio-wrap">
+                <input
+                  onclick="goNextPage(this)"
+                  type="radio"
+                  name="choice"
+                  id="select2"
+                  value="2"
+                />
+                <label for="select2"></label>
+              </div>
+              <div class="radio-wrap">
+                <input
+                  onclick="goNextPage(this)"
+                  type="radio"
+                  name="choice"
+                  id="select3"
+                  value="3"
+                />
+                <label for="select3"></label>
+              </div>
+              <div class="radio-wrap">
+                <input
+                  onclick="goNextPage(this)"
+                  type="radio"
+                  name="choice"
+                  id="select4"
+                  value="4"
+                />
+                <label for="select4"></label>
+              </div>
+              <div class="radio-wrap">
+                <input
+                  onclick="goNextPage(this)"
+                  type="radio"
+                  name="choice"
+                  id="select5"
+                  value="5"
+                />
+                <label for="select5"></label>
+              </div>
+            </div>
+            <div class="explain">
+              <span>전혀 그렇지 않다.</span>
+              <span>매우 그렇다.</span>
+            </div>
+          </div>
+          <div></div>
+        </section>
+        <!-- QUESTION 3 -->
+        <section class="test hide" id="question3">
+          <div class="question">나는 상상력이 풍부하다</div>
+          <div class="answer">
+            <div class="choice">
+              <div class="radio-wrap">
+                <input
+                  onclick="goNextPage(this)"
+                  type="radio"
+                  name="choice"
+                  id="select1"
+                  value="1"
+                />
+                <label for="select1"></label>
+              </div>
+              <div class="radio-wrap">
+                <input
+                  onclick="goNextPage(this)"
+                  type="radio"
+                  name="choice"
+                  id="select2"
+                  value="2"
+                />
+                <label for="select2"></label>
+              </div>
+              <div class="radio-wrap">
+                <input
+                  onclick="goNextPage(this)"
+                  type="radio"
+                  name="choice"
+                  id="select3"
+                  value="3"
+                />
+                <label for="select3"></label>
+              </div>
+              <div class="radio-wrap">
+                <input
+                  onclick="goNextPage(this)"
+                  type="radio"
+                  name="choice"
+                  id="select4"
+                  value="4"
+                />
+                <label for="select4"></label>
+              </div>
+              <div class="radio-wrap">
+                <input
+                  onclick="goNextPage(this)"
+                  type="radio"
+                  name="choice"
+                  id="select5"
+                  value="5"
+                />
+                <label for="select5"></label>
+              </div>
+            </div>
+            <div class="explain">
+              <span>전혀 그렇지 않다.</span>
+              <span>매우 그렇다.</span>
+            </div>
+          </div>
+          <div></div>
+        </section>
+        <!-- QUESTION 4 -->
+        <section class="test hide" id="question4">
+          <div class="question">나는 상상력이 풍부하다</div>
+          <div class="answer">
+            <div class="choice">
+              <div class="radio-wrap">
+                <input
+                  onclick="goNextPage(this)"
+                  type="radio"
+                  name="choice"
+                  id="select1"
+                  value="1"
+                />
+                <label for="select1"></label>
+              </div>
+              <div class="radio-wrap">
+                <input
+                  onclick="goNextPage(this)"
+                  type="radio"
+                  name="choice"
+                  id="select2"
+                  value="2"
+                />
+                <label for="select2"></label>
+              </div>
+              <div class="radio-wrap">
+                <input
+                  onclick="goNextPage(this)"
+                  type="radio"
+                  name="choice"
+                  id="select3"
+                  value="3"
+                />
+                <label for="select3"></label>
+              </div>
+              <div class="radio-wrap">
+                <input
+                  onclick="goNextPage(this)"
+                  type="radio"
+                  name="choice"
+                  id="select4"
+                  value="4"
+                />
+                <label for="select4"></label>
+              </div>
+              <div class="radio-wrap">
+                <input
+                  onclick="goNextPage(this)"
+                  type="radio"
+                  name="choice"
+                  id="select5"
+                  value="5"
+                />
+                <label for="select5"></label>
+              </div>
+            </div>
+            <div class="explain">
+              <span>전혀 그렇지 않다.</span>
+              <span>매우 그렇다.</span>
+            </div>
+          </div>
+          <div></div>
+        </section>
+        <!-- QUESTION 5 -->
+        <section class="test hide" id="question5">
+          <div class="question">나는 상상력이 풍부하다</div>
+          <div class="answer">
+            <div class="choice">
+              <div class="radio-wrap">
+                <input
+                  onclick="goNextPage(this)"
+                  type="radio"
+                  name="choice"
+                  id="select1"
+                  value="1"
+                />
+                <label for="select1"></label>
+              </div>
+              <div class="radio-wrap">
+                <input
+                  onclick="goNextPage(this)"
+                  type="radio"
+                  name="choice"
+                  id="select2"
+                  value="2"
+                />
+                <label for="select2"></label>
+              </div>
+              <div class="radio-wrap">
+                <input
+                  onclick="goNextPage(this)"
+                  type="radio"
+                  name="choice"
+                  id="select3"
+                  value="3"
+                />
+                <label for="select3"></label>
+              </div>
+              <div class="radio-wrap">
+                <input
+                  onclick="goNextPage(this)"
+                  type="radio"
+                  name="choice"
+                  id="select4"
+                  value="4"
+                />
+                <label for="select4"></label>
+              </div>
+              <div class="radio-wrap">
+                <input
+                  onclick="goNextPage(this)"
+                  type="radio"
+                  name="choice"
+                  id="select5"
+                  value="5"
+                />
+                <label for="select5"></label>
+              </div>
+            </div>
+            <div class="explain">
+              <span>전혀 그렇지 않다.</span>
+              <span>매우 그렇다.</span>
+            </div>
+          </div>
+          <div></div>
+        </section>
+        <!-- QUESTION 6 -->
+        <section class="test hide" id="question6">
+          <div class="question">나는 상상력이 풍부하다</div>
+          <div class="answer">
+            <div class="choice">
+              <div class="radio-wrap">
+                <input
+                  onclick="goNextPage(this)"
+                  type="radio"
+                  name="choice"
+                  id="select1"
+                  value="1"
+                />
+                <label for="select1"></label>
+              </div>
+              <div class="radio-wrap">
+                <input
+                  onclick="goNextPage(this)"
+                  type="radio"
+                  name="choice"
+                  id="select2"
+                  value="2"
+                />
+                <label for="select2"></label>
+              </div>
+              <div class="radio-wrap">
+                <input
+                  onclick="goNextPage(this)"
+                  type="radio"
+                  name="choice"
+                  id="select3"
+                  value="3"
+                />
+                <label for="select3"></label>
+              </div>
+              <div class="radio-wrap">
+                <input
+                  onclick="goNextPage(this)"
+                  type="radio"
+                  name="choice"
+                  id="select4"
+                  value="4"
+                />
+                <label for="select4"></label>
+              </div>
+              <div class="radio-wrap">
+                <input
+                  onclick="goNextPage(this)"
+                  type="radio"
+                  name="choice"
+                  id="select5"
+                  value="5"
+                />
+                <label for="select5"></label>
+              </div>
+            </div>
+            <div class="explain">
+              <span>전혀 그렇지 않다.</span>
+              <span>매우 그렇다.</span>
+            </div>
+          </div>
+          <div></div>
+        </section>
+        <!-- QUESTION 7 -->
+        <section class="test hide" id="question7">
+          <div class="question">나는 상상력이 풍부하다</div>
+          <div class="answer">
+            <div class="choice">
+              <div class="radio-wrap">
+                <input
+                  onclick="goNextPage(this)"
+                  type="radio"
+                  name="choice"
+                  id="select1"
+                  value="1"
+                />
+                <label for="select1"></label>
+              </div>
+              <div class="radio-wrap">
+                <input
+                  onclick="goNextPage(this)"
+                  type="radio"
+                  name="choice"
+                  id="select2"
+                  value="2"
+                />
+                <label for="select2"></label>
+              </div>
+              <div class="radio-wrap">
+                <input
+                  onclick="goNextPage(this)"
+                  type="radio"
+                  name="choice"
+                  id="select3"
+                  value="3"
+                />
+                <label for="select3"></label>
+              </div>
+              <div class="radio-wrap">
+                <input
+                  onclick="goNextPage(this)"
+                  type="radio"
+                  name="choice"
+                  id="select4"
+                  value="4"
+                />
+                <label for="select4"></label>
+              </div>
+              <div class="radio-wrap">
+                <input
+                  onclick="goNextPage(this)"
+                  type="radio"
+                  name="choice"
+                  id="select5"
+                  value="5"
+                />
+                <label for="select5"></label>
+              </div>
+            </div>
+            <div class="explain">
+              <span>전혀 그렇지 않다.</span>
+              <span>매우 그렇다.</span>
+            </div>
+          </div>
+          <div></div>
+        </section>
+        <!-- QUESTION 8 -->
+        <section class="test hide" id="question8">
+          <div class="question">나는 상상력이 풍부하다</div>
+          <div class="answer">
+            <div class="choice">
+              <div class="radio-wrap">
+                <input
+                  onclick="goNextPage(this)"
+                  type="radio"
+                  name="choice"
+                  id="select1"
+                  value="1"
+                />
+                <label for="select1"></label>
+              </div>
+              <div class="radio-wrap">
+                <input
+                  onclick="goNextPage(this)"
+                  type="radio"
+                  name="choice"
+                  id="select2"
+                  value="2"
+                />
+                <label for="select2"></label>
+              </div>
+              <div class="radio-wrap">
+                <input
+                  onclick="goNextPage(this)"
+                  type="radio"
+                  name="choice"
+                  id="select3"
+                  value="3"
+                />
+                <label for="select3"></label>
+              </div>
+              <div class="radio-wrap">
+                <input
+                  onclick="goNextPage(this)"
+                  type="radio"
+                  name="choice"
+                  id="select4"
+                  value="4"
+                />
+                <label for="select4"></label>
+              </div>
+              <div class="radio-wrap">
+                <input
+                  onclick="goNextPage(this)"
+                  type="radio"
+                  name="choice"
+                  id="select5"
+                  value="5"
+                />
+                <label for="select5"></label>
+              </div>
+            </div>
+            <div class="explain">
+              <span>전혀 그렇지 않다.</span>
+              <span>매우 그렇다.</span>
+            </div>
+          </div>
+          <div></div>
+        </section>
+        <!-- QUESTION 9 -->
+        <section class="test hide" id="question9">
+          <div class="question">나는 상상력이 풍부하다</div>
+          <div class="answer">
+            <div class="choice">
+              <div class="radio-wrap">
+                <input
+                  onclick="goNextPage(this)"
+                  type="radio"
+                  name="choice"
+                  id="select1"
+                  value="1"
+                />
+                <label for="select1"></label>
+              </div>
+              <div class="radio-wrap">
+                <input
+                  onclick="goNextPage(this)"
+                  type="radio"
+                  name="choice"
+                  id="select2"
+                  value="2"
+                />
+                <label for="select2"></label>
+              </div>
+              <div class="radio-wrap">
+                <input
+                  onclick="goNextPage(this)"
+                  type="radio"
+                  name="choice"
+                  id="select3"
+                  value="3"
+                />
+                <label for="select3"></label>
+              </div>
+              <div class="radio-wrap">
+                <input
+                  onclick="goNextPage(this)"
+                  type="radio"
+                  name="choice"
+                  id="select4"
+                  value="4"
+                />
+                <label for="select4"></label>
+              </div>
+              <div class="radio-wrap">
+                <input
+                  onclick="goNextPage(this)"
+                  type="radio"
+                  name="choice"
+                  id="select5"
+                  value="5"
+                />
+                <label for="select5"></label>
+              </div>
+            </div>
+            <div class="explain">
+              <span>전혀 그렇지 않다.</span>
+              <span>매우 그렇다.</span>
+            </div>
+          </div>
+          <div></div>
+        </section>
+        <!-- QUESTION 10 -->
+        <section class="test hide" id="question10">
+          <div class="question">나는 상상력이 풍부하다</div>
+          <div class="answer">
+            <div class="choice">
+              <div class="radio-wrap">
+                <input
+                  onclick="goNextPage(this)"
+                  type="radio"
+                  name="choice"
+                  id="select1"
+                  value="1"
+                />
+                <label for="select1"></label>
+              </div>
+              <div class="radio-wrap">
+                <input
+                  onclick="goNextPage(this)"
+                  type="radio"
+                  name="choice"
+                  id="select2"
+                  value="2"
+                />
+                <label for="select2"></label>
+              </div>
+              <div class="radio-wrap">
+                <input
+                  onclick="goNextPage(this)"
+                  type="radio"
+                  name="choice"
+                  id="select3"
+                  value="3"
+                />
+                <label for="select3"></label>
+              </div>
+              <div class="radio-wrap">
+                <input
+                  onclick="goNextPage(this)"
+                  type="radio"
+                  name="choice"
+                  id="select4"
+                  value="4"
+                />
+                <label for="select4"></label>
+              </div>
+              <div class="radio-wrap">
+                <input
+                  onclick="goNextPage(this)"
+                  type="radio"
+                  name="choice"
+                  id="select5"
+                  value="5"
+                />
+                <label for="select5"></label>
+              </div>
+            </div>
+            <div class="explain">
+              <span>전혀 그렇지 않다.</span>
+              <span>매우 그렇다.</span>
+            </div>
+          </div>
+          <div></div>
+        </section>
+        <!-- QUESTION 11 -->
+        <section class="test hide" id="question11">
+          <div class="question">나는 상상력이 풍부하다</div>
+          <div class="answer">
+            <div class="choice">
+              <div class="radio-wrap">
+                <input
+                  onclick="goNextPage(this)"
+                  type="radio"
+                  name="choice"
+                  id="select1"
+                  value="1"
+                />
+                <label for="select1"></label>
+              </div>
+              <div class="radio-wrap">
+                <input
+                  onclick="goNextPage(this)"
+                  type="radio"
+                  name="choice"
+                  id="select2"
+                  value="2"
+                />
+                <label for="select2"></label>
+              </div>
+              <div class="radio-wrap">
+                <input
+                  onclick="goNextPage(this)"
+                  type="radio"
+                  name="choice"
+                  id="select3"
+                  value="3"
+                />
+                <label for="select3"></label>
+              </div>
+              <div class="radio-wrap">
+                <input
+                  onclick="goNextPage(this)"
+                  type="radio"
+                  name="choice"
+                  id="select4"
+                  value="4"
+                />
+                <label for="select4"></label>
+              </div>
+              <div class="radio-wrap">
+                <input
+                  onclick="goNextPage(this)"
+                  type="radio"
+                  name="choice"
+                  id="select5"
+                  value="5"
+                />
+                <label for="select5"></label>
+              </div>
+            </div>
+            <div class="explain">
+              <span>전혀 그렇지 않다.</span>
+              <span>매우 그렇다.</span>
+            </div>
+          </div>
+          <div></div>
+        </section>
+        <!-- QUESTION 12 -->
+        <section class="test hide" id="question12">
+          <div class="question">나는 상상력이 풍부하다</div>
+          <div class="answer">
+            <div class="choice">
+              <div class="radio-wrap">
+                <input
+                  onclick="goNextPage(this)"
+                  type="radio"
+                  name="choice"
+                  id="select1"
+                  value="1"
+                />
+                <label for="select1"></label>
+              </div>
+              <div class="radio-wrap">
+                <input
+                  onclick="goNextPage(this)"
+                  type="radio"
+                  name="choice"
+                  id="select2"
+                  value="2"
+                />
+                <label for="select2"></label>
+              </div>
+              <div class="radio-wrap">
+                <input
+                  onclick="goNextPage(this)"
+                  type="radio"
+                  name="choice"
+                  id="select3"
+                  value="3"
+                />
+                <label for="select3"></label>
+              </div>
+              <div class="radio-wrap">
+                <input
+                  onclick="goNextPage(this)"
+                  type="radio"
+                  name="choice"
+                  id="select4"
+                  value="4"
+                />
+                <label for="select4"></label>
+              </div>
+              <div class="radio-wrap">
+                <input
+                  onclick="goNextPage(this)"
+                  type="radio"
+                  name="choice"
+                  id="select5"
+                  value="5"
+                />
+                <label for="select5"></label>
+              </div>
+            </div>
+            <div class="explain">
+              <span>전혀 그렇지 않다.</span>
+              <span>매우 그렇다.</span>
+            </div>
+          </div>
+          <div></div>
+        </section>
+        <!-- QUESTION 13 -->
+        <section class="test hide" id="question13">
+          <div class="question">나는 상상력이 풍부하다</div>
+          <div class="answer">
+            <div class="choice">
+              <div class="radio-wrap">
+                <input
+                  onclick="goNextPage(this)"
+                  type="radio"
+                  name="choice"
+                  id="select1"
+                  value="1"
+                />
+                <label for="select1"></label>
+              </div>
+              <div class="radio-wrap">
+                <input
+                  onclick="goNextPage(this)"
+                  type="radio"
+                  name="choice"
+                  id="select2"
+                  value="2"
+                />
+                <label for="select2"></label>
+              </div>
+              <div class="radio-wrap">
+                <input
+                  onclick="goNextPage(this)"
+                  type="radio"
+                  name="choice"
+                  id="select3"
+                  value="3"
+                />
+                <label for="select3"></label>
+              </div>
+              <div class="radio-wrap">
+                <input
+                  onclick="goNextPage(this)"
+                  type="radio"
+                  name="choice"
+                  id="select4"
+                  value="4"
+                />
+                <label for="select4"></label>
+              </div>
+              <div class="radio-wrap">
+                <input
+                  onclick="goNextPage(this)"
+                  type="radio"
+                  name="choice"
+                  id="select5"
+                  value="5"
+                />
+                <label for="select5"></label>
+              </div>
+            </div>
+            <div class="explain">
+              <span>전혀 그렇지 않다.</span>
+              <span>매우 그렇다.</span>
+            </div>
+          </div>
+          <div></div>
+        </section>
+        <!-- QUESTION 14 -->
+        <section class="test hide" id="question14">
+          <div class="question">나는 상상력이 풍부하다</div>
+          <div class="answer">
+            <div class="choice">
+              <div class="radio-wrap">
+                <input
+                  onclick="goNextPage(this)"
+                  type="radio"
+                  name="choice"
+                  id="select1"
+                  value="1"
+                />
+                <label for="select1"></label>
+              </div>
+              <div class="radio-wrap">
+                <input
+                  onclick="goNextPage(this)"
+                  type="radio"
+                  name="choice"
+                  id="select2"
+                  value="2"
+                />
+                <label for="select2"></label>
+              </div>
+              <div class="radio-wrap">
+                <input
+                  onclick="goNextPage(this)"
+                  type="radio"
+                  name="choice"
+                  id="select3"
+                  value="3"
+                />
+                <label for="select3"></label>
+              </div>
+              <div class="radio-wrap">
+                <input
+                  onclick="goNextPage(this)"
+                  type="radio"
+                  name="choice"
+                  id="select4"
+                  value="4"
+                />
+                <label for="select4"></label>
+              </div>
+              <div class="radio-wrap">
+                <input
+                  onclick="goNextPage(this)"
+                  type="radio"
+                  name="choice"
+                  id="select5"
+                  value="5"
+                />
+                <label for="select5"></label>
+              </div>
+            </div>
+            <div class="explain">
+              <span>전혀 그렇지 않다.</span>
+              <span>매우 그렇다.</span>
+            </div>
+          </div>
+          <div></div>
+        </section>
+        <!-- QUESTION 15 -->
+        <section class="test hide" id="question15">
+          <div class="question">나는 상상력이 풍부하다</div>
+          <div class="answer">
+            <div class="choice">
+              <div class="radio-wrap">
+                <input
+                  onclick="goNextPage(this)"
+                  type="radio"
+                  name="choice"
+                  id="select1"
+                  value="1"
+                />
+                <label for="select1"></label>
+              </div>
+              <div class="radio-wrap">
+                <input
+                  onclick="goNextPage(this)"
+                  type="radio"
+                  name="choice"
+                  id="select2"
+                  value="2"
+                />
+                <label for="select2"></label>
+              </div>
+              <div class="radio-wrap">
+                <input
+                  onclick="goNextPage(this)"
+                  type="radio"
+                  name="choice"
+                  id="select3"
+                  value="3"
+                />
+                <label for="select3"></label>
+              </div>
+              <div class="radio-wrap">
+                <input
+                  onclick="goNextPage(this)"
+                  type="radio"
+                  name="choice"
+                  id="select4"
+                  value="4"
+                />
+                <label for="select4"></label>
+              </div>
+              <div class="radio-wrap">
+                <input
+                  onclick="goNextPage(this)"
+                  type="radio"
+                  name="choice"
+                  id="select5"
+                  value="5"
+                />
+                <label for="select5"></label>
+              </div>
+            </div>
+            <div class="explain">
+              <span>전혀 그렇지 않다.</span>
+              <span>매우 그렇다.</span>
+            </div>
+          </div>
+          <div></div>
+        </section>
+        <!-- QUESTION 16 -->
+        <section class="test hide" id="question16">
+          <div class="question">나는 상상력이 풍부하다</div>
+          <div class="answer">
+            <div class="choice">
+              <div class="radio-wrap">
+                <input
+                  onclick="goNextPage(this)"
+                  type="radio"
+                  name="choice"
+                  id="select1"
+                  value="1"
+                />
+                <label for="select1"></label>
+              </div>
+              <div class="radio-wrap">
+                <input
+                  onclick="goNextPage(this)"
+                  type="radio"
+                  name="choice"
+                  id="select2"
+                  value="2"
+                />
+                <label for="select2"></label>
+              </div>
+              <div class="radio-wrap">
+                <input
+                  onclick="goNextPage(this)"
+                  type="radio"
+                  name="choice"
+                  id="select3"
+                  value="3"
+                />
+                <label for="select3"></label>
+              </div>
+              <div class="radio-wrap">
+                <input
+                  onclick="goNextPage(this)"
+                  type="radio"
+                  name="choice"
+                  id="select4"
+                  value="4"
+                />
+                <label for="select4"></label>
+              </div>
+              <div class="radio-wrap">
+                <input
+                  onclick="goNextPage(this)"
+                  type="radio"
+                  name="choice"
+                  id="select5"
+                  value="5"
+                />
+                <label for="select5"></label>
+              </div>
+            </div>
+            <div class="explain">
+              <span>전혀 그렇지 않다.</span>
+              <span>매우 그렇다.</span>
+            </div>
+          </div>
+          <div></div>
+        </section>
+        <!-- QUESTION 17 -->
+        <section class="test hide" id="question17">
+          <div class="question">나는 상상력이 풍부하다</div>
+          <div class="answer">
+            <div class="choice">
+              <div class="radio-wrap">
+                <input
+                  onclick="goNextPage(this)"
+                  type="radio"
+                  name="choice"
+                  id="select1"
+                  value="1"
+                />
+                <label for="select1"></label>
+              </div>
+              <div class="radio-wrap">
+                <input
+                  onclick="goNextPage(this)"
+                  type="radio"
+                  name="choice"
+                  id="select2"
+                  value="2"
+                />
+                <label for="select2"></label>
+              </div>
+              <div class="radio-wrap">
+                <input
+                  onclick="goNextPage(this)"
+                  type="radio"
+                  name="choice"
+                  id="select3"
+                  value="3"
+                />
+                <label for="select3"></label>
+              </div>
+              <div class="radio-wrap">
+                <input
+                  onclick="goNextPage(this)"
+                  type="radio"
+                  name="choice"
+                  id="select4"
+                  value="4"
+                />
+                <label for="select4"></label>
+              </div>
+              <div class="radio-wrap">
+                <input
+                  onclick="goNextPage(this)"
+                  type="radio"
+                  name="choice"
+                  id="select5"
+                  value="5"
+                />
+                <label for="select5"></label>
+              </div>
+            </div>
+            <div class="explain">
+              <span>전혀 그렇지 않다.</span>
+              <span>매우 그렇다.</span>
+            </div>
+          </div>
+          <div></div>
+        </section>
+        <!-- QUESTION 18 -->
+        <section class="test hide" id="question18">
+          <div class="question">나는 상상력이 풍부하다</div>
+          <div class="answer">
+            <div class="choice">
+              <div class="radio-wrap">
+                <input
+                  onclick="goNextPage(this)"
+                  type="radio"
+                  name="choice"
+                  id="select1"
+                  value="1"
+                />
+                <label for="select1"></label>
+              </div>
+              <div class="radio-wrap">
+                <input
+                  onclick="goNextPage(this)"
+                  type="radio"
+                  name="choice"
+                  id="select2"
+                  value="2"
+                />
+                <label for="select2"></label>
+              </div>
+              <div class="radio-wrap">
+                <input
+                  onclick="goNextPage(this)"
+                  type="radio"
+                  name="choice"
+                  id="select3"
+                  value="3"
+                />
+                <label for="select3"></label>
+              </div>
+              <div class="radio-wrap">
+                <input
+                  onclick="goNextPage(this)"
+                  type="radio"
+                  name="choice"
+                  id="select4"
+                  value="4"
+                />
+                <label for="select4"></label>
+              </div>
+              <div class="radio-wrap">
+                <input
+                  onclick="goNextPage(this)"
+                  type="radio"
+                  name="choice"
+                  id="select5"
+                  value="5"
+                />
+                <label for="select5"></label>
+              </div>
+            </div>
+            <div class="explain">
+              <span>전혀 그렇지 않다.</span>
+              <span>매우 그렇다.</span>
+            </div>
+          </div>
+          <div></div>
+        </section>
+        <!-- QUESTION 19 -->
+        <section class="test hide" id="question19">
+          <div class="question">나는 상상력이 풍부하다</div>
+          <div class="answer">
+            <div class="choice">
+              <div class="radio-wrap">
+                <input
+                  onclick="goNextPage(this)"
+                  type="radio"
+                  name="choice"
+                  id="select1"
+                  value="1"
+                />
+                <label for="select1"></label>
+              </div>
+              <div class="radio-wrap">
+                <input
+                  onclick="goNextPage(this)"
+                  type="radio"
+                  name="choice"
+                  id="select2"
+                  value="2"
+                />
+                <label for="select2"></label>
+              </div>
+              <div class="radio-wrap">
+                <input
+                  onclick="goNextPage(this)"
+                  type="radio"
+                  name="choice"
+                  id="select3"
+                  value="3"
+                />
+                <label for="select3"></label>
+              </div>
+              <div class="radio-wrap">
+                <input
+                  onclick="goNextPage(this)"
+                  type="radio"
+                  name="choice"
+                  id="select4"
+                  value="4"
+                />
+                <label for="select4"></label>
+              </div>
+              <div class="radio-wrap">
+                <input
+                  onclick="goNextPage(this)"
+                  type="radio"
+                  name="choice"
+                  id="select5"
+                  value="5"
+                />
+                <label for="select5"></label>
+              </div>
+            </div>
+            <div class="explain">
+              <span>전혀 그렇지 않다.</span>
+              <span>매우 그렇다.</span>
+            </div>
+          </div>
+          <div></div>
+        </section>
+        <!-- QUESTION 20 -->
+        <section class="test hide" id="question20">
+          <div class="question">나는 상상력이 풍부하다</div>
+          <div class="answer">
+            <div class="choice">
+              <div class="radio-wrap">
+                <input
+                  onclick="goNextPage(this)"
+                  type="radio"
+                  name="choice"
+                  id="select1"
+                  value="1"
+                />
+                <label for="select1"></label>
+              </div>
+              <div class="radio-wrap">
+                <input
+                  onclick="goNextPage(this)"
+                  type="radio"
+                  name="choice"
+                  id="select2"
+                  value="2"
+                />
+                <label for="select2"></label>
+              </div>
+              <div class="radio-wrap">
+                <input
+                  onclick="goNextPage(this)"
+                  type="radio"
+                  name="choice"
+                  id="select3"
+                  value="3"
+                />
+                <label for="select3"></label>
+              </div>
+              <div class="radio-wrap">
+                <input
+                  onclick="goNextPage(this)"
+                  type="radio"
+                  name="choice"
+                  id="select4"
+                  value="4"
+                />
+                <label for="select4"></label>
+              </div>
+              <div class="radio-wrap">
+                <input
+                  onclick="goNextPage(this)"
+                  type="radio"
+                  name="choice"
+                  id="select5"
+                  value="5"
+                />
+                <label for="select5"></label>
+              </div>
+            </div>
+            <div class="explain">
+              <span>전혀 그렇지 않다.</span>
+              <span>매우 그렇다.</span>
+            </div>
+          </div>
+          <div></div>
+        </section>
+        <!-- QUESTION 21 -->
+        <section class="test hide" id="question21">
+          <div class="question">나는 상상력이 풍부하다</div>
+          <div class="answer">
+            <div class="choice">
+              <div class="radio-wrap">
+                <input
+                  onclick="goNextPage(this)"
+                  type="radio"
+                  name="choice"
+                  id="select1"
+                  value="1"
+                />
+                <label for="select1"></label>
+              </div>
+              <div class="radio-wrap">
+                <input
+                  onclick="goNextPage(this)"
+                  type="radio"
+                  name="choice"
+                  id="select2"
+                  value="2"
+                />
+                <label for="select2"></label>
+              </div>
+              <div class="radio-wrap">
+                <input
+                  onclick="goNextPage(this)"
+                  type="radio"
+                  name="choice"
+                  id="select3"
+                  value="3"
+                />
+                <label for="select3"></label>
+              </div>
+              <div class="radio-wrap">
+                <input
+                  onclick="goNextPage(this)"
+                  type="radio"
+                  name="choice"
+                  id="select4"
+                  value="4"
+                />
+                <label for="select4"></label>
+              </div>
+              <div class="radio-wrap">
+                <input
+                  onclick="goNextPage(this)"
+                  type="radio"
+                  name="choice"
+                  id="select5"
+                  value="5"
+                />
+                <label for="select5"></label>
+              </div>
+            </div>
+            <div class="explain">
+              <span>전혀 그렇지 않다.</span>
+              <span>매우 그렇다.</span>
+            </div>
+          </div>
+          <div></div>
+        </section>
+        <!-- QUESTION 22 -->
+        <section class="test hide" id="question22">
+          <div class="question">나는 상상력이 풍부하다</div>
+          <div class="answer">
+            <div class="choice">
+              <div class="radio-wrap">
+                <input
+                  onclick="goNextPage(this)"
+                  type="radio"
+                  name="choice"
+                  id="select1"
+                  value="1"
+                />
+                <label for="select1"></label>
+              </div>
+              <div class="radio-wrap">
+                <input
+                  onclick="goNextPage(this)"
+                  type="radio"
+                  name="choice"
+                  id="select2"
+                  value="2"
+                />
+                <label for="select2"></label>
+              </div>
+              <div class="radio-wrap">
+                <input
+                  onclick="goNextPage(this)"
+                  type="radio"
+                  name="choice"
+                  id="select3"
+                  value="3"
+                />
+                <label for="select3"></label>
+              </div>
+              <div class="radio-wrap">
+                <input
+                  onclick="goNextPage(this)"
+                  type="radio"
+                  name="choice"
+                  id="select4"
+                  value="4"
+                />
+                <label for="select4"></label>
+              </div>
+              <div class="radio-wrap">
+                <input
+                  onclick="goNextPage(this)"
+                  type="radio"
+                  name="choice"
+                  id="select5"
+                  value="5"
+                />
+                <label for="select5"></label>
+              </div>
+            </div>
+            <div class="explain">
+              <span>전혀 그렇지 않다.</span>
+              <span>매우 그렇다.</span>
+            </div>
+          </div>
+          <div></div>
+        </section>
+        <!-- QUESTION 23 -->
+        <section class="test hide" id="question23">
+          <div class="question">나는 상상력이 풍부하다</div>
+          <div class="answer">
+            <div class="choice">
+              <div class="radio-wrap">
+                <input
+                  onclick="goNextPage(this)"
+                  type="radio"
+                  name="choice"
+                  id="select1"
+                  value="1"
+                />
+                <label for="select1"></label>
+              </div>
+              <div class="radio-wrap">
+                <input
+                  onclick="goNextPage(this)"
+                  type="radio"
+                  name="choice"
+                  id="select2"
+                  value="2"
+                />
+                <label for="select2"></label>
+              </div>
+              <div class="radio-wrap">
+                <input
+                  onclick="goNextPage(this)"
+                  type="radio"
+                  name="choice"
+                  id="select3"
+                  value="3"
+                />
+                <label for="select3"></label>
+              </div>
+              <div class="radio-wrap">
+                <input
+                  onclick="goNextPage(this)"
+                  type="radio"
+                  name="choice"
+                  id="select4"
+                  value="4"
+                />
+                <label for="select4"></label>
+              </div>
+              <div class="radio-wrap">
+                <input
+                  onclick="goNextPage(this)"
+                  type="radio"
+                  name="choice"
+                  id="select5"
+                  value="5"
+                />
+                <label for="select5"></label>
+              </div>
+            </div>
+            <div class="explain">
+              <span>전혀 그렇지 않다.</span>
+              <span>매우 그렇다.</span>
+            </div>
+          </div>
+          <div></div>
+        </section>
+        <!-- QUESTION 24 -->
+        <section class="test hide" id="question24">
+          <div class="question">나는 상상력이 풍부하다</div>
+          <div class="answer">
+            <div class="choice">
+              <div class="radio-wrap">
+                <input
+                  onclick="goNextPage(this)"
+                  type="radio"
+                  name="choice"
+                  id="select1"
+                  value="1"
+                />
+                <label for="select1"></label>
+              </div>
+              <div class="radio-wrap">
+                <input
+                  onclick="goNextPage(this)"
+                  type="radio"
+                  name="choice"
+                  id="select2"
+                  value="2"
+                />
+                <label for="select2"></label>
+              </div>
+              <div class="radio-wrap">
+                <input
+                  onclick="goNextPage(this)"
+                  type="radio"
+                  name="choice"
+                  id="select3"
+                  value="3"
+                />
+                <label for="select3"></label>
+              </div>
+              <div class="radio-wrap">
+                <input
+                  onclick="goNextPage(this)"
+                  type="radio"
+                  name="choice"
+                  id="select4"
+                  value="4"
+                />
+                <label for="select4"></label>
+              </div>
+              <div class="radio-wrap">
+                <input
+                  onclick="goNextPage(this)"
+                  type="radio"
+                  name="choice"
+                  id="select5"
+                  value="5"
+                />
+                <label for="select5"></label>
+              </div>
+            </div>
+            <div class="explain">
+              <span>전혀 그렇지 않다.</span>
+              <span>매우 그렇다.</span>
+            </div>
+          </div>
+          <div></div>
+        </section>
+        <!-- QUESTION 25 -->
+        <section class="test hide" id="question25">
+          <div class="question">나는 상상력이 풍부하다</div>
+          <div class="answer">
+            <div class="choice">
+              <div class="radio-wrap">
+                <input
+                  onclick="goNextPage(this)"
+                  type="radio"
+                  name="choice"
+                  id="select1"
+                  value="1"
+                />
+                <label for="select1"></label>
+              </div>
+              <div class="radio-wrap">
+                <input
+                  onclick="goNextPage(this)"
+                  type="radio"
+                  name="choice"
+                  id="select2"
+                  value="2"
+                />
+                <label for="select2"></label>
+              </div>
+              <div class="radio-wrap">
+                <input
+                  onclick="goNextPage(this)"
+                  type="radio"
+                  name="choice"
+                  id="select3"
+                  value="3"
+                />
+                <label for="select3"></label>
+              </div>
+              <div class="radio-wrap">
+                <input
+                  onclick="goNextPage(this)"
+                  type="radio"
+                  name="choice"
+                  id="select4"
+                  value="4"
+                />
+                <label for="select4"></label>
+              </div>
+              <div class="radio-wrap">
+                <input
+                  onclick="goNextPage(this)"
+                  type="radio"
+                  name="choice"
+                  id="select5"
+                  value="5"
+                />
+                <label for="select5"></label>
+              </div>
+            </div>
+            <div class="explain">
+              <span>전혀 그렇지 않다.</span>
+              <span>매우 그렇다.</span>
+            </div>
+          </div>
+          <div></div>
+        </section>
+        <!-- QUESTION 26 -->
+        <section class="test hide" id="question26">
+          <div class="question">나는 상상력이 풍부하다</div>
+          <div class="answer">
+            <div class="choice">
+              <div class="radio-wrap">
+                <input
+                  onclick="goNextPage(this)"
+                  type="radio"
+                  name="choice"
+                  id="select1"
+                  value="1"
+                />
+                <label for="select1"></label>
+              </div>
+              <div class="radio-wrap">
+                <input
+                  onclick="goNextPage(this)"
+                  type="radio"
+                  name="choice"
+                  id="select2"
+                  value="2"
+                />
+                <label for="select2"></label>
+              </div>
+              <div class="radio-wrap">
+                <input
+                  onclick="goNextPage(this)"
+                  type="radio"
+                  name="choice"
+                  id="select3"
+                  value="3"
+                />
+                <label for="select3"></label>
+              </div>
+              <div class="radio-wrap">
+                <input
+                  onclick="goNextPage(this)"
+                  type="radio"
+                  name="choice"
+                  id="select4"
+                  value="4"
+                />
+                <label for="select4"></label>
+              </div>
+              <div class="radio-wrap">
+                <input
+                  onclick="goNextPage(this)"
+                  type="radio"
+                  name="choice"
+                  id="select5"
+                  value="5"
+                />
+                <label for="select5"></label>
+              </div>
+            </div>
+            <div class="explain">
+              <span>전혀 그렇지 않다.</span>
+              <span>매우 그렇다.</span>
+            </div>
+          </div>
+          <div></div>
+        </section>
+        <!-- QUESTION 27 -->
+        <section class="test hide" id="question27">
+          <div class="question">나는 상상력이 풍부하다</div>
+          <div class="answer">
+            <div class="choice">
+              <div class="radio-wrap">
+                <input
+                  onclick="goNextPage(this)"
+                  type="radio"
+                  name="choice"
+                  id="select1"
+                  value="1"
+                />
+                <label for="select1"></label>
+              </div>
+              <div class="radio-wrap">
+                <input
+                  onclick="goNextPage(this)"
+                  type="radio"
+                  name="choice"
+                  id="select2"
+                  value="2"
+                />
+                <label for="select2"></label>
+              </div>
+              <div class="radio-wrap">
+                <input
+                  onclick="goNextPage(this)"
+                  type="radio"
+                  name="choice"
+                  id="select3"
+                  value="3"
+                />
+                <label for="select3"></label>
+              </div>
+              <div class="radio-wrap">
+                <input
+                  onclick="goNextPage(this)"
+                  type="radio"
+                  name="choice"
+                  id="select4"
+                  value="4"
+                />
+                <label for="select4"></label>
+              </div>
+              <div class="radio-wrap">
+                <input
+                  onclick="goNextPage(this)"
+                  type="radio"
+                  name="choice"
+                  id="select5"
+                  value="5"
+                />
+                <label for="select5"></label>
+              </div>
+            </div>
+            <div class="explain">
+              <span>전혀 그렇지 않다.</span>
+              <span>매우 그렇다.</span>
+            </div>
+          </div>
+          <div></div>
+        </section>
+        <!-- QUESTION 28 -->
+        <section class="test hide" id="question28">
+          <div class="question">나는 상상력이 풍부하다</div>
+          <div class="answer">
+            <div class="choice">
+              <div class="radio-wrap">
+                <input
+                  onclick="goNextPage(this)"
+                  type="radio"
+                  name="choice"
+                  id="select1"
+                  value="1"
+                />
+                <label for="select1"></label>
+              </div>
+              <div class="radio-wrap">
+                <input
+                  onclick="goNextPage(this)"
+                  type="radio"
+                  name="choice"
+                  id="select2"
+                  value="2"
+                />
+                <label for="select2"></label>
+              </div>
+              <div class="radio-wrap">
+                <input
+                  onclick="goNextPage(this)"
+                  type="radio"
+                  name="choice"
+                  id="select3"
+                  value="3"
+                />
+                <label for="select3"></label>
+              </div>
+              <div class="radio-wrap">
+                <input
+                  onclick="goNextPage(this)"
+                  type="radio"
+                  name="choice"
+                  id="select4"
+                  value="4"
+                />
+                <label for="select4"></label>
+              </div>
+              <div class="radio-wrap">
+                <input
+                  onclick="goNextPage(this)"
+                  type="radio"
+                  name="choice"
+                  id="select5"
+                  value="5"
+                />
+                <label for="select5"></label>
+              </div>
+            </div>
+            <div class="explain">
+              <span>전혀 그렇지 않다.</span>
+              <span>매우 그렇다.</span>
+            </div>
+          </div>
+          <div></div>
+        </section>
+        <!-- QUESTION 29 -->
+        <section class="test hide" id="question29">
+          <div class="question">나는 상상력이 풍부하다</div>
+          <div class="answer">
+            <div class="choice">
+              <div class="radio-wrap">
+                <input
+                  onclick="goNextPage(this)"
+                  type="radio"
+                  name="choice"
+                  id="select1"
+                  value="1"
+                />
+                <label for="select1"></label>
+              </div>
+              <div class="radio-wrap">
+                <input
+                  onclick="goNextPage(this)"
+                  type="radio"
+                  name="choice"
+                  id="select2"
+                  value="2"
+                />
+                <label for="select2"></label>
+              </div>
+              <div class="radio-wrap">
+                <input
+                  onclick="goNextPage(this)"
+                  type="radio"
+                  name="choice"
+                  id="select3"
+                  value="3"
+                />
+                <label for="select3"></label>
+              </div>
+              <div class="radio-wrap">
+                <input
+                  onclick="goNextPage(this)"
+                  type="radio"
+                  name="choice"
+                  id="select4"
+                  value="4"
+                />
+                <label for="select4"></label>
+              </div>
+              <div class="radio-wrap">
+                <input
+                  onclick="goNextPage(this)"
+                  type="radio"
+                  name="choice"
+                  id="select5"
+                  value="5"
+                />
+                <label for="select5"></label>
+              </div>
+            </div>
+            <div class="explain">
+              <span>전혀 그렇지 않다.</span>
+              <span>매우 그렇다.</span>
+            </div>
+          </div>
+          <div></div>
+        </section>
+        <!-- QUESTION 30 -->
+        <section class="test hide" id="question30">
+          <div class="question">나는 상상력이 풍부하다</div>
+          <div class="answer">
+            <div class="choice">
+              <div class="radio-wrap">
+                <input
+                  onclick="goNextPage(this)"
+                  type="radio"
+                  name="choice"
+                  id="select1"
+                  value="1"
+                />
+                <label for="select1"></label>
+              </div>
+              <div class="radio-wrap">
+                <input
+                  onclick="goNextPage(this)"
+                  type="radio"
+                  name="choice"
+                  id="select2"
+                  value="2"
+                />
+                <label for="select2"></label>
+              </div>
+              <div class="radio-wrap">
+                <input
+                  onclick="goNextPage(this)"
+                  type="radio"
+                  name="choice"
+                  id="select3"
+                  value="3"
+                />
+                <label for="select3"></label>
+              </div>
+              <div class="radio-wrap">
+                <input
+                  onclick="goNextPage(this)"
+                  type="radio"
+                  name="choice"
+                  id="select4"
+                  value="4"
+                />
+                <label for="select4"></label>
+              </div>
+              <div class="radio-wrap">
+                <input
+                  onclick="goNextPage(this)"
+                  type="radio"
+                  name="choice"
+                  id="select5"
+                  value="5"
+                />
+                <label for="select5"></label>
+              </div>
+            </div>
+            <div class="explain">
+              <span>전혀 그렇지 않다.</span>
+              <span>매우 그렇다.</span>
+            </div>
+          </div>
+          <div></div>
+        </section>
+        <!-- QUESTION 31 -->
+        <section class="test hide" id="question31">
+          <div class="question">나는 상상력이 풍부하다</div>
+          <div class="answer">
+            <div class="choice">
+              <div class="radio-wrap">
+                <input
+                  onclick="goNextPage(this)"
+                  type="radio"
+                  name="choice"
+                  id="select1"
+                  value="1"
+                />
+                <label for="select1"></label>
+              </div>
+              <div class="radio-wrap">
+                <input
+                  onclick="goNextPage(this)"
+                  type="radio"
+                  name="choice"
+                  id="select2"
+                  value="2"
+                />
+                <label for="select2"></label>
+              </div>
+              <div class="radio-wrap">
+                <input
+                  onclick="goNextPage(this)"
+                  type="radio"
+                  name="choice"
+                  id="select3"
+                  value="3"
+                />
+                <label for="select3"></label>
+              </div>
+              <div class="radio-wrap">
+                <input
+                  onclick="goNextPage(this)"
+                  type="radio"
+                  name="choice"
+                  id="select4"
+                  value="4"
+                />
+                <label for="select4"></label>
+              </div>
+              <div class="radio-wrap">
+                <input
+                  onclick="goNextPage(this)"
+                  type="radio"
+                  name="choice"
+                  id="select5"
+                  value="5"
+                />
+                <label for="select5"></label>
+              </div>
+            </div>
+            <div class="explain">
+              <span>전혀 그렇지 않다.</span>
+              <span>매우 그렇다.</span>
+            </div>
+          </div>
+          <div></div>
+        </section>
+        <!-- QUESTION 32 -->
+        <section class="test hide" id="question32">
+          <div class="question">나는 상상력이 풍부하다</div>
+          <div class="answer">
+            <div class="choice">
+              <div class="radio-wrap">
+                <input
+                  onclick="goNextPage(this)"
+                  type="radio"
+                  name="choice"
+                  id="select1"
+                  value="1"
+                />
+                <label for="select1"></label>
+              </div>
+              <div class="radio-wrap">
+                <input
+                  onclick="goNextPage(this)"
+                  type="radio"
+                  name="choice"
+                  id="select2"
+                  value="2"
+                />
+                <label for="select2"></label>
+              </div>
+              <div class="radio-wrap">
+                <input
+                  onclick="goNextPage(this)"
+                  type="radio"
+                  name="choice"
+                  id="select3"
+                  value="3"
+                />
+                <label for="select3"></label>
+              </div>
+              <div class="radio-wrap">
+                <input
+                  onclick="goNextPage(this)"
+                  type="radio"
+                  name="choice"
+                  id="select4"
+                  value="4"
+                />
+                <label for="select4"></label>
+              </div>
+              <div class="radio-wrap">
+                <input
+                  onclick="goNextPage(this)"
+                  type="radio"
+                  name="choice"
+                  id="select5"
+                  value="5"
+                />
+                <label for="select5"></label>
+              </div>
+            </div>
+            <div class="explain">
+              <span>전혀 그렇지 않다.</span>
+              <span>매우 그렇다.</span>
+            </div>
+          </div>
+          <div></div>
+        </section>
+        <!-- QUESTION 33 -->
+        <section class="test hide" id="question33">
+          <div class="question">나는 상상력이 풍부하다</div>
+          <div class="answer">
+            <div class="choice">
+              <div class="radio-wrap">
+                <input
+                  onclick="goNextPage(this)"
+                  type="radio"
+                  name="choice"
+                  id="select1"
+                  value="1"
+                />
+                <label for="select1"></label>
+              </div>
+              <div class="radio-wrap">
+                <input
+                  onclick="goNextPage(this)"
+                  type="radio"
+                  name="choice"
+                  id="select2"
+                  value="2"
+                />
+                <label for="select2"></label>
+              </div>
+              <div class="radio-wrap">
+                <input
+                  onclick="goNextPage(this)"
+                  type="radio"
+                  name="choice"
+                  id="select3"
+                  value="3"
+                />
+                <label for="select3"></label>
+              </div>
+              <div class="radio-wrap">
+                <input
+                  onclick="goNextPage(this)"
+                  type="radio"
+                  name="choice"
+                  id="select4"
+                  value="4"
+                />
+                <label for="select4"></label>
+              </div>
+              <div class="radio-wrap">
+                <input
+                  onclick="goNextPage(this)"
+                  type="radio"
+                  name="choice"
+                  id="select5"
+                  value="5"
+                />
+                <label for="select5"></label>
+              </div>
+            </div>
+            <div class="explain">
+              <span>전혀 그렇지 않다.</span>
+              <span>매우 그렇다.</span>
+            </div>
+          </div>
+          <div></div>
+        </section>
+        <!-- QUESTION 34 -->
+        <section class="test hide" id="question34">
+          <div class="question">나는 상상력이 풍부하다</div>
+          <div class="answer">
+            <div class="choice">
+              <div class="radio-wrap">
+                <input
+                  onclick="goNextPage(this)"
+                  type="radio"
+                  name="choice"
+                  id="select1"
+                  value="1"
+                />
+                <label for="select1"></label>
+              </div>
+              <div class="radio-wrap">
+                <input
+                  onclick="goNextPage(this)"
+                  type="radio"
+                  name="choice"
+                  id="select2"
+                  value="2"
+                />
+                <label for="select2"></label>
+              </div>
+              <div class="radio-wrap">
+                <input
+                  onclick="goNextPage(this)"
+                  type="radio"
+                  name="choice"
+                  id="select3"
+                  value="3"
+                />
+                <label for="select3"></label>
+              </div>
+              <div class="radio-wrap">
+                <input
+                  onclick="goNextPage(this)"
+                  type="radio"
+                  name="choice"
+                  id="select4"
+                  value="4"
+                />
+                <label for="select4"></label>
+              </div>
+              <div class="radio-wrap">
+                <input
+                  onclick="goNextPage(this)"
+                  type="radio"
+                  name="choice"
+                  id="select5"
+                  value="5"
+                />
+                <label for="select5"></label>
+              </div>
+            </div>
+            <div class="explain">
+              <span>전혀 그렇지 않다.</span>
+              <span>매우 그렇다.</span>
+            </div>
+          </div>
+          <div></div>
+        </section>
+        <!-- QUESTION 35 -->
+        <section class="test hide" id="question35">
+          <div class="question">나는 상상력이 풍부하다</div>
+          <div class="answer">
+            <div class="choice">
+              <div class="radio-wrap">
+                <input
+                  onclick="goNextPage(this)"
+                  type="radio"
+                  name="choice"
+                  id="select1"
+                  value="1"
+                />
+                <label for="select1"></label>
+              </div>
+              <div class="radio-wrap">
+                <input
+                  onclick="goNextPage(this)"
+                  type="radio"
+                  name="choice"
+                  id="select2"
+                  value="2"
+                />
+                <label for="select2"></label>
+              </div>
+              <div class="radio-wrap">
+                <input
+                  onclick="goNextPage(this)"
+                  type="radio"
+                  name="choice"
+                  id="select3"
+                  value="3"
+                />
+                <label for="select3"></label>
+              </div>
+              <div class="radio-wrap">
+                <input
+                  onclick="goNextPage(this)"
+                  type="radio"
+                  name="choice"
+                  id="select4"
+                  value="4"
+                />
+                <label for="select4"></label>
+              </div>
+              <div class="radio-wrap">
+                <input
+                  onclick="goNextPage(this)"
+                  type="radio"
+                  name="choice"
+                  id="select5"
+                  value="5"
+                />
+                <label for="select5"></label>
+              </div>
+            </div>
+            <div class="explain">
+              <span>전혀 그렇지 않다.</span>
+              <span>매우 그렇다.</span>
+            </div>
+          </div>
+          <div></div>
+        </section>
+        <!-- QUESTION 36 -->
+        <section class="test hide" id="question36">
+          <div class="question">나는 상상력이 풍부하다</div>
+          <div class="answer">
+            <div class="choice">
+              <div class="radio-wrap">
+                <input
+                  onclick="goNextPage(this)"
+                  type="radio"
+                  name="choice"
+                  id="select1"
+                  value="1"
+                />
+                <label for="select1"></label>
+              </div>
+              <div class="radio-wrap">
+                <input
+                  onclick="goNextPage(this)"
+                  type="radio"
+                  name="choice"
+                  id="select2"
+                  value="2"
+                />
+                <label for="select2"></label>
+              </div>
+              <div class="radio-wrap">
+                <input
+                  onclick="goNextPage(this)"
+                  type="radio"
+                  name="choice"
+                  id="select3"
+                  value="3"
+                />
+                <label for="select3"></label>
+              </div>
+              <div class="radio-wrap">
+                <input
+                  onclick="goNextPage(this)"
+                  type="radio"
+                  name="choice"
+                  id="select4"
+                  value="4"
+                />
+                <label for="select4"></label>
+              </div>
+              <div class="radio-wrap">
+                <input
+                  onclick="goNextPage(this)"
+                  type="radio"
+                  name="choice"
+                  id="select5"
+                  value="5"
+                />
+                <label for="select5"></label>
+              </div>
+            </div>
+            <div class="explain">
+              <span>전혀 그렇지 않다.</span>
+              <span>매우 그렇다.</span>
+            </div>
+          </div>
+          <div></div>
+        </section>
+        <!-- QUESTION 37 -->
+        <section class="test hide" id="question37">
+          <div class="question">나는 상상력이 풍부하다</div>
+          <div class="answer">
+            <div class="choice">
+              <div class="radio-wrap">
+                <input
+                  onclick="goNextPage(this)"
+                  type="radio"
+                  name="choice"
+                  id="select1"
+                  value="1"
+                />
+                <label for="select1"></label>
+              </div>
+              <div class="radio-wrap">
+                <input
+                  onclick="goNextPage(this)"
+                  type="radio"
+                  name="choice"
+                  id="select2"
+                  value="2"
+                />
+                <label for="select2"></label>
+              </div>
+              <div class="radio-wrap">
+                <input
+                  onclick="goNextPage(this)"
+                  type="radio"
+                  name="choice"
+                  id="select3"
+                  value="3"
+                />
+                <label for="select3"></label>
+              </div>
+              <div class="radio-wrap">
+                <input
+                  onclick="goNextPage(this)"
+                  type="radio"
+                  name="choice"
+                  id="select4"
+                  value="4"
+                />
+                <label for="select4"></label>
+              </div>
+              <div class="radio-wrap">
+                <input
+                  onclick="goNextPage(this)"
+                  type="radio"
+                  name="choice"
+                  id="select5"
+                  value="5"
+                />
+                <label for="select5"></label>
+              </div>
+            </div>
+            <div class="explain">
+              <span>전혀 그렇지 않다.</span>
+              <span>매우 그렇다.</span>
+            </div>
+          </div>
+          <div></div>
+        </section>
+        <!-- QUESTION 38 -->
+        <section class="test hide" id="question38">
+          <div class="question">나는 상상력이 풍부하다</div>
+          <div class="answer">
+            <div class="choice">
+              <div class="radio-wrap">
+                <input
+                  onclick="goNextPage(this)"
+                  type="radio"
+                  name="choice"
+                  id="select1"
+                  value="1"
+                />
+                <label for="select1"></label>
+              </div>
+              <div class="radio-wrap">
+                <input
+                  onclick="goNextPage(this)"
+                  type="radio"
+                  name="choice"
+                  id="select2"
+                  value="2"
+                />
+                <label for="select2"></label>
+              </div>
+              <div class="radio-wrap">
+                <input
+                  onclick="goNextPage(this)"
+                  type="radio"
+                  name="choice"
+                  id="select3"
+                  value="3"
+                />
+                <label for="select3"></label>
+              </div>
+              <div class="radio-wrap">
+                <input
+                  onclick="goNextPage(this)"
+                  type="radio"
+                  name="choice"
+                  id="select4"
+                  value="4"
+                />
+                <label for="select4"></label>
+              </div>
+              <div class="radio-wrap">
+                <input
+                  onclick="goNextPage(this)"
+                  type="radio"
+                  name="choice"
+                  id="select5"
+                  value="5"
+                />
+                <label for="select5"></label>
+              </div>
+            </div>
+            <div class="explain">
+              <span>전혀 그렇지 않다.</span>
+              <span>매우 그렇다.</span>
+            </div>
+          </div>
+          <div></div>
+        </section>
+        <!-- QUESTION 39 -->
+        <section class="test hide" id="question39">
+          <div class="question">나는 상상력이 풍부하다</div>
+          <div class="answer">
+            <div class="choice">
+              <div class="radio-wrap">
+                <input
+                  onclick="goNextPage(this)"
+                  type="radio"
+                  name="choice"
+                  id="select1"
+                  value="1"
+                />
+                <label for="select1"></label>
+              </div>
+              <div class="radio-wrap">
+                <input
+                  onclick="goNextPage(this)"
+                  type="radio"
+                  name="choice"
+                  id="select2"
+                  value="2"
+                />
+                <label for="select2"></label>
+              </div>
+              <div class="radio-wrap">
+                <input
+                  onclick="goNextPage(this)"
+                  type="radio"
+                  name="choice"
+                  id="select3"
+                  value="3"
+                />
+                <label for="select3"></label>
+              </div>
+              <div class="radio-wrap">
+                <input
+                  onclick="goNextPage(this)"
+                  type="radio"
+                  name="choice"
+                  id="select4"
+                  value="4"
+                />
+                <label for="select4"></label>
+              </div>
+              <div class="radio-wrap">
+                <input
+                  onclick="goNextPage(this)"
+                  type="radio"
+                  name="choice"
+                  id="select5"
+                  value="5"
+                />
+                <label for="select5"></label>
+              </div>
+            </div>
+            <div class="explain">
+              <span>전혀 그렇지 않다.</span>
+              <span>매우 그렇다.</span>
+            </div>
+          </div>
+          <div></div>
+        </section>
+        <!-- QUESTION 40 -->
+        <section class="test hide" id="question40">
+          <div class="question">나는 상상력이 풍부하다</div>
+          <div class="answer">
+            <div class="choice">
+              <div class="radio-wrap">
+                <input
+                  onclick="goNextPage(this)"
+                  type="radio"
+                  name="choice"
+                  id="select1"
+                  value="1"
+                />
+                <label for="select1"></label>
+              </div>
+              <div class="radio-wrap">
+                <input
+                  onclick="goNextPage(this)"
+                  type="radio"
+                  name="choice"
+                  id="select2"
+                  value="2"
+                />
+                <label for="select2"></label>
+              </div>
+              <div class="radio-wrap">
+                <input
+                  onclick="goNextPage(this)"
+                  type="radio"
+                  name="choice"
+                  id="select3"
+                  value="3"
+                />
+                <label for="select3"></label>
+              </div>
+              <div class="radio-wrap">
+                <input
+                  onclick="goNextPage(this)"
+                  type="radio"
+                  name="choice"
+                  id="select4"
+                  value="4"
+                />
+                <label for="select4"></label>
+              </div>
+              <div class="radio-wrap">
+                <input
+                  onclick="goNextPage(this)"
+                  type="radio"
+                  name="choice"
+                  id="select5"
+                  value="5"
+                />
+                <label for="select5"></label>
+              </div>
+            </div>
+            <div class="explain">
+              <span>전혀 그렇지 않다.</span>
+              <span>매우 그렇다.</span>
+            </div>
+          </div>
+          <div></div>
+        </section>
+        <div class="question-status hide">
+          <progress class="progress-bar" value="0" min="0" max="40"></progress>
+          <div class="percentage"></div>
+          <div class="current-percentage"></div>
+          <div class="question-count">0/40</div>
+        </div>
+        <!-- RESULT -->
+        <section class="result hide">
+          
+        </section>
       </div>
       <footer>
-        <span>ⓒ 2023 Front-end Test-World Project.<br /> All Rights Reserved.</span>
+        <span
+          >ⓒ 2023 Front-end Test-World Project.<br />
+          All Rights Reserved.</span
+        >
       </footer>
-      <div class="home-indicator">
-      </div>
+      <div class="home-indicator"></div>
+      <canvas></canvas>
     </div>
   </body>
 </html>
