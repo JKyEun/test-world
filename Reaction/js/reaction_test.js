@@ -1,39 +1,60 @@
 const testScreen = document.querySelector(".content__test-screen");
 const testScreenText = testScreen.querySelector("p");
 const recordUl = document.querySelector(".content__record");
+const recordBtn = document.querySelector(".content__submit img");
 
-function setGreenPanel() {
-  testScreen.style.backgroundColor = "greenyellow";
-  testScreenText.textContent = "Wait for Blue";
+function setYellowPanel() {
+  testScreen.style.backgroundColor = "#ffde39";
+  testScreenText.textContent = "Wait for Green";
 }
 
-function setBluePanel() {
-  testScreen.style.backgroundColor = "royalblue";
-  testScreenText.textContent = "Click!";
+function setGreenPanel() {
+  testScreen.style.backgroundColor = "#34d335";
+  testScreenText.textContent = "Push!";
 }
 
 function startGame() {
-  setGreenPanel();
+  setYellowPanel();
+  // function yellowTouchEvent() {
+  //   recordBtn.setAttribute("src", "./img/btn/btn_red.png");
+  //   testScreen.style.backgroundColor = "#f90115";
+  //   testScreenText.textContent = "초록색에 선택하세요!";
+  //   recordUl.querySelector("li").remove();
+  // }
+  // if ((testScreen.style.backgroundColor = "#ffde39")) {
+  //   return recordBtn.addEventListener("touchstart", yellowTouchEvent);
+  // }
   const randomTime = Math.floor(Math.random() * 5 + 3) * 1000;
+  recordBtn.setAttribute("src", "./img/btn/btn_yellow.png");
 
   setTimeout(function () {
     const startTime = new Date();
-    setBluePanel();
-    function touchEvent() {
+    recordBtn.setAttribute("src", "./img/btn/btn_green.png");
+    setGreenPanel();
+
+    function greenTouchEvent() {
       const endTime = new Date();
       const recordedTime = endTime - startTime + "ms";
-      const recordTimeList = document.createElement("i");
-      recordTimeList.textContent = recordedTime;
+      const recordTimeList = document.createElement("li");
+      recordTimeList.textContent = `Trial ${
+        recordUl.childElementCount + 1
+      }: ${recordedTime}`;
       recordUl.append(recordTimeList);
-      setGreenPanel();
-      testScreen.removeEventListener("touchstart", touchEvent);
+      setYellowPanel();
+
+      recordBtn.removeEventListener("touchstart", greenTouchEvent);
+
       recordUl.childElementCount < 5
         ? startGame()
-        : (testScreenText.textContent = "Done");
+        : (testScreenText.textContent = "Done") &&
+          (testScreen.style.backgroundColor = "#34d335");
     }
 
-    testScreen.addEventListener("touchstart", touchEvent);
+    if ((testScreen.style.backgroundColor = "#34d335")) {
+      recordBtn.addEventListener("touchstart", greenTouchEvent);
+    }
   }, randomTime);
+
   return;
 }
 
