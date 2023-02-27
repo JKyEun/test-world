@@ -1,8 +1,17 @@
+@import url("https://fonts.googleapis.com/css2?family=VT323&display=swap");
+@import url("https://cdn.jsdelivr.net/npm/galmuri@latest/dist/galmuri.css");
+@import url("https://cdn.jsdelivr.net/npm/galmuri@latest/dist/galmuri.css");
+.hide {
+  display: none !important;
+}
+
 body {
-  background-image: url(../img/back.png);
+  background-image: url(../img/bg-main.png);
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
+  text-align: center;
+  justify-content: center;
 }
 
 .container-sm {
@@ -15,11 +24,17 @@ body {
 .container-sm header {
   background-color: rgba(255, 255, 255, 0.5);
   border: 1px solid black;
-  height: 130px;
+  height: 75px;
   width: 100%;
   display: flex;
   justify-content: space-around;
   align-items: center;
+}
+.container-sm header #name {
+  margin-top: 0.5rem;
+  font-size: 35px;
+  font-family: "Galmuri14", monospace;
+  font-weight: 600;
 }
 .container-sm img {
   width: 30px;
@@ -29,38 +44,117 @@ body {
   background-color: rgba(255, 255, 255, 0.5);
   border: 1px solid black;
   width: 100%;
-  height: calc(100vh - 59px - 130px - 64px - 45px);
+  height: calc(100vh - 59px - 75px - 64px - 45px);
 }
-.container-sm .content .img {
-  display: flex;
-  justify-content: center;
+.container-sm .content .bigfive {
+  width: 232px;
+  height: auto;
 }
-.container-sm .content .img img {
-  width: 270px;
-  height: 180px;
+.container-sm .content .start {
+  width: 157px;
+  height: auto;
 }
-.container-sm .content .inner {
-  color: black;
-  font-size: 30px;
-  display: flex;
-  flex-direction: column;
-  text-align: center;
-  justify-content: center;
-  margin-top: 30px;
+.container-sm .content .text {
+  font-size: 25px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  font-family: "VT323", "Galmuri14", monospace;
 }
-.container-sm .content .inner .text {
-  font-size: 30px;
-  margin-bottom: 20px;
-}
-.container-sm .content .inner .btn {
-  width: 100px;
-  margin-top: 30px;
+.container-sm .content .text span {
+  font-size: 22px;
 }
 .container-sm footer {
   width: 100%;
   height: 64px;
 }
+.container-sm footer div {
+  font-family: "VT323", "Galmuri14", monospace;
+  color: white;
+}
 .container-sm .home-indicator {
   width: 100%;
   height: 45px;
+}
+
+.all {
+  position: relative;
+  background-color: rgba(255, 255, 255, 0.5);
+  border: 1px solid black;
+  width: 100%;
+  height: calc(100vh - 59px - 75px - 64px - 45px);
+  overflow: hidden;
+}
+.all .qna {
+  font-family: "Galmuri14", monospace;
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+  transition: 1s;
+  left: 280px;
+}
+.all .qna.prev {
+  transform: translateX(-200%);
+}
+.all .qna.next {
+  transform: translateX(200%);
+}
+.all .qna .qBox {
+  margin-top: 20px;
+  font-size: 26px;
+  font-weight: bold;
+}
+.all .qna .aBox {
+  display: flex;
+  justify-content: center;
+}
+.all .qna .aBox .col-2 {
+  width: 50px;
+  height: 55px;
+  margin: 10px;
+  height: -webkit-fill-available;
+  line-height: 48px;
+  border: 2px solid black;
+}
+.all .qna .aBox .col-2 label {
+  width: 100%;
+}
+.all .qna .aBox .col-2 input[type=radio] {
+  display: none;
+}
+.all .qna .aBox .col-2 input[type=radio]:checked + label {
+  width: 50px;
+  height: 55px;
+  border: 2px solid black;
+  background: #cfa8ff;
+}
+.all .qna .aBox .col-2 input[type=radio]:hover + label {
+  cursor: pointer;
+}
+.all .question-status {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 40px;
+}
+.all .question-status .progress-bar {
+  text-align: center;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+}
+.all .question-status .progress-bar::-webkit-progress-bar {
+  background: #ffffff;
+  height: 28px;
+  width: 280px;
+}
+.all .question-status .progress-bar::-webkit-progress-value {
+  background: #cfa8ff;
+  height: 28px;
+  width: 48px;
+}
+.all .question-status .question-count {
+  margin-top: 7px;
+  font-size: 19px;
 }/*# sourceMappingURL=style.css.map */

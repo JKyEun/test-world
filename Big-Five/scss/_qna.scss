@@ -1,0 +1,93 @@
+@import url("https://cdn.jsdelivr.net/npm/galmuri@latest/dist/galmuri.css");
+// font-family: 'Galmuri14'
+.all {
+  position: relative;
+  background-color: rgba(255, 255, 255, 0.5);
+  border: 1px solid black;
+  width: 100%;
+  height: calc(100vh - 59px - 75px - 64px - 45px); //헤더 반으로 줄인거
+  overflow: hidden;
+  .qna {
+    font-family: "Galmuri14", monospace;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    // justify-content: space-evenly;
+    align-items: center;
+    height: 100%;
+    transition: 1s;
+    left: 280px;
+    &.prev {
+      transform: translateX(-200%);
+    }
+    &.next {
+      transform: translateX(200%);
+    }
+
+    .qBox {
+      margin-top: 20px;
+      font-size: 26px;
+      font-weight: bold;
+    }
+    .aBox {
+      display: flex;
+      justify-content: center;
+      .col-2 {
+        width: 50px;
+        height: 55px;
+        margin: 10px;
+        height: -webkit-fill-available;
+        line-height: 48px;
+        border: 2px solid black;
+        label {
+          width: 100%;
+        }
+        input[type="radio"] {
+          display: none;
+
+          &:checked + label {
+            width: 50px;
+            height: 55px;
+            border: 2px solid black;
+            background: #cfa8ff;
+          }
+          &:hover + label {
+            // background-color: black;
+            cursor: pointer;
+          }
+        }
+      }
+    }
+  }
+  .question-status {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 40px;
+    .progress-bar {
+      text-align: center;
+      appearance: none;
+      &::-webkit-progress-bar {
+        //바의 외관
+        background: #ffffff;
+        height: 28px;
+        width: 280px;
+        // border: 2px solid black;
+        // overflow: hidden;
+      }
+      &::-webkit-progress-value {
+        //바 게이지
+        // background: #5a3f87;
+        background: #cfa8ff;
+        height: 28px;
+        width: 48px;
+      }
+    }
+    .question-count {
+      margin-top: 7px;
+      font-size: 19px;
+      // color: #5a3f87;
+      // color: #f2cb05;
+    }
+  }
+}
