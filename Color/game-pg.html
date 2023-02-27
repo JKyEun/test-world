@@ -21,30 +21,33 @@
 
   <body>
     <!-- HEADER -->
-    <header>
-      <div class="container">
-        <div class="gameBoard">
-          <div class="status-menu">
-            <div class="time">
-              <strong id="player-time" aria-label="남은 시간"></strong>
-            </div>
-            <div class="stage">stage</div>
-            <div class="home">
-              <a href="./color.html" class="home--Btn">
-                <span class="sr-only">메인 페이지로 이동</span>
-              </a>
-            </div>
+    <div class="container">
+      <div class="gameBoard">
+        <header class="status-menu">
+          <div class="time">
+            <strong id="player-time" aria-label="남은 시간"></strong>
           </div>
-        </div>
+          <div class="stage">stage</div>
+          <div class="home">
+            <a href="./color.html" class="home--Btn">
+              <span class="sr-only">메인 페이지로 이동</span>
+            </a>
+          </div>
+        </header>
+        <!-- MAIN GAME -->
+        <main class="game">
+          <div class="palette"></div>
+        </main>
       </div>
-    </header>
-
-    <!-- MAIN GAME -->
-    <div class="game">
-      <div class="palette"></div>
     </div>
 
     <!-- NOTIFICATION -->
-    <div class="push"></div>
+    <div class="modal modal-layer">
+      <div class="modal__content">
+        <div class="modal__content-title"></div>
+
+        <button class="white-button modal__content-close-button" type="button">닫기</button>
+      </div>
+    </div>
   </body>
 </html>
