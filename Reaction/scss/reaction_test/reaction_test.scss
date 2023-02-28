@@ -1,5 +1,12 @@
 //FONT
 @import url("https://cdn.jsdelivr.net/npm/galmuri@latest/dist/galmuri.css");
+.hide {
+  display: none;
+}
+
+p {
+  margin: 0;
+}
 
 body {
   text-align: center;
@@ -11,6 +18,7 @@ body {
 
 .container-sm {
   height: 100vh;
+  max-width: 516px;
 
   .status-bar {
     background-color: inherit;
@@ -77,6 +85,14 @@ body {
         margin-top: 10px;
         padding: 0;
       }
+    }
+
+    .result {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 30px;
+      height: 30vh;
     }
   }
   footer {
