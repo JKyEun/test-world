@@ -52,7 +52,7 @@ for (let i = 1; i <= questions.length; i++) {
   }
 
   // 질문 내용 입력
-  questionDivs[i-1].innerText = questions[i-1];
+  questionDivs[i - 1].innerText = questions[i - 1];
 }
 
 // 버튼 활성화 이벤트
@@ -187,14 +187,10 @@ function goNextPage(t) {
 
   questionStatus.querySelector(".progress-bar").value++;
   currentPage = questionStatus.querySelector(".progress-bar").value;
-  document.querySelector(".current-percentage").style.width = `${
-    2.5 * currentPage
-  }%`;
+  document.querySelector(".current-percentage").style.width = `${2.5 * currentPage}%`;
   h2.innerText = `Qestion ${currentPage + 1}`;
   answerArr[currentPage] = t.value;
-  questionStatus.querySelector(
-    ".question-count"
-  ).innerText = `${currentPage}/${questions.length}`;
+  questionStatus.querySelector(".question-count").innerText = `${currentPage}/${questions.length}`;
 }
 
 // 이전 페이지로 넘기기
@@ -230,13 +226,9 @@ function goPrevPage() {
 
   questionStatus.querySelector(".progress-bar").value--;
   currentPage = questionStatus.querySelector(".progress-bar").value;
-  document.querySelector(".current-percentage").style.width = `${
-    2.5 * currentPage
-  }%`;
+  document.querySelector(".current-percentage").style.width = `${2.5 * currentPage}%`;
   h2.innerText = `Qestion ${currentPage + 1}`;
-  questionStatus.querySelector(
-    ".question-count"
-  ).innerText = `${currentPage}/${questions.length}`;
+  questionStatus.querySelector(".question-count").innerText = `${currentPage}/${questions.length}`;
 }
 
 previousBtn.addEventListener("click", goPrevPage);

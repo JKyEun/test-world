@@ -1,18 +1,18 @@
+// FONT
 @import url("https://cdn.jsdelivr.net/npm/galmuri@latest/dist/galmuri.css");
 @import url("https://fonts.googleapis.com/css2?family=VT323&display=swap");
-* {
-  margin: 0px;
-  padding: 0px;
-  box-sizing: border-box;
-}
 
-ul,
-ol {
-  list-style: none;
-}
+// font-family: 'Galmuri9';
+// font-family: 'VT323', monospace;
 
-a {
-  text-decoration: none;
+body {
+  background-image: url("../../img/gamebg.png");
+  // background-color: black;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 100vw;
+  height: 100vh;
 }
 
 .container {
@@ -22,7 +22,10 @@ a {
   align-items: center;
   width: 100vw;
   height: 100vh;
-  background-color: black;
+  // background-image: url("../img/game-bg.png");
+  // background-color: black;
+  // background-size: contain;
+  // background-repeat: no-repeat;
 }
 
 .gameBoard {
@@ -30,7 +33,7 @@ a {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 90%;
+  width: 100%;
   max-width: 646px;
   height: 100%;
 }
@@ -87,11 +90,11 @@ a {
 
 .time::before {
   margin-right: 3px;
-  background-image: url("../img/clock.png");
+  background-image: url("../../img/clock.png");
 }
 
 .home--Btn {
-  background-image: url("../img/home-green.png");
+  background-image: url("../../img/home-green.png");
 }
 
 .game {
@@ -202,49 +205,60 @@ a {
 
 /* Tablet */
 @media screen and (min-width: 768px) {
-  .menu__nav {
+  .menu {
     font-size: 21px;
   }
-  .menu__nav-time,
-  .menu__nav-home {
+
+  .time,
+  .home {
     width: 55px;
   }
-  .menu__nav-time::before,
-  .menu__nav-home--button {
+
+  .time::before,
+  .home--Btn {
     width: 24px;
     height: 24px;
   }
-  .menu__nav-time::before {
+
+  .time::before {
     margin-right: 5px;
   }
+
   .palette-item {
     border-radius: 15px;
     padding: 3px;
   }
+
   .modal__content {
     width: 50%;
   }
+
   .modal__content-title--result {
     margin-bottom: 15px;
   }
+
   .modal__content-title--stage {
     font-size: 21px;
     margin-bottom: 15px;
   }
+
   .modal__content-title--desc {
     font-size: 18px;
   }
+
   .modal__content-close-button {
     font-size: 17px;
   }
 }
+
 /* Desktop */
 @media screen and (min-width: 1024px) {
   .palette-item {
     border-radius: 10px;
     padding: 4px;
   }
+
   .modal__content {
     width: 20%;
   }
-}/*# sourceMappingURL=game-pg-style.css.map */
+}

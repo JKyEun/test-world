@@ -1,13 +1,12 @@
-// 게임 상태 관리에 필요한 변수 초기화
-let stage = 1; // 게임 스테이지
-let time = 15; // 남은 시간
-let paletteRow = 2; // 팔레트 행
-let paletteSize = paletteRow ** 2; // 팔레트 아이템 전체 갯수 (행의 제곱)
+let stage = 1;
+let time = 15;
+let paletteRow = 2;
+let paletteSize = paletteRow ** 2; //
 let targetIndex = 0;
-let targetOpacity = 0.6; // 타겟 아이템 opacity
-let color = {}; // 팔레트 아이템 색상 (red, green, blue 값을 저장하는 object)
+let targetOpacity = 0.6;
+let color = {};
 
-let timer = 0; // 타이머
+let timer = 0;
 
 // 게임 시작
 const modal = document.getElementsByClassName("modal")[0];
@@ -18,17 +17,10 @@ function startGame() {
   timer = setInterval(() => {
     playerTime.innerHTML = --time;
 
-    // 시간 초과 jubhjnh
     if (time <= 0) {
       playerTime.innerHTML = 0;
-
-      // 타이머 종료
       clearInterval(timer);
-
-      // 결과 모달 출력
       showGameResult();
-
-      // 게임 설정 값 초기화
       initGame();
     }
   }, 1000);
@@ -36,9 +28,7 @@ function startGame() {
 
 // 팔레트 아이템 생성
 function createPlatteItem() {
-  // 랜덤으로 타겟 아이템 생성
   targetIndex = createTargetItem(paletteSize);
-  // 팔레트 아이템 세팅
   settingPlatteItem();
 }
 
@@ -52,7 +42,6 @@ const palette = document.getElementsByClassName("palette")[0];
 const paletteItem = document.getElementsByClassName("palette-item");
 
 function settingPlatteItem() {
-  // html 추가
   for (let i = 0; i < paletteSize; i++) {
     if (i === targetIndex) {
       palette.innerHTML =
@@ -94,7 +83,6 @@ function settingPlatteItem() {
 
 // 랜덤 색상 생성
 function createColor(color) {
-  // 너무 어둡거나 너무 밝은 색이 나오지 않도록 범위 지정
   color.red = Math.floor(Math.random() * 101) + 40;
   color.green = Math.floor(Math.random() * 101) + 40;
   color.blue = Math.floor(Math.random() * 101) + 40;
@@ -121,35 +109,27 @@ function selectTargetItem() {
 
 // 오답 처리
 function selectWrongItem() {
-  // 틀렸을 때 3초씩 줄어드는 효과
   if (time - 3 < 0) {
     time = 0;
   } else {
     time = time - 3;
   }
 
-  // 화면 갱신
   playerTime.innerHTML = time;
 }
 
-// 사용자가 정답을 맞춘 경우 설정 값 변경
 function updateSettings() {
-  // 화면 초기화
   palette.innerHTML = "";
 
-  // targetIndex, color는 팔레트 아이템 생성 시 랜덤 값으로 재생성되기 때문에 따로 리셋 처리 하지 않음
   stage++;
   time = 15;
 
-  // stage가 3씩 올라갈 때마다 팔레트 사이즈 증가
   if (stage % 3 === 1) {
     paletteRow++;
     paletteSize = paletteRow ** 2;
   }
 
-  // opacity 값 0.02씩 증가 (0.94 이상으로는 증가하지 않음)
   if (targetOpacity <= 0.94) {
-    // 2진수로 실수 계산 시 오차가 생기기 때문에 소수점 셋째자리에서 반올림하도록 처리
     targetOpacity = +(targetOpacity + 0.02).toFixed(2);
   }
 
