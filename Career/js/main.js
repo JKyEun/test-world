@@ -347,8 +347,12 @@ function getResult() {
     const typeGraph = document.querySelector(
       `.graph .type:nth-child(${i + 1}) .type-graph`
     );
-    typeGraph.style.width = `${(eachScore[i] / 100) * 78}%`;
-    typeGraph.innerText = `${eachScore[i]}점`;
+    setTimeout(() => {
+      typeGraph.style.width = `${eachScore[i] * (78 / 100)}%`;
+      setTimeout(() => {
+        typeGraph.innerText = `${eachScore[i]}점`;
+      }, 2000);
+    }, 2000);
   }
 
   const prev = document.querySelector(".prev");

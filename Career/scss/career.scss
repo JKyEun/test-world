@@ -229,8 +229,11 @@ body {
             font-size: 12px;
           }
           .type-graph {
-            width: 78%;
+            // width: 78%;
+            width: 0%;
             height: 32px;
+            transition: 2s;
+            transition-timing-function: ease-in-out;
           }
           &:nth-child(1) .type-graph {
             background-color: #2c3e50;
