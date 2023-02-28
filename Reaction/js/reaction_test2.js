@@ -12,11 +12,11 @@ const recordBtn = document.querySelector(".content__submit img");
 
 // variable
 let startTime = 0;
-let timeOut = 0;
+
 //패널,버튼 색깔 바꾸기
 function setYellowPanel() {
   testScreen.style.backgroundColor = YELLOW;
-  testScreenText.textContent = "Wait for Green";
+
   recordBtn.setAttribute("src", "./img/btn/btn_yellow.png");
 }
 
@@ -37,13 +37,6 @@ function setRedPanel() {
 //패널 색에 따른 터치 이벤트
 
 function greenTouchEvent() {
-  const endTime = new Date();
-  const recordedTime = endTime - startTime + "ms";
-  const recordTimeList = document.createElement("li");
-  recordTimeList.textContent = `Trial ${
-    recordUl.childElementCount + 1
-  }: ${recordedTime}`;
-  recordUl.append(recordTimeList);
   recordBtn.removeEventListener("touchstart", greenTouchEvent);
 
   recordUl.childElementCount < 5
@@ -51,24 +44,35 @@ function greenTouchEvent() {
     : setGreenPanel() && (testScreenText.textContent = "Done"); //결과창 함수로 바꿀것
 }
 
-// function yellowTouchEvent() {
-//   setRedPanel();
-//   recordBtn.removeEventListener("touchstart", yellowTouchEvent);
-//   setGame();
-// }
+function touchEvent() {
+  timer();
+}
+
+function getRecord() {
+  const endTime = new Date();
+  const recordedTime = endTime - startTime + "ms";
+  const recordTimeList = document.createElement("li");
+  recordTimeList.textContent = `Trial ${
+    recordUl.childElementCount + 1
+  }: ${recordedTime}`;
+  recordUl.append(recordTimeList);
+}
+
+function timer() {
+  //   clearTimeout(timeOut);
+  testScreenText.textContent = "Wait for Green";
+  const randomTime = Math.floor(Math.random() * 5 + 3) * 1000;
+  let timeOut = setTimeout(() => {
+    setGreenPanel();
+    startTime = new Date();
+  }, randomTime);
+}
 
 //게임시작
 function setGame() {
+  testScreenText.textContent = "Touch to Start";
   setYellowPanel();
-  // recordBtn.addEventListener("touchstart", yellowTouchEvent);
-  const randomTime = Math.floor(Math.random() * 5 + 3) * 1000;
-
-  timeOut = setTimeout(() => {
-    startTime = new Date();
-    recordBtn.setAttribute("src", "./img/btn/btn_green.png");
-    setGreenPanel();
-    recordBtn.addEventListener("touchstart", greenTouchEvent);
-  }, randomTime);
+  recordBtn.addEventListener("touchstart", touchEvent);
 }
 
 window.onload = () => {
