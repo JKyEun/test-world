@@ -12,6 +12,9 @@
     <!-- RESET CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reset-css@5.0.1/reset.min.css" />
 
+    <!-- BOOSTRAP -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous" />
+
     <!-- CSS -->
     <link rel="stylesheet" href="./SCSS/game-pg-style.css" />
 
@@ -23,17 +26,20 @@
     <!-- HEADER -->
     <div class="container">
       <div class="gameBoard">
-        <header class="status-menu">
-          <div class="time">
-            <strong id="player-time" aria-label="남은 시간"></strong>
-          </div>
-          <div class="stage">stage</div>
-          <div class="home">
-            <a href="./color.html" class="home--Btn">
-              <span class="sr-only">메인 페이지로 이동</span>
-            </a>
-          </div>
+        <header div class="menu">
+          <nav class="status">
+            <div class="time">
+              <strong id="player-time" aria-label="남은 시간"></strong>
+            </div>
+            <div class="stage">stage<strong id="player-stage" aria-label="스테이지"></strong></div>
+            <div class="home">
+              <a href="../Color/color.html" class="home--Btn">
+                <span class="sr-only">메인 페이지로 이동</span>
+              </a>
+            </div>
+          </nav>
         </header>
+
         <!-- MAIN GAME -->
         <main class="game">
           <div class="palette"></div>
@@ -41,10 +47,14 @@
       </div>
     </div>
 
-    <!-- NOTIFICATION -->
-    <div class="modal modal-layer">
+    <!-- Modal -->
+    <div class="modal">
       <div class="modal__content">
-        <div class="modal__content-title"></div>
+        <div class="modal__content-title">
+          <h1 class="modal__content-title--result">게임 종료!</h1>
+          <span class="modal__content-title--stage"> <strong>STAGE</strong> </span>
+          <p class="modal__content-title--desc"></p>
+        </div>
 
         <button class="white-button modal__content-close-button" type="button">닫기</button>
       </div>
