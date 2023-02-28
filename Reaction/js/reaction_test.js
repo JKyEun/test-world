@@ -7,6 +7,7 @@ const RED = "rgb(249, 1, 21)";
 let START_TIME = 0;
 let END_TIME = 0;
 let resultArr = [];
+let timeOut = null;
 
 //dom
 const container = document.querySelector(".content");
@@ -31,14 +32,14 @@ function setGreenPanel() {
 
 function setRedPanel() {
   testScreen.style.backgroundColor = RED;
-  testScreenText.textContent = "초록색에 버튼을 눌러주세요! Retry!";
+  testScreenText.innerHTML = `초록색에 버튼을 눌러주세요 <br> 버튼을 눌러 다시 시작하세요!`;
   recordBtn.setAttribute("src", "./img/btn/btn_red.png");
 }
 
 // 정답 노출 함수
 function timer() {
   const randomTime = Math.floor(Math.random() * 5 + 3) * 1000;
-  setTimeout(() => {
+  timeOut = setTimeout(() => {
     setGreenPanel();
     START_TIME = new Date();
   }, randomTime);
@@ -68,21 +69,35 @@ function isEnd() {
     recordBtn.style.display = "none";
     const result = document.createElement("div");
     result.classList.add("result");
-    result.innerHTML = `<p>당신의 평균 반응속도<br>${avgResult}</p>`;
+    result.innerHTML = `<p>당신의 평균 반응속도<br>${avgResult} ms </p>`;
     container.prepend(result);
   }
+}
+
+//모든 기록 삭제 함수
+function clearResult() {
+  recordUl.innerHTML = "";
 }
 
 // 이벤트 리스너 함수
 function touchEvent() {
   if (testScreen.style.backgroundColor === YELLOW) {
-    // 예외처리
+    setRedPanel();
+    clearTimeout(timeOut);
+    return;
   }
   if (testScreen.style.backgroundColor === GREEN) {
     setYellowPanel();
     timer();
     getRecord();
     isEnd();
+    return;
+  }
+  if (testScreen.style.backgroundColor === RED) {
+    clearResult();
+    setYellowPanel();
+    timer();
+    return;
   }
 }
 

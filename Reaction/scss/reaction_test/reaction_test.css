@@ -17,6 +17,7 @@ body {
 
 .container-sm {
   height: 100vh;
+  max-width: 516px;
 }
 .container-sm .status-bar {
   background-color: inherit;
