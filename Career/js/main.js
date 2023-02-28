@@ -28,7 +28,7 @@ const questions = [
   "계약직으로 입사하는 것은 불안하다.",
   "돈을 벌기 위한 고민을 항상 하고있다.",
   "가끔은 돈을 벌지 않고 쉬고 싶다.",
-  "다른 사람의 아픔에 깊게 공감한다.",
+  "다른 사람의 아픔에 공감하는 편이다.",
   "스포츠를 좋아한다.",
   "일보다 가정이 중요하다.",
   "일을 할 때, 나무보단 숲을 보는 편이다.",
@@ -36,7 +36,7 @@ const questions = [
   "먼 지역으로 발령나는 것은 피하고 싶다.",
   "권력, 자아실현, 명예, 워라밸, 돈 중에 가장 중요한 가치는 돈이다.",
   "남이 시키는 일보다 내 스스로 하는 일이 더 능률이 좋다.",
-  "세상을 바꾸고 싶다.",
+  "사람을 상대하는 것이 힘들지 않다.",
   "한번 시작한 일은 끝을 봐야한다.",
   "돈보다 복지가 중요하다.",
 ];
@@ -230,6 +230,10 @@ function goNextPage(t) {
     ".question-count"
   ).innerText = `${currentPage}/${questions.length}`;
 
+  // 배열에 사용자 입력 값 받아오기
+  answerArr[currentPage - 1] = Number(t.value);
+
+  // 마지막 페이지일때
   if (currentPage === 40) {
     getResult();
     return;
@@ -237,9 +241,6 @@ function goNextPage(t) {
 
   // 제목 변경
   h2.innerText = `Qestion ${currentPage + 1}`;
-
-  // 배열에 사용자 입력 값 받아오기
-  answerArr[currentPage] = Number(t.value);
 }
 
 // 이전 페이지로 넘기기
@@ -298,7 +299,25 @@ function getResult() {
   // 점수 할당
   for (let i = 0; i < answerArr.length; i++) {
     const index = i % 8;
-    eachScore[index] += (answerArr[i] * 5);
+    eachScore[index] += answerArr[i] * 4;
+  }
+
+  // 보너스 점수, 감점
+  eachScore[0] += answerArr[37] * 2 - answerArr[9] * 2;
+  eachScore[1] += answerArr[38] * 1 - answerArr[35] * 3;
+  eachScore[1] = eachScore[1] * (100 / 90);
+  eachScore[2] += answerArr[7] * 1 - answerArr[11] * 3;
+  eachScore[2] = eachScore[2] * (100 / 90);
+  eachScore[3] += answerArr[4] * 2 - answerArr[10] * 2;
+  eachScore[4] += answerArr[25] * 2 - answerArr[18] * 2;
+  eachScore[5] += answerArr[16] * 2 - answerArr[23] * 2;
+  eachScore[6] += answerArr[11] * 3 - answerArr[28] * 1;
+  eachScore[6] = eachScore[6] * (100 / 110);
+  eachScore[7] += answerArr[21] * 2 - answerArr[8] * 2;
+
+  // 소수점 자르기
+  for (let i = 0; i < eachScore.length; i++) {
+    eachScore[i] = Number(eachScore[i].toFixed(1));
   }
 
   // SUMMARY 내용 입력
@@ -323,7 +342,9 @@ function getResult() {
 
   // 그래프 만들기
   for (let i = 0; i < eachScore.length; i++) {
-    const typeGraph = document.querySelector(`.graph .type:nth-child(${i+1}) .type-graph`);
+    const typeGraph = document.querySelector(
+      `.graph .type:nth-child(${i + 1}) .type-graph`
+    );
     typeGraph.style.width = `${(eachScore[i] / 100) * 56}vw`;
     typeGraph.innerText = `${eachScore[i]}점`;
   }
