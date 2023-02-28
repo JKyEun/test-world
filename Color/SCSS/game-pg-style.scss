@@ -24,12 +24,16 @@
   justify-content: center;
   align-items: center;
   width: 90%;
-  // max-width: 646px;
+  max-width: 646px;
   height: 100%;
-  background-color: bisque;
 }
 
-.status-menu {
+.menu {
+  width: 100%;
+  height: auto;
+}
+
+.status {
   display: flex;
   justify-content: space-between;
   width: 100%;
@@ -37,10 +41,9 @@
   font: 25px/1 "Galmuri9";
   padding-bottom: 10px;
   color: #fff;
-  // border: 2px solid white;
 }
 
-.status-menu > * {
+.status > * {
   display: flex;
   align-items: flex-end;
 }
@@ -48,9 +51,12 @@
 .time {
   justify-content: flex-start;
   width: 45px;
+  margin-right: 10px;
+  margin-left: 10px;
+  font-size: 21px;
 }
 
-#player-time {
+#player-stage {
   justify-content: center;
   flex-grow: 1;
 }
@@ -64,8 +70,8 @@
 .home--Btn {
   content: "";
   display: block;
-  width: 20px;
-  height: 20px;
+  width: 19px;
+  height: 19px;
   margin-bottom: 2px;
   background-position: center center;
   background-repeat: no-repeat;
@@ -73,28 +79,15 @@
 }
 
 .time::before {
-  margin-left: 3px;
-  margin-top: 3px;
-  background-image: url("../img/time.png");
+  margin-right: 3px;
+  background-image: url("../img/clock.png");
 }
 
 .home--Btn {
-  margin-top: 3px;
-  background-image: url("../img/home2.png");
+  background-image: url("../img/home-green.png");
 }
 
-.sr-only {
-  position: absolute;
-  overflow: hidden;
-  width: 1px;
-  height: 1px;
-  padding: 0;
-  margin: -1px;
-  border: 0;
-  clip: rect(0, 0, 0, 0);
-}
-
-.gmae {
+.game {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -105,6 +98,12 @@
   box-shadow: rgba(0, 0, 0, 0.09) 0px 3px 12px;
 }
 
+.game::after {
+  content: "";
+  display: block;
+  padding-bottom: 100%;
+}
+
 .palette {
   position: relative;
   display: flex;
@@ -112,4 +111,144 @@
   left: 0;
   width: 100%;
   height: 100%;
+}
+
+.palette-item {
+  padding: 3px;
+  border-radius: 10px;
+  background-clip: content-box;
+  cursor: pointer;
+}
+
+.modal {
+  display: none;
+  letter-spacing: -0.03em;
+}
+
+.modal-layer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 10;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.modal__content {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+  width: 70%;
+  height: auto;
+  padding: 30px;
+  z-index: 9999;
+  border-radius: 5px;
+  background-color: #fff;
+  box-shadow: rgba(0, 0, 0, 0.09) 0px 3px 12px;
+}
+
+.modal__content-title {
+  text-align: center;
+  margin-bottom: 25px;
+}
+
+.modal__content-title--result {
+  font-size: 21px;
+  font-family: "Galmuri9";
+  margin-bottom: 10px;
+  color: red;
+}
+
+.modal__content-title--stage {
+  display: inline-block;
+  margin-bottom: 10px;
+  font-size: 17px;
+  font-family: "Galmuri9";
+}
+
+.modal__content-title--desc {
+  font-size: 15px;
+  font-family: "Galmuri9";
+}
+
+.modal__content-close-button {
+  width: 100%;
+  font-size: 10px;
+  font-family: "Galmuri9";
+}
+
+.white-button {
+  width: 30%;
+  padding: 5px;
+}
+
+.show {
+  display: block;
+  opacity: 1;
+}
+
+/* Tablet */
+@media screen and (min-width: 768px) {
+  .menu__nav {
+    font-size: 21px;
+  }
+
+  .menu__nav-time,
+  .menu__nav-home {
+    width: 55px;
+  }
+
+  .menu__nav-time::before,
+  .menu__nav-home--button {
+    width: 24px;
+    height: 24px;
+  }
+
+  .menu__nav-time::before {
+    margin-right: 5px;
+  }
+
+  .palette-item {
+    border-radius: 15px;
+    padding: 3px;
+  }
+
+  .modal__content {
+    width: 50%;
+  }
+
+  .modal__content-title--result {
+    margin-bottom: 15px;
+  }
+
+  .modal__content-title--stage {
+    font-size: 21px;
+    margin-bottom: 15px;
+  }
+
+  .modal__content-title--desc {
+    font-size: 18px;
+  }
+
+  .modal__content-close-button {
+    font-size: 17px;
+  }
+}
+
+/* Desktop */
+@media screen and (min-width: 1024px) {
+  .palette-item {
+    border-radius: 10px;
+    padding: 4px;
+  }
+
+  .modal__content {
+    width: 20%;
+  }
 }
