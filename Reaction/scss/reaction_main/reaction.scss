@@ -12,6 +12,7 @@ body {
 .container-sm {
   //   background-color: red;
   height: 100vh;
+  max-width: 516px;
 
   .status-bar {
     background-color: inherit;
@@ -39,6 +40,7 @@ body {
       }
       .title {
         font-size: 30px;
+        font-weight: 700;
       }
     }
   }

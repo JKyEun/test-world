@@ -1,4 +1,12 @@
 @import url("https://cdn.jsdelivr.net/npm/galmuri@latest/dist/galmuri.css");
+.hide {
+  display: none;
+}
+
+p {
+  margin: 0;
+}
+
 body {
   text-align: center;
   background-image: url(../../img/bg_img.png);
@@ -9,6 +17,7 @@ body {
 
 .container-sm {
   height: 100vh;
+  max-width: 516px;
 }
 .container-sm .status-bar {
   background-color: inherit;
@@ -35,6 +44,7 @@ body {
 }
 .container-sm header .header-container .title {
   font-size: 30px;
+  font-weight: 700;
 }
 .container-sm .content {
   background-color: rgba(255, 255, 255, 0.5);
@@ -45,7 +55,37 @@ body {
 .container-sm .content .content__test-screen {
   width: inherit;
   height: 30vh;
-  background-color: greenyellow;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.container-sm .content .content__test-screen p {
+  font-size: large;
+  font-weight: bold;
+}
+.container-sm .content .content__submit {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+.container-sm .content .content__submit img {
+  margin-top: 30px;
+  width: 100px;
+  height: 100px;
+  z-index: 999;
+}
+.container-sm .content .content__submit ul {
+  margin-bottom: 0;
+  margin-top: 10px;
+  padding: 0;
+}
+.container-sm .content .result {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 30px;
+  height: 30vh;
 }
 .container-sm footer {
   width: 100%;

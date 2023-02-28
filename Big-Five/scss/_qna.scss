@@ -1,0 +1,85 @@
+@import url("https://cdn.jsdelivr.net/npm/galmuri@latest/dist/galmuri.css");
+// font-family: 'Galmuri14'
+.all {
+  position: relative;
+  background-color: rgba(255, 255, 255, 0.5);
+  border: 1px solid black;
+  width: 100%;
+  height: calc(100vh - 59px - 130px - 64px - 45px);
+  overflow: hidden;
+  .main {
+    display: flex;
+    justify-content: center;
+    .qna {
+      font-family: "Galmuri14", monospace;
+      position: absolute;
+      flex-direction: column;
+      // justify-content: space-evenly;
+      align-items: center;
+      height: 100%;
+      transition: 1s;
+
+      &.prev {
+        transform: translateX(-450px);
+      }
+      &.next {
+        transform: translateX(450px);
+      }
+      .qBox {
+        margin-top: 50px;
+        font-size: 26px;
+        font-weight: bold;
+      }
+      .aBox {
+        display: flex;
+        margin-top: 30px;
+        justify-content: center;
+
+        .col-2 {
+          width: 55px;
+          height: 55px;
+          margin: 10px;
+          background-image: url("../img/btn.png");
+          background-size: cover;
+
+          // label {
+          //   width: 100%;
+          //   height: 100%;
+          // }
+          input[type="radio"] {
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            &:hover {
+              cursor: pointer;
+            }
+            &:checked {
+              display: none;
+            }
+            &:checked + label {
+              background-image: url("../img/btnpush.png");
+              background-size: cover;
+            }
+          }
+          label {
+            border-radius: 50%;
+            width: 100%;
+            height: 100%;
+          }
+        }
+      }
+    }
+    .status {
+      position: absolute;
+      bottom: 7vh;
+      width: 300px;
+      height: 20px;
+      background-color: rgb(255, 255, 255);
+      .statusBar {
+        height: 100%;
+        width: 20px;
+        background: plum;
+      }
+    }
+  }
+}

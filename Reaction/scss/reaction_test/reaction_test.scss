@@ -1,5 +1,12 @@
 //FONT
 @import url("https://cdn.jsdelivr.net/npm/galmuri@latest/dist/galmuri.css");
+.hide {
+  display: none;
+}
+
+p {
+  margin: 0;
+}
 
 body {
   text-align: center;
@@ -11,6 +18,7 @@ body {
 
 .container-sm {
   height: 100vh;
+  max-width: 516px;
 
   .status-bar {
     background-color: inherit;
@@ -37,6 +45,7 @@ body {
       }
       .title {
         font-size: 30px;
+        font-weight: 700;
       }
     }
   }
@@ -49,7 +58,41 @@ body {
     .content__test-screen {
       width: inherit;
       height: 30vh;
-      background-color: greenyellow;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      p {
+        font-size: large;
+        font-weight: bold;
+      }
+    }
+
+    .content__submit {
+      display: flex;
+
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
+
+      img {
+        margin-top: 30px;
+        width: 100px;
+        height: 100px;
+        z-index: 999;
+      }
+      ul {
+        margin-bottom: 0;
+        margin-top: 10px;
+        padding: 0;
+      }
+    }
+
+    .result {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 30px;
+      height: 30vh;
     }
   }
   footer {

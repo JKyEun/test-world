@@ -1,66 +1,129 @@
+@import url("https://fonts.googleapis.com/css2?family=VT323&display=swap");
+@import url("https://cdn.jsdelivr.net/npm/galmuri@latest/dist/galmuri.css");
+@import url("https://cdn.jsdelivr.net/npm/galmuri@latest/dist/galmuri.css");
+.hide {
+  display: none !important;
+}
+
 body {
-  background-image: url(../img/back.png);
+  background-image: url(../img/bg-main.png);
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
+  text-align: center;
+  justify-content: center;
+  font-family: "Galmuri14";
 }
 
 .container-sm {
   height: 100vh;
-}
-.container-sm .status-bar {
-  height: 59px;
-  width: 100%;
+  max-width: 516px;
+  margin-top: 95px;
 }
 .container-sm header {
+  display: flex;
+  justify-content: space-around;
   background-color: rgba(255, 255, 255, 0.5);
   border: 1px solid black;
   height: 130px;
   width: 100%;
-  display: flex;
-  justify-content: space-around;
   align-items: center;
 }
-.container-sm img {
-  width: 30px;
-  height: 30px;
+.container-sm header img {
+  width: 35px;
+  height: auto;
 }
-.container-sm .content {
+.container-sm .all .content {
   background-color: rgba(255, 255, 255, 0.5);
   border: 1px solid black;
   width: 100%;
   height: calc(100vh - 59px - 130px - 64px - 45px);
 }
-.container-sm .content .img {
-  display: flex;
-  justify-content: center;
-}
-.container-sm .content .img img {
-  width: 270px;
-  height: 180px;
-}
-.container-sm .content .inner {
-  color: black;
-  font-size: 30px;
-  display: flex;
-  flex-direction: column;
-  text-align: center;
-  justify-content: center;
-  margin-top: 30px;
-}
-.container-sm .content .inner .text {
-  font-size: 30px;
-  margin-bottom: 20px;
-}
-.container-sm .content .inner .btn {
-  width: 100px;
-  margin-top: 30px;
-}
 .container-sm footer {
   width: 100%;
   height: 64px;
 }
+.container-sm footer div {
+  font-family: "VT323", "Galmuri14", monospace;
+  color: white;
+}
 .container-sm .home-indicator {
   width: 100%;
   height: 45px;
+}
+
+.all {
+  position: relative;
+  background-color: rgba(255, 255, 255, 0.5);
+  border: 1px solid black;
+  width: 100%;
+  height: calc(100vh - 59px - 130px - 64px - 45px);
+  overflow: hidden;
+}
+.all .main {
+  display: flex;
+  justify-content: center;
+}
+.all .main .qna {
+  font-family: "Galmuri14", monospace;
+  position: absolute;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+  transition: 1s;
+}
+.all .main .qna.prev {
+  transform: translateX(-450px);
+}
+.all .main .qna.next {
+  transform: translateX(450px);
+}
+.all .main .qna .qBox {
+  margin-top: 50px;
+  font-size: 26px;
+  font-weight: bold;
+}
+.all .main .qna .aBox {
+  display: flex;
+  margin-top: 30px;
+  justify-content: center;
+}
+.all .main .qna .aBox .col-2 {
+  width: 55px;
+  height: 55px;
+  margin: 10px;
+  background-image: url("../img/btn.png");
+  background-size: cover;
+}
+.all .main .qna .aBox .col-2 input[type=radio] {
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+}
+.all .main .qna .aBox .col-2 input[type=radio]:hover {
+  cursor: pointer;
+}
+.all .main .qna .aBox .col-2 input[type=radio]:checked {
+  display: none;
+}
+.all .main .qna .aBox .col-2 input[type=radio]:checked + label {
+  background-image: url("../img/btnpush.png");
+  background-size: cover;
+}
+.all .main .qna .aBox .col-2 label {
+  border-radius: 50%;
+  width: 100%;
+  height: 100%;
+}
+.all .main .status {
+  position: absolute;
+  bottom: 7vh;
+  width: 300px;
+  height: 20px;
+  background-color: rgb(255, 255, 255);
+}
+.all .main .status .statusBar {
+  height: 100%;
+  width: 20px;
+  background: plum;
 }/*# sourceMappingURL=style.css.map */

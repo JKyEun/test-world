@@ -1,68 +1,60 @@
+// FONT
+@import url("https://fonts.googleapis.com/css2?family=VT323&display=swap");
+// font-family: 'VT323', monospace;
+@import url("https://cdn.jsdelivr.net/npm/galmuri@latest/dist/galmuri.css");
+// font-family: 'Galmuri14'
+
+// HIDE
+.hide {
+  display: none !important;
+}
+//MAIN
 body {
-  background-image: url(../img/back.png);
+  background-image: url(../img/bg-main.png);
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
+  text-align: center;
+  justify-content: center;
+  font-family: "Galmuri14";
 }
 .container-sm {
-  //   background-color: red;
   height: 100vh;
-  .status-bar {
-    // background-color: rgb(0, 0, 0);
-    height: 59px;
-    width: 100%;
-  }
+  max-width: 516px;
+  margin-top: 95px;
+
   header {
+    display: flex;
+    justify-content: space-around;
     background-color: rgba(255, 255, 255, 0.5);
     border: 1px solid black;
     height: 130px;
     width: 100%;
-    display: flex;
-    justify-content: space-around;
     align-items: center;
-  }
-  img {
-    width: 30px;
-    height: 30px;
-  }
-
-  .content {
-    background-color: rgba(255, 255, 255, 0.5);
-    border: 1px solid black;
-    width: 100%;
-    height: calc(100vh - 59px - 130px - 64px - 45px);
-
-    .img {
-      display: flex;
-      justify-content: center;
-      img {
-        width: 270px;
-        height: 180px;
-      }
-    }
-    .inner {
-      color: black;
-      font-size: 30px;
-      display: flex;
-      flex-direction: column;
-      text-align: center;
-      justify-content: center;
-      margin-top: 30px;
-
-      .text {
-        font-size: 30px;
-        margin-bottom: 20px;
-      }
-      .btn {
-        width: 100px;
-        margin-top: 30px;
-      }
+    img {
+      width: 35px;
+      height: auto;
     }
   }
+  .all {
+    .content {
+      background-color: rgba(255, 255, 255, 0.5);
+      border: 1px solid black;
+      width: 100%;
+      height: calc(100vh - 59px - 130px - 64px - 45px);
+    }
+  }
+
+  //FOOTER
   footer {
     // background-color: rgb(0, 0, 0);
     width: 100%;
     height: 64px;
+
+    div {
+      font-family: "VT323", "Galmuri14", monospace;
+      color: white;
+    }
   }
   .home-indicator {
     width: 100%;
@@ -70,3 +62,5 @@ body {
     height: 45px;
   }
 }
+
+@import "qna";

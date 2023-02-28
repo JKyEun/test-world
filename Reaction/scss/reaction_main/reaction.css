@@ -9,6 +9,7 @@ body {
 
 .container-sm {
   height: 100vh;
+  max-width: 516px;
 }
 .container-sm .status-bar {
   background-color: inherit;
@@ -35,6 +36,7 @@ body {
 }
 .container-sm header .header-container .title {
   font-size: 30px;
+  font-weight: 700;
 }
 .container-sm .content {
   background-color: rgba(255, 255, 255, 0.5);
