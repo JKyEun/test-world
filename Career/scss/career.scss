@@ -222,13 +222,14 @@ body {
           display: flex;
           align-items: center;
           .type-name {
+            min-width: 100px;
             width: 100px;
             border: 1px solid black;
             background-color: rgb(237, 237, 237);
             font-size: 12px;
           }
           .type-graph {
-            width: 56vw;
+            width: 78%;
             height: 32px;
           }
           &:nth-child(1) .type-graph {
@@ -270,7 +271,37 @@ body {
         justify-content: space-evenly;
         width: 100%;
         height: 100%;
-
+        h3 {
+          margin-top: 20px;
+          color: #fff;
+          &:nth-child(1) {
+            background-color: #2c3e50;
+          }
+          &:nth-child(4) {
+            background-color: #2980b9;
+          }
+          &:nth-child(7) {
+            background-color: #27ae60;
+          }
+          &:nth-child(10) {
+            background-color: #c0392b;
+          }
+          &:nth-child(13) {
+            background-color: #8e44ad;
+          }
+          &:nth-child(16) {
+            background-color: #f39c12;
+          }
+          &:nth-child(19) {
+            background-color: #00cec9;
+          }
+          &:nth-child(22) {
+            background-color: #55efc4;
+          }
+        }
+        div {
+          background-color: #fff;
+        }
       }
     }
     footer {

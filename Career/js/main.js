@@ -340,12 +340,18 @@ function getResult() {
     summary.innerText = `당신은 "라이프스타일 지향형" 입니다.`;
   }
 
+  // 설명 입력
+  const explain = document.querySelector(".result .explain");
+  explain.innerText = moreInfo.querySelector(
+    `.explain${userType + 1}`
+  ).innerText;
+
   // 그래프 만들기
   for (let i = 0; i < eachScore.length; i++) {
     const typeGraph = document.querySelector(
       `.graph .type:nth-child(${i + 1}) .type-graph`
     );
-    typeGraph.style.width = `${(eachScore[i] / 100) * 56}vw`;
+    typeGraph.style.width = `${(eachScore[i] / 100) * 78}%`;
     typeGraph.innerText = `${eachScore[i]}점`;
   }
 
@@ -398,7 +404,5 @@ function closeInfoOfType() {
 
 // 테스트 다시 시작하는 함수
 function restartTest() {
-  result.classList.add("hide");
-  intro.classList.remove("hide");
-  h2.innerText = "Career Anchor";
+  location.reload();
 }
