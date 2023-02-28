@@ -5,89 +5,81 @@
   background-color: rgba(255, 255, 255, 0.5);
   border: 1px solid black;
   width: 100%;
-  height: calc(100vh - 59px - 75px - 64px - 45px); //헤더 반으로 줄인거
+  height: calc(100vh - 59px - 130px - 64px - 45px);
   overflow: hidden;
-  .qna {
-    font-family: "Galmuri14", monospace;
-    position: absolute;
+  .main {
     display: flex;
-    flex-direction: column;
-    // justify-content: space-evenly;
-    align-items: center;
-    height: 100%;
-    transition: 1s;
-    left: 280px;
-    &.prev {
-      transform: translateX(-200%);
-    }
-    &.next {
-      transform: translateX(200%);
-    }
+    justify-content: center;
+    .qna {
+      font-family: "Galmuri14", monospace;
+      position: absolute;
+      flex-direction: column;
+      // justify-content: space-evenly;
+      align-items: center;
+      height: 100%;
+      transition: 1s;
 
-    .qBox {
-      margin-top: 20px;
-      font-size: 26px;
-      font-weight: bold;
-    }
-    .aBox {
-      display: flex;
-      justify-content: center;
-      .col-2 {
-        width: 50px;
-        height: 55px;
-        margin: 10px;
-        height: -webkit-fill-available;
-        line-height: 48px;
-        border: 2px solid black;
-        label {
-          width: 100%;
-        }
-        input[type="radio"] {
-          display: none;
+      &.prev {
+        transform: translateX(-450px);
+      }
+      &.next {
+        transform: translateX(450px);
+      }
+      .qBox {
+        margin-top: 50px;
+        font-size: 26px;
+        font-weight: bold;
+      }
+      .aBox {
+        display: flex;
+        margin-top: 30px;
+        justify-content: center;
 
-          &:checked + label {
-            width: 50px;
-            height: 55px;
-            border: 2px solid black;
-            background: #cfa8ff;
+        .col-2 {
+          width: 55px;
+          height: 55px;
+          margin: 10px;
+          background-image: url("../img/btn.png");
+          background-size: cover;
+
+          // label {
+          //   width: 100%;
+          //   height: 100%;
+          // }
+          input[type="radio"] {
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            &:hover {
+              cursor: pointer;
+            }
+            &:checked {
+              display: none;
+            }
+            &:checked + label {
+              background-image: url("../img/btnpush.png");
+              background-size: cover;
+            }
           }
-          &:hover + label {
-            // background-color: black;
-            cursor: pointer;
+          label {
+            border-radius: 50%;
+            width: 100%;
+            height: 100%;
           }
         }
       }
     }
-  }
-  .question-status {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-top: 40px;
-    .progress-bar {
-      text-align: center;
-      appearance: none;
-      &::-webkit-progress-bar {
-        //바의 외관
-        background: #ffffff;
-        height: 28px;
-        width: 280px;
-        // border: 2px solid black;
-        // overflow: hidden;
+    .status {
+      position: absolute;
+      bottom: 7vh;
+      width: 300px;
+      height: 20px;
+      background-color: rgb(255, 255, 255);
+      .statusBar {
+        height: 100%;
+        width: 20px;
+        background: plum;
       }
-      &::-webkit-progress-value {
-        //바 게이지
-        // background: #5a3f87;
-        background: #cfa8ff;
-        height: 28px;
-        width: 48px;
-      }
-    }
-    .question-count {
-      margin-top: 7px;
-      font-size: 19px;
-      // color: #5a3f87;
-      // color: #f2cb05;
     }
   }
 }

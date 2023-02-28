@@ -12,56 +12,32 @@ body {
   background-size: cover;
   text-align: center;
   justify-content: center;
+  font-family: "Galmuri14";
 }
 
 .container-sm {
   height: 100vh;
-}
-.container-sm .status-bar {
-  height: 59px;
-  width: 100%;
+  max-width: 516px;
+  margin-top: 95px;
 }
 .container-sm header {
-  background-color: rgba(255, 255, 255, 0.5);
-  border: 1px solid black;
-  height: 75px;
-  width: 100%;
   display: flex;
   justify-content: space-around;
+  background-color: rgba(255, 255, 255, 0.5);
+  border: 1px solid black;
+  height: 130px;
+  width: 100%;
   align-items: center;
 }
-.container-sm header #name {
-  margin-top: 0.5rem;
-  font-size: 35px;
-  font-family: "Galmuri14", monospace;
-  font-weight: 600;
+.container-sm header img {
+  width: 35px;
+  height: auto;
 }
-.container-sm img {
-  width: 30px;
-  height: 30px;
-}
-.container-sm .content {
+.container-sm .all .content {
   background-color: rgba(255, 255, 255, 0.5);
   border: 1px solid black;
   width: 100%;
-  height: calc(100vh - 59px - 75px - 64px - 45px);
-}
-.container-sm .content .bigfive {
-  width: 232px;
-  height: auto;
-}
-.container-sm .content .start {
-  width: 157px;
-  height: auto;
-}
-.container-sm .content .text {
-  font-size: 25px;
-  margin-top: 10px;
-  margin-bottom: 10px;
-  font-family: "VT323", "Galmuri14", monospace;
-}
-.container-sm .content .text span {
-  font-size: 22px;
+  height: calc(100vh - 59px - 130px - 64px - 45px);
 }
 .container-sm footer {
   width: 100%;
@@ -81,80 +57,73 @@ body {
   background-color: rgba(255, 255, 255, 0.5);
   border: 1px solid black;
   width: 100%;
-  height: calc(100vh - 59px - 75px - 64px - 45px);
+  height: calc(100vh - 59px - 130px - 64px - 45px);
   overflow: hidden;
 }
-.all .qna {
+.all .main {
+  display: flex;
+  justify-content: center;
+}
+.all .main .qna {
   font-family: "Galmuri14", monospace;
   position: absolute;
-  display: flex;
   flex-direction: column;
   align-items: center;
   height: 100%;
   transition: 1s;
-  left: 280px;
 }
-.all .qna.prev {
-  transform: translateX(-200%);
+.all .main .qna.prev {
+  transform: translateX(-450px);
 }
-.all .qna.next {
-  transform: translateX(200%);
+.all .main .qna.next {
+  transform: translateX(450px);
 }
-.all .qna .qBox {
-  margin-top: 20px;
+.all .main .qna .qBox {
+  margin-top: 50px;
   font-size: 26px;
   font-weight: bold;
 }
-.all .qna .aBox {
+.all .main .qna .aBox {
   display: flex;
+  margin-top: 30px;
   justify-content: center;
 }
-.all .qna .aBox .col-2 {
-  width: 50px;
+.all .main .qna .aBox .col-2 {
+  width: 55px;
   height: 55px;
   margin: 10px;
-  height: -webkit-fill-available;
-  line-height: 48px;
-  border: 2px solid black;
+  background-image: url("../img/btn.png");
+  background-size: cover;
 }
-.all .qna .aBox .col-2 label {
+.all .main .qna .aBox .col-2 input[type=radio] {
   width: 100%;
+  height: 100%;
+  opacity: 0;
 }
-.all .qna .aBox .col-2 input[type=radio] {
-  display: none;
-}
-.all .qna .aBox .col-2 input[type=radio]:checked + label {
-  width: 50px;
-  height: 55px;
-  border: 2px solid black;
-  background: #cfa8ff;
-}
-.all .qna .aBox .col-2 input[type=radio]:hover + label {
+.all .main .qna .aBox .col-2 input[type=radio]:hover {
   cursor: pointer;
 }
-.all .question-status {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-top: 40px;
+.all .main .qna .aBox .col-2 input[type=radio]:checked {
+  display: none;
 }
-.all .question-status .progress-bar {
-  text-align: center;
-  -webkit-appearance: none;
-     -moz-appearance: none;
-          appearance: none;
+.all .main .qna .aBox .col-2 input[type=radio]:checked + label {
+  background-image: url("../img/btnpush.png");
+  background-size: cover;
 }
-.all .question-status .progress-bar::-webkit-progress-bar {
-  background: #ffffff;
-  height: 28px;
-  width: 280px;
+.all .main .qna .aBox .col-2 label {
+  border-radius: 50%;
+  width: 100%;
+  height: 100%;
 }
-.all .question-status .progress-bar::-webkit-progress-value {
-  background: #cfa8ff;
-  height: 28px;
-  width: 48px;
+.all .main .status {
+  position: absolute;
+  bottom: 7vh;
+  width: 300px;
+  height: 20px;
+  background-color: rgb(255, 255, 255);
 }
-.all .question-status .question-count {
-  margin-top: 7px;
-  font-size: 19px;
+.all .main .status .statusBar {
+  height: 100%;
+  width: 20px;
+  background: plum;
 }/*# sourceMappingURL=style.css.map */
