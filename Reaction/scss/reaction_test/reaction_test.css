@@ -1,4 +1,12 @@
 @import url("https://cdn.jsdelivr.net/npm/galmuri@latest/dist/galmuri.css");
+.hide {
+  display: none;
+}
+
+p {
+  margin: 0;
+}
+
 body {
   text-align: center;
   background-image: url(../../img/bg_img.png);
@@ -70,6 +78,13 @@ body {
   margin-bottom: 0;
   margin-top: 10px;
   padding: 0;
+}
+.container-sm .content .result {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 30px;
+  height: 30vh;
 }
 .container-sm footer {
   width: 100%;
