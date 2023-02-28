@@ -278,13 +278,9 @@ function goPrevPage() {
 
   questionStatus.querySelector(".progress-bar").value--;
   currentPage = questionStatus.querySelector(".progress-bar").value;
-  document.querySelector(".current-percentage").style.width = `${
-    2.5 * currentPage
-  }%`;
+  document.querySelector(".current-percentage").style.width = `${2.5 * currentPage}%`;
   h2.innerText = `Qestion ${currentPage + 1}`;
-  questionStatus.querySelector(
-    ".question-count"
-  ).innerText = `${currentPage}/${questions.length}`;
+  questionStatus.querySelector(".question-count").innerText = `${currentPage}/${questions.length}`;
 }
 
 previousBtn.addEventListener("click", goPrevPage);

@@ -1,5 +1,5 @@
 // 버튼
-const playBtn = document.querySelector(".playbtn");
+const playBtn = document.querySelector(".play");
 const homeBtn = document.querySelector(".home");
 
 // PlayBtn 활성화
