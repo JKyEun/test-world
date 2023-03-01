@@ -69,7 +69,9 @@ function isEnd() {
     recordBtn.style.display = "none";
     const result = document.createElement("div");
     result.classList.add("result");
-    result.innerHTML = `<p>당신의 평균 반응속도<br>${avgResult} ms </p>`;
+    result.innerHTML = `<p>당신의 평균 반응속도<br>${Math.round(
+      avgResult
+    )} ms </p>`;
     container.prepend(result);
   }
 }
@@ -106,6 +108,7 @@ function setGame() {
   setYellowPanel();
   timer();
   recordBtn.addEventListener("touchstart", touchEvent);
+  recordBtn.addEventListener("mousedown", touchEvent);
 }
 
 window.onload = () => {

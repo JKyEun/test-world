@@ -6,13 +6,27 @@ const playBtn = document.querySelector(".content__title-btn");
 homeBtn.addEventListener("touchstart", function () {
   homeBtn.setAttribute("src", "./img/home_active.png");
 });
+homeBtn.addEventListener("mousedown", function () {
+  homeBtn.setAttribute("src", "./img/home_active.png");
+});
+
 homeBtn.addEventListener("touchend", function () {
+  homeBtn.setAttribute("src", "./img/home.png");
+});
+homeBtn.addEventListener("mouseup", function () {
   homeBtn.setAttribute("src", "./img/home.png");
 });
 
 playBtn.addEventListener("touchstart", function () {
   playBtn.setAttribute("src", "./img/btn_play_active.png");
 });
+playBtn.addEventListener("mousedown", function () {
+  playBtn.setAttribute("src", "./img/btn_play_active.png");
+});
+
 playBtn.addEventListener("touchend", function () {
+  playBtn.setAttribute("src", "./img/btn_play.png");
+});
+playBtn.addEventListener("mouseup", function () {
   playBtn.setAttribute("src", "./img/btn_play.png");
 });
