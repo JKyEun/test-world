@@ -1,0 +1,68 @@
+@import url("https://cdn.jsdelivr.net/npm/galmuri@latest/dist/galmuri.css");
+.hide {
+  display: none !important;
+}
+
+body {
+  background-image: url("../img/main-background.png");
+  background-position: center;
+  background-size: cover;
+  font-family: "galmuri9", Arial, sans-serif;
+  color: #181818;
+  text-shadow: -1px 0px #fff, 0px 1px #fff, 1px 0px #fff, 0px -1px #fff;
+  text-align: center;
+}
+body .container-sm {
+  height: 100vh;
+  max-width: 516px;
+}
+body .container-sm .status-bar {
+  height: 10px;
+  width: 100%;
+}
+body .container-sm header {
+  display: flex;
+  border: 3px solid black;
+  justify-content: center;
+  align-items: center;
+  height: 130px;
+  width: 100%;
+  padding: 20px;
+  background-color: rgba(255, 255, 255, 0.5);
+}
+body .container-sm .content {
+  display: flex;
+  position: relative;
+  justify-content: space-evenly;
+  align-items: space-evenly;
+  width: 100%;
+  min-height: calc(100vh - 10px - 130px - 64px);
+  background-color: rgba(255, 255, 255, 0.5);
+  border: 3px solid black;
+}
+body .container-sm .content div {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+body .container-sm .content div a:hover img {
+  transform: scale(1.2);
+}
+body .container-sm .content div a img {
+  transition: 0.5s;
+  width: 180px;
+  height: 180px;
+}
+body .container-sm footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 64px;
+}
+body .container-sm footer span {
+  text-shadow: -1px 0px #181818, 0px 1px #181818, 1px 0px #181818, 0px -1px #181818;
+  font-size: 12px;
+  letter-spacing: 1px;
+  color: #fff;
+}/*# sourceMappingURL=style.css.map */
