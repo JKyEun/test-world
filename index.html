@@ -1,6 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <!-- GOOGLE ANALYTICS -->
+    <!-- Google tag (gtag.js) -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-G56FENNKVL"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+
+      gtag("config", "G-G56FENNKVL");
+    </script>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -23,11 +38,45 @@
       integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
       crossorigin="anonymous"
     ></script>
+    <!-- MAIN CSS -->
+    <link rel="stylesheet" href="./scss/style.css" />
+    <!-- MAIN JS -->
+    <script defer src="./js/main.js"></script>
   </head>
   <body>
-    <a href="./Career/career.html">CAREER</a>
-    <a href="./Big-Five/bigFive.html">BIGFIVE</a>
-    <a href="./Reaction/reaction.html">REACTION</a>
-    <a href="./Color/color.html">COLOR</a>
+    <div class="container-sm">
+      <div class="status-bar"></div>
+      <header>
+        <h2>Test-World</h2>
+      </header>
+      <div class="content">
+        <div>
+          <a href="./Career/career.html">
+            <img src="./img/anchor.png" alt="닻" />
+            <div>경력 유형 검사</div>
+          </a>
+          <a href="./Big-Five/bigFive.html">
+            <img src="./img/big5.png" alt="닻" />
+            <div>Big5 성격 검사</div>
+          </a>
+        </div>
+        <div>
+          <a href="./Reaction/reaction.html">
+            <img src="./img/reaction.png" alt="닻" />
+            <div>반응속도 테스트</div>
+          </a>
+          <a href="./Color/color.html">
+            <img src="./img/color.png" alt="닻" />
+            <div>색상 구분 테스트</div>
+          </a>
+        </div>
+      </div>
+      <footer>
+        <span
+          >ⓒ 2023 Front-end Test-World Project.<br />
+          All Rights Reserved.</span
+        >
+      </footer>
+    </div>
   </body>
 </html>
