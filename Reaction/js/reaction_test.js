@@ -67,16 +67,65 @@ function isEnd() {
 
     testScreen.style.display = "none";
     recordBtn.style.display = "none";
+    analyzeResult(avgResult);
     const result = document.createElement("div");
     result.classList.add("result");
-    result.innerHTML = `<p>당신의 평균 반응속도<br>${avgResult} ms </p>`;
+    result.innerHTML = `<p>당신의 평균 반응속도<br>${Math.round(
+      avgResult
+    )} ms </p>`;
     container.prepend(result);
+  }
+}
+
+//결과 분석 함수
+function analyzeResult(avgResult) {
+  const resultAnalyze = document.createElement("div");
+  resultAnalyze.classList.add("result--analyze");
+  container.prepend(resultAnalyze);
+  if (avgResult < 150) {
+    resultAnalyze.innerHTML =
+      "<p>손에 꼽히는 반응속도네요! 당신은 반응속도 랭커!</p>";
+    return;
+  }
+
+  if (avgResult >= 150 && avgResult < 200) {
+    resultAnalyze.innerHTML =
+      "<p>수준급의 반응속도입니다! 혹시 프로게이머?</p>";
+    return;
+  }
+
+  if (avgResult >= 200 && avgResult < 273) {
+    resultAnalyze.innerHTML = "<p>평균보다 좋은 반응속도를 가지셨군요!</p>";
+    return;
+  }
+
+  if (avgResult >= 273 && avgResult < 300) {
+    resultAnalyze.innerHTML = "<p>평균정도의 반응속도 입니다!</p>";
+    return;
+  }
+
+  if (avgResult >= 300 && avgResult < 370) {
+    resultAnalyze.innerHTML =
+      "<p>평균보다 조금 느리시네요! 조금더 힘내봅시다!</p>";
+    return;
+  }
+
+  if (avgResult >= 370 && avgResult < 400) {
+    resultAnalyze.innerHTML =
+      "<p>아쉬운 속도에요 ㅠㅠ 한번 더 시도해보세요! </p>";
+    return;
+  }
+
+  if (avgResult >= 400) {
+    resultAnalyze.innerHTML = "<p>세월이 야속하네요 ㅠㅠ 더 연습해볼까요? </p>";
+    return;
   }
 }
 
 //모든 기록 삭제 함수
 function clearResult() {
   recordUl.innerHTML = "";
+  resultArr = [];
 }
 
 // 이벤트 리스너 함수
@@ -106,6 +155,7 @@ function setGame() {
   setYellowPanel();
   timer();
   recordBtn.addEventListener("touchstart", touchEvent);
+  recordBtn.addEventListener("mousedown", touchEvent);
 }
 
 window.onload = () => {
