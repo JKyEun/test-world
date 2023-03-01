@@ -10,6 +10,7 @@ body {
   background-size: cover;
   font-family: "galmuri9", Arial, sans-serif;
   color: #181818;
+  text-shadow: -1px 0px #fff, 0px 1px #fff, 1px 0px #fff, 0px -1px #fff;
   text-align: center;
 }
 body .container-sm {
@@ -210,10 +211,13 @@ body .container-sm .content .result {
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
-  padding: 0 20px;
 }
-body .container-sm .content .result .summary {
-  font-size: 20px;
+body .container-sm .content .result .capture-area {
+  padding: 20px;
+}
+body .container-sm .content .result .explain div {
+  background-color: #fff;
+  margin-bottom: 20px;
 }
 body .container-sm .content .result .type {
   display: flex;
@@ -256,12 +260,26 @@ body .container-sm .content .result .type:nth-child(7) .type-graph {
 body .container-sm .content .result .type:nth-child(8) .type-graph {
   background-color: #55efc4;
 }
-body .container-sm .content .result .more {
-  font-size: 14px;
-  margin-bottom: 3px;
+body .container-sm .content .result .capture-area + div {
+  padding: 10px 20px;
 }
-body .container-sm .content .result .restart {
+body .container-sm .content .result .capture-area + div .more {
   font-size: 14px;
+  margin-bottom: 5px;
+}
+body .container-sm .content .result .capture-area + div .restart {
+  font-size: 14px;
+}
+body .container-sm .content .result .share {
+  padding: 10px 20px;
+}
+body .container-sm .content .result .share div {
+  display: flex;
+  justify-content: space-evenly;
+}
+body .container-sm .content .result .share div button {
+  width: 90px;
+  height: 60px;
 }
 body .container-sm .content .more-info {
   display: flex;
@@ -269,6 +287,8 @@ body .container-sm .content .more-info {
   justify-content: space-evenly;
   width: 100%;
   height: 100%;
+  text-shadow: none;
+  padding: 10px 20px;
 }
 body .container-sm .content .more-info h3 {
   margin-top: 20px;
@@ -298,8 +318,14 @@ body .container-sm .content .more-info h3:nth-child(19) {
 body .container-sm .content .more-info h3:nth-child(22) {
   background-color: #55efc4;
 }
+body .container-sm .content .more-info p {
+  text-shadow: -1px 0px #fff, 0px 1px #fff, 1px 0px #fff, 0px -1px #fff;
+}
 body .container-sm .content .more-info div {
   background-color: #fff;
+}
+body .container-sm .content .more-info button {
+  margin-top: 10px;
 }
 body .container-sm footer {
   display: flex;
@@ -309,6 +335,7 @@ body .container-sm footer {
   height: 64px;
 }
 body .container-sm footer span {
+  text-shadow: -1px 0px #181818, 0px 1px #181818, 1px 0px #181818, 0px -1px #181818;
   font-size: 12px;
   letter-spacing: 1px;
   color: #fff;
