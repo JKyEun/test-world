@@ -37,7 +37,7 @@
     <link rel="stylesheet" href="./scss/career.css" />
     <!-- JS -->
     <script defer src="./js/main.js"></script>
-    <script defer src="./js/kakao.js"></script>
+    <script defer src="./js/share.js"></script>
   </head>
 
   <body>
@@ -2596,40 +2596,45 @@
         </div>
         <!-- RESULT -->
         <section class="result hide">
-          <h3 class="summary">당신은 "" 입니다.</h3>
-          <p class="explain">설명</p>
-          <div class="graph">
-            <div class="type">
-              <div class="type-name">관리자<br />지향</div>
-              <div class="type-graph"></div>
+          <div class="capture-area">
+            <h3 class="summary">당신은 "" 입니다.</h3>
+            <div class="explain">
+              <p>설명</p>
+              <div>관련 직업:</div>
             </div>
-            <div class="type">
-              <div class="type-name">전문능력<br />지향</div>
-              <div class="type-graph"></div>
-            </div>
-            <div class="type">
-              <div class="type-name">안전성<br />지향</div>
-              <div class="type-graph"></div>
-            </div>
-            <div class="type">
-              <div class="type-name">사업가적 <br />창의성 지향</div>
-              <div class="type-graph"></div>
-            </div>
-            <div class="type">
-              <div class="type-name">자율성<br />지향</div>
-              <div class="type-graph"></div>
-            </div>
-            <div class="type">
-              <div class="type-name">봉사<br />지향</div>
-              <div class="type-graph"></div>
-            </div>
-            <div class="type">
-              <div class="type-name">순수한 도전<br />지향</div>
-              <div class="type-graph"></div>
-            </div>
-            <div class="type">
-              <div class="type-name">라이프스타일<br />지향</div>
-              <div class="type-graph"></div>
+            <div class="graph">
+              <div class="type">
+                <div class="type-name">관리자<br />지향</div>
+                <div class="type-graph"></div>
+              </div>
+              <div class="type">
+                <div class="type-name">전문능력<br />지향</div>
+                <div class="type-graph"></div>
+              </div>
+              <div class="type">
+                <div class="type-name">안전성<br />지향</div>
+                <div class="type-graph"></div>
+              </div>
+              <div class="type">
+                <div class="type-name">사업가적 <br />창의성 지향</div>
+                <div class="type-graph"></div>
+              </div>
+              <div class="type">
+                <div class="type-name">자율성<br />지향</div>
+                <div class="type-graph"></div>
+              </div>
+              <div class="type">
+                <div class="type-name">봉사<br />지향</div>
+                <div class="type-graph"></div>
+              </div>
+              <div class="type">
+                <div class="type-name">순수한 도전<br />지향</div>
+                <div class="type-graph"></div>
+              </div>
+              <div class="type">
+                <div class="type-name">라이프스타일<br />지향</div>
+                <div class="type-graph"></div>
+              </div>
             </div>
           </div>
           <div>
@@ -2641,12 +2646,14 @@
               다시 한 번 검사해보고 싶다면?
               <button onclick="restartTest()" class="restartBtn">Click!</button>
             </div>
-            <a id="kakao-link-btn" href="javascript:capture()">
-              <img
-                src="https://developers.kakao.com/assets/img/about/logos/kakaolink/kakaolink_btn_medium.png"
-              />
-              <div>카카오톡 <br />결과 공유</div>
-            </a>
+          </div>
+          <div class="share">
+            <h5>친구에게 공유하기</h5>
+            <div>
+              <button onclick="capture()">카톡으로 결과 공유</button>
+              <button onclick="captureExport()">이미지로 결과 저장</button>
+              <button onclick="copyToClipBoard()">URL 복사</button>
+            </div>
           </div>
         </section>
         <section class="more-info hide">

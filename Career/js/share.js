@@ -73,3 +73,32 @@ function kakaoShare(img) {
     installTalk: true,
   });
 }
+
+// 이미지 캡쳐, 저장하기
+function captureExport() {
+  console.log("실행");
+  html2canvas(document.querySelector(".capture-area"), {}).then(function (
+    canvas
+  ) {
+    // 이미지를 jpg 파일 타입으로 변경하는 코드
+    const el = document.createElement("a");
+    el.href = canvas.toDataURL("image/jpeg");
+    el.download = "경력 유형 결과.jpg"; //다운로드 할 파일명 설정
+    el.click();
+  });
+}
+
+// URL 클립보드에 복사하기
+function copyToClipBoard() {
+  const url = "https://posco-test-world.netlify.app";
+
+  navigator.clipboard
+    .writeText(url)
+    .then(() => {
+      console.log("Text copied to clipboard...");
+      alert("복사되었습니다!");
+    })
+    .catch((err) => {
+      console.log("Something went wrong", err);
+    });
+}
