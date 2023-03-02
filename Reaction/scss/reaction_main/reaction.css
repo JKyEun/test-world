@@ -44,6 +44,9 @@ body {
   width: 100%;
   height: calc(100vh - 10px - 130px - 64px);
   border: 1px solid black;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
 }
 .container-sm .content .content__title-img {
   margin-top: 5vh;
@@ -53,14 +56,10 @@ body {
   height: 156px;
 }
 .container-sm .content .content__title-text {
-  margin-top: 10vh;
   font-size: large;
 }
 .container-sm .content .content__title-text p {
   margin: 0;
-}
-.container-sm .content .content__title-btn {
-  margin-top: 5vh;
 }
 .container-sm footer {
   width: 100%;

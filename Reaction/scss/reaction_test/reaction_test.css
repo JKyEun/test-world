@@ -52,6 +52,8 @@ body {
   width: 100%;
   height: calc(100vh - 10px - 130px - 64px);
   border: 1px solid black;
+  display: flex;
+  flex-direction: column;
 }
 .container-sm .content .content__test-screen {
   width: inherit;

@@ -48,6 +48,9 @@ body {
     width: 100%;
     height: calc(100vh - 10px - 130px - 64px);
     border: 1px solid black;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
 
     .content__title-img {
       margin-top: 5vh;
@@ -58,15 +61,10 @@ body {
     }
 
     .content__title-text {
-      margin-top: 10vh;
       font-size: large;
       p {
         margin: 0;
       }
-    }
-
-    .content__title-btn {
-      margin-top: 5vh;
     }
   }
   footer {
