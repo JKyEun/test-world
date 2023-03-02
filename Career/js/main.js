@@ -119,25 +119,41 @@ window.addEventListener("resize", () => {
 });
 ctx.fillStyle = "#181818";
 
-function goTestPage() {
-  intro.classList.add("hide");
+function drawTransitionEffect() {
   canvas.style.zIndex = 1;
-  for (let i = 0; i < 5000; i++) {
+  for (let i = 0; i < 2000; i++) {
     setTimeout(() => {
-      const num = 15;
+      const num = 25;
       x = Math.floor(Math.random() * (canvas.width / num)) * num;
       y = Math.floor(Math.random() * (canvas.height / num)) * num;
       locateArr.push([x, y]);
       ctx.fillRect(x, y, num, num);
     }, 10);
   }
+}
+
+function clearTransitionEffect() {
+  for (let i = 0; i < 2000; i++) {
+    setTimeout(() => {
+      const num = 25;
+      ctx.clearRect(locateArr[i][0], locateArr[i][1], num, num);
+    }, 10);
+  }
+}
+
+function resetCanvas() {
   setTimeout(() => {
-    for (let i = 0; i < 5000; i++) {
-      setTimeout(() => {
-        const num = 15;
-        ctx.clearRect(locateArr[i][0], locateArr[i][1], num, num);
-      }, 10);
-    }
+    locateArr = [];
+    canvas.style.zIndex = -1;
+    ctx.reset();
+  }, 1000);
+}
+
+function goTestPage() {
+  intro.classList.add("hide");
+  drawTransitionEffect();
+  setTimeout(() => {
+    clearTransitionEffect();
     h2.innerText = "Qestion 1";
     questionStatus.classList.remove("hide");
     homeBtn.classList.add("hide");
@@ -146,33 +162,15 @@ function goTestPage() {
     firstQuestion.classList.remove("hide");
     secondQuestion.classList.add("next");
     secondQuestion.classList.remove("hide");
-    setTimeout(() => {
-      locateArr = [];
-      canvas.style.zIndex = -1;
-      ctx.reset();
-    }, 1000);
+    resetCanvas();
   }, 1000);
 }
 
 function goIntroPage() {
   firstQuestion.classList.add("hide");
-  canvas.style.zIndex = 1;
-  for (let i = 0; i < 5000; i++) {
-    setTimeout(() => {
-      const num = 15;
-      x = Math.floor(Math.random() * (canvas.width / num)) * num;
-      y = Math.floor(Math.random() * (canvas.height / num)) * num;
-      locateArr.push([x, y]);
-      ctx.fillRect(x, y, num, num);
-    }, 10);
-  }
+  drawTransitionEffect();
   setTimeout(() => {
-    for (let i = 0; i < 5000; i++) {
-      setTimeout(() => {
-        const num = 15;
-        ctx.clearRect(locateArr[i][0], locateArr[i][1], num, num);
-      }, 10);
-    }
+    clearTransitionEffect();
     h2.innerText = "Qestion 1";
     questionStatus.classList.add("hide");
     homeBtn.classList.remove("hide");
@@ -181,11 +179,7 @@ function goIntroPage() {
     intro.classList.remove("hide");
     secondQuestion.classList.remove("next");
     secondQuestion.classList.add("hide");
-    setTimeout(() => {
-      locateArr = [];
-      canvas.style.zIndex = -1;
-      ctx.reset();
-    }, 1000);
+    resetCanvas();
   }, 1000);
 }
 
@@ -366,33 +360,14 @@ function getResult() {
   prev.classList.add("hide");
   prev.classList.remove("prev");
   questionStatus.classList.add("hide");
-
-  canvas.style.zIndex = 1;
-  for (let i = 0; i < 5000; i++) {
-    setTimeout(() => {
-      const num = 15;
-      x = Math.floor(Math.random() * (canvas.width / num)) * num;
-      y = Math.floor(Math.random() * (canvas.height / num)) * num;
-      locateArr.push([x, y]);
-      ctx.fillRect(x, y, num, num);
-    }, 10);
-  }
+  drawTransitionEffect();
   setTimeout(() => {
-    for (let i = 0; i < 5000; i++) {
-      setTimeout(() => {
-        const num = 15;
-        ctx.clearRect(locateArr[i][0], locateArr[i][1], num, num);
-      }, 10);
-    }
+    clearTransitionEffect();
     h2.innerText = "Result";
     result.classList.remove("hide");
     homeBtn.classList.remove("hide");
     previousBtn.classList.add("hide");
-    setTimeout(() => {
-      locateArr = [];
-      canvas.style.zIndex = -1;
-      ctx.reset();
-    }, 1000);
+    resetCanvas();
   }, 1000);
 }
 
