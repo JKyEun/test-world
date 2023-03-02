@@ -30,7 +30,29 @@ body {
       height: 130px;
       width: 100%;
       padding: 20px;
+      font-size: 50px;
       background-color: rgba(255, 255, 255, 0.5);
+      p {
+        margin: 0;
+
+        &::after {
+          content: "";
+          margin-left: 0.4rem;
+
+          animation: cursor 0.9s 5 steps(2);
+        }
+        @keyframes cursor {
+          0% {
+            border-right: none;
+          }
+          99% {
+            border-right: 2px solid #181818;
+          }
+          100% {
+            border-right: none;
+          }
+        }
+      }
     }
     .content {
       display: flex;
@@ -46,13 +68,21 @@ body {
         flex-direction: column;
         justify-content: space-evenly;
         a {
+          text-decoration: none;
+          color: #181818;
           &:hover img {
             transform: scale(1.2);
+            transition: 0.5s;
           }
           img {
-            transition: 0.5s;
             width: 180px;
             height: 180px;
+          }
+          .reaction_logo {
+            width: 140px;
+            height: 140px;
+            margin-top: 20px;
+            margin-bottom: 20px;
           }
         }
       }

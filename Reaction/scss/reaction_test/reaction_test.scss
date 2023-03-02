@@ -14,6 +14,7 @@ body {
   background-size: cover;
   background-position: center;
   font-family: "galmuri9";
+  text-shadow: -1px 0px #fff, 0px 1px #fff, 1px 0px #fff, 0px -1px #fff;
 }
 
 .container-sm {
@@ -104,6 +105,7 @@ body {
     justify-content: center;
     align-items: center;
     p {
+      text-shadow: none;
       font-size: small;
       color: white;
       margin: 0;
