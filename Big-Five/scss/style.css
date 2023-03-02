@@ -1,5 +1,3 @@
-@import url("https://fonts.googleapis.com/css2?family=VT323&display=swap");
-@import url("https://cdn.jsdelivr.net/npm/galmuri@latest/dist/galmuri.css");
 @import url("https://cdn.jsdelivr.net/npm/galmuri@latest/dist/galmuri.css");
 .hide {
   display: none !important;
@@ -12,42 +10,82 @@ body {
   background-size: cover;
   text-align: center;
   justify-content: center;
-  font-family: "Galmuri14";
+  font-family: "galmuri9";
 }
-
-.container-sm {
+body .container-sm {
   height: 100vh;
   max-width: 516px;
-  margin-top: 95px;
 }
-.container-sm header {
+body .container-sm .status-bar {
+  height: 10px;
+  width: 100%;
+}
+body .container-sm header {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-evenly;
   background-color: rgba(255, 255, 255, 0.5);
   border: 1px solid black;
   height: 130px;
   width: 100%;
+  padding: 20px;
   align-items: center;
 }
-.container-sm header img {
-  width: 35px;
-  height: auto;
+body .container-sm header .home {
+  width: 30px;
+  height: 30px;
+  transition: 0.2s;
 }
-.container-sm .all .content {
+body .container-sm header .home:hover {
+  transform: scale(1.1);
+}
+body .container-sm header img {
+  width: 30px;
+  height: 30px;
+}
+body .container-sm .all {
+  min-height: calc(100vh - 10px - 130px - 64px);
+}
+body .container-sm .all .content {
+  min-height: calc(100vh - 10px - 130px - 64px);
+  height: calc(100vh - 59px - 130px - 64px - 45px);
   background-color: rgba(255, 255, 255, 0.5);
   border: 1px solid black;
   width: 100%;
-  height: calc(100vh - 59px - 130px - 64px - 45px);
+  height: 100%;
+  padding: 10px;
+  position: relative;
 }
-.container-sm footer {
+body .container-sm .all .content .bigfive {
+  width: 250px;
+  height: auto;
+}
+body .container-sm .all .content .bar {
+  width: 30px;
+  height: 30px;
+  transition: 0.2s;
+}
+body .container-sm .all .content .bar:hover {
+  cursor: pointer;
+  transform: scale(1.1);
+}
+body .container-sm .all .content .start {
+  width: 150px;
+  transition: 0.2s;
+}
+body .container-sm .all .content .start:hover {
+  cursor: pointer;
+  transform: scale(1.1);
+}
+body .container-sm footer {
   width: 100%;
   height: 64px;
 }
-.container-sm footer div {
-  font-family: "VT323", "Galmuri14", monospace;
+body .container-sm footer div {
+  font-family: "galmuri9", monospace;
   color: white;
+  font-size: 12px;
 }
-.container-sm .home-indicator {
+body .container-sm .home-indicator {
   width: 100%;
   height: 45px;
 }
@@ -65,65 +103,133 @@ body {
   justify-content: center;
 }
 .all .main .qna {
-  font-family: "Galmuri14", monospace;
+  font-family: "galmuri9", monospace;
   position: absolute;
   flex-direction: column;
   align-items: center;
   height: 100%;
+  width: 100%;
   transition: 1s;
 }
 .all .main .qna.prev {
-  transform: translateX(-450px);
+  transform: translateX(-500px);
 }
 .all .main .qna.next {
-  transform: translateX(450px);
+  transform: translateX(500px);
 }
 .all .main .qna .qBox {
   margin-top: 50px;
   font-size: 26px;
   font-weight: bold;
+  padding: 0 10px;
 }
 .all .main .qna .aBox {
   display: flex;
+  flex-direction: column;
   margin-top: 30px;
-  justify-content: center;
+  justify-content: space-evenly;
+  margin: 7px;
 }
-.all .main .qna .aBox .col-2 {
-  width: 55px;
-  height: 55px;
-  margin: 10px;
+.all .main .qna .aBox .radio {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.all .main .qna .aBox .select {
+  width: 60px;
+  height: 60px;
+  margin: 1px;
   background-image: url("../img/btn.png");
   background-size: cover;
 }
-.all .main .qna .aBox .col-2 input[type=radio] {
+.all .main .qna .aBox .select:nth-child(2), .all .main .qna .aBox .select:nth-child(4) {
+  width: 55px;
+  height: 55px;
+}
+.all .main .qna .aBox .select:nth-child(3) {
+  width: 50px;
+  height: 50px;
+}
+.all .main .qna .aBox .select input[type=radio] {
   width: 100%;
   height: 100%;
   opacity: 0;
 }
-.all .main .qna .aBox .col-2 input[type=radio]:hover {
+.all .main .qna .aBox .select input[type=radio]:hover {
   cursor: pointer;
 }
-.all .main .qna .aBox .col-2 input[type=radio]:checked {
+.all .main .qna .aBox .select input[type=radio]:checked {
   display: none;
 }
-.all .main .qna .aBox .col-2 input[type=radio]:checked + label {
+.all .main .qna .aBox .select input[type=radio]:checked + label {
   background-image: url("../img/btnpush.png");
   background-size: cover;
 }
-.all .main .qna .aBox .col-2 label {
+.all .main .qna .aBox .select label {
   border-radius: 50%;
   width: 100%;
   height: 100%;
 }
-.all .main .status {
+.all .main .question-status {
   position: absolute;
   bottom: 7vh;
-  width: 300px;
-  height: 20px;
-  background-color: rgb(255, 255, 255);
+  left: 50%;
+  width: 70vw;
+  max-width: 431px;
+  transform: translateX(-50%);
 }
-.all .main .status .statusBar {
+.all .main .question-status .progress-bar {
+  display: none;
+}
+.all .main .question-status .percentage {
+  position: absolute;
+  width: 70vw;
+  height: 16px;
+  max-width: 431px;
+  background-color: #777;
+}
+.all .main .question-status .current-percentage {
+  position: absolute;
+  transition: width 1s;
+  left: 0;
+  width: 0%;
+  height: 16px;
+  background-color: green;
+}
+.all .main .question-status .question-count {
+  transform: translateY(16px);
+}
+.all .result {
   height: 100%;
-  width: 20px;
-  background: plum;
+  min-height: calc(100vh - 10px - 130px - 64px);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  padding: 0 20px;
+}
+.all .result .graph {
+  display: flex;
+  flex-direction: column;
+}
+.all .result .graph .type {
+  align-items: center;
+}
+.all .result .graph .type div {
+  display: flex;
+}
+.all .result .graph .type div .type-name {
+  justify-content: center;
+  align-items: center;
+  min-width: 100px;
+  width: 100px;
+  border: 1px solid black;
+  background-color: rgb(237, 237, 237);
+  font-size: 15px;
+}
+.all .result .graph .type div .type-graph {
+  width: 0%;
+  height: 32px;
+  transition: 2s;
+  transition-timing-function: ease-in-out;
+  background-color: pink;
 }/*# sourceMappingURL=style.css.map */

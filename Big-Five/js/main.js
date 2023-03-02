@@ -154,7 +154,7 @@ startbtn.addEventListener("click", function () {
   firstQuestion.classList.remove("hide");
   secondQuestion.classList.add("next");
   secondQuestion.classList.remove("hide");
-  h2.innerText = `Qestion 1`;
+  h2.innerText = `Question 1`;
   count.innerText = "0/60";
 });
 
@@ -209,7 +209,7 @@ function goNext(t) {
   }
 
   // 제목 변경
-  h2.innerText = `Qestion ${currentPage + 1}`;
+  h2.innerText = `Question ${currentPage + 1}`;
 }
 
 //이전페이지
@@ -221,7 +221,7 @@ function goPrev() {
   console.log(currentPage);
   console.log(prevQna);
   if (currentPage === 0) {
-    // goIntroPage();
+    goIntroPage();
     return;
   }
 
@@ -253,7 +253,7 @@ function goPrev() {
   document.querySelector(".current-percentage").style.width = `${
     1.6 * currentPage
   }%`;
-  h2.innerText = `Qestion ${currentPage + 1}`;
+  h2.innerText = `Question ${currentPage + 1}`;
   questionStatus.querySelector(
     ".question-count"
   ).innerText = `${currentPage}/${qList.length}`;
@@ -262,23 +262,16 @@ function goPrev() {
 backbtn.addEventListener("click", goPrev);
 
 //검사 결과 페이지
-
 function getResult() {
-  // let eachScore = new Array(60).fill(0);
   let eachScore = new Array(5);
   for (let i = 0; i < eachScore.length; i++) {
     eachScore[i] = new Array(6).fill(0);
   }
 
-  // const summary = document.querySelector(".result .summary");
   result.classList.remove("hide");
   questionStatus.classList.add("hide");
 
   h2.innerText = `결과페이지`;
-  // for (let i = 0; i < answerArr.length; i++) {
-  //   const index = i % 5;
-  //   eachScore[index] += answerArr[i] * 4;
-  // }
 
   //삼중for문
   //각 성향의 점수를 더해줌
@@ -290,10 +283,6 @@ function getResult() {
       }
     }
   }
-  //소수점 자르기
-  // for (let i = 0; i < eachScore.length; i++) {
-  //   eachScore[i] = Number(eachScore[i].toFixed(1));
-  // }
 
   //각 유형의 성향 점수
   let characterArr = [
@@ -367,18 +356,11 @@ function getResult() {
       if (eachScore[i][j] >= 8) {
         explainList.push(explainArr[i][j]);
       }
+      explainList.join(" ");
     }
   }
   const explainText = document.querySelector(".result .explain");
   explainText.innerText = explainList;
-
-  // for (let i = 0; i < eachScore.length; i++) {
-  //   for (let j = 0; j < eachScore[i].length; j++) {
-  //     console.log("eachScore [" + i + "][" + j + "]' : " + eachScore[i][j]);
-  //     console.log("eachScore [" + i + "][" + j + "]' : " + eachScore[i][j]);
-
-  //   }
-  // }
 
   // 각 유형의 합계 그래프 만들기
   for (let i = 0; i < resultArr.length; i++) {
@@ -389,53 +371,20 @@ function getResult() {
       typeGraph.style.width = `${resultArr[i] * (78 / 100)}%`;
 
       setTimeout(() => {
-        typeGraph.innerText = `${resultArr[i] * (100 / 60)}점`;
-      }, 2000);
-    }, 2000);
+        typeGraph.innerText = `${Number(
+          resultArr[i] * (100 / 60).toFixed(1)
+        )}점`;
+      }, 1000);
+    }, 1000);
 
     for (let j = 0; j < eachScore[0].length; j++) {
       const character = document.querySelector(
         `.graph .type:nth-child(${i + 1}) .type-character`
       );
-      // let text = null;
-      // if (eachScore[i][j] >= 6) {
-      //   text = document.createTextNode(
-      //     `${characterArr[i][j]} : ${eachScore[i][j] * 10} - ${
-      //       explainArr[i][j]
-      //     }`
-      //   );
-      // } else {
-      //   text = document.createTextNode(
-      //     `${characterArr[i][j]} : ${eachScore[i][j] * 10}`
-      //   );
-      // }
       let text = document.createTextNode(
         `${characterArr[i][j]} : ${eachScore[i][j] * 10}점`
       );
       character.appendChild(text);
-
-      // character.innerText = `${characterArr[i][j]} : ${eachScore[i][j]}`;
     }
   }
-
-  //SUMMARY 내용
-  //해당 사용자의 유형을 나타냄
-  // const userType = eachScore.indexOf(Math.max(...eachScore));
-  // if (userType === 0) {
-  //   summary.innerText = `당신은 개방성이 강해요`;
-  // } else if (userType === 1) {
-  //   summary.innerText = `당신은 성실성이 강해요`;
-  // } else if (userType === 2) {
-  //   summary.innerText = `당신은 외향성이 강해요`;
-  // } else if (userType === 3) {
-  //   summary.innerText = `당신은 우호성이 강해요`;
-  // } else if (userType === 4) {
-  //   summary.innerText = `당신은 신경증이 강해요`;
-  // }
-
-  //설명입력
-  // const explain = document.querySelector(".result .explain");
-  // explain.innerText = moreInfo.querySelector(
-  //   `.explain${userType + 1}`
-  // ).innerText;
 }
