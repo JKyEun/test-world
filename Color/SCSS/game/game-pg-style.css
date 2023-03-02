@@ -242,14 +242,6 @@ body {
   .modal__content-close-button {
     font-size: 17px;
   }
-  @keyframes vibrationEffect {
-    from {
-      left: 0;
-    }
-    to {
-      left: 3px;
-    }
-  }
   .share {
     font-family: "Galmuri9";
     margin-top: 1px;
