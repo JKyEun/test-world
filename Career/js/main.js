@@ -107,6 +107,17 @@ previousBtn.addEventListener("touchend", () => {
   previousBtn.src = "./img/previousBtn.png";
 });
 
+// 햄버거 메뉴 활성화
+const bar = document.querySelector(".bar");
+const menu = document.querySelector(".menu");
+bar.addEventListener("click", () => {
+  if (menu.classList.contains("hide")) {
+    menu.classList.remove("hide");
+  } else {
+    menu.classList.add("hide");
+  }
+});
+
 // Canvas 활용 트랜지션
 const canvas = document.querySelector("canvas");
 const ctx = canvas.getContext("2d");
