@@ -121,9 +121,9 @@ ctx.fillStyle = "#181818";
 
 function drawTransitionEffect() {
   canvas.style.zIndex = 1;
-  for (let i = 0; i < 2000; i++) {
+  for (let i = 0; i < 1500; i++) {
     setTimeout(() => {
-      const num = 25;
+      const num = 30;
       x = Math.floor(Math.random() * (canvas.width / num)) * num;
       y = Math.floor(Math.random() * (canvas.height / num)) * num;
       locateArr.push([x, y]);
@@ -133,9 +133,9 @@ function drawTransitionEffect() {
 }
 
 function clearTransitionEffect() {
-  for (let i = 0; i < 2000; i++) {
+  for (let i = 0; i < 1500; i++) {
     setTimeout(() => {
-      const num = 25;
+      const num = 30;
       ctx.clearRect(locateArr[i][0], locateArr[i][1], num, num);
     }, 10);
   }
@@ -146,7 +146,7 @@ function resetCanvas() {
     locateArr = [];
     canvas.style.zIndex = -1;
     ctx.reset();
-  }, 1000);
+  }, 500);
 }
 
 function goTestPage() {
@@ -163,7 +163,7 @@ function goTestPage() {
     secondQuestion.classList.add("next");
     secondQuestion.classList.remove("hide");
     resetCanvas();
-  }, 1000);
+  }, 500);
 }
 
 function goIntroPage() {
@@ -180,7 +180,7 @@ function goIntroPage() {
     secondQuestion.classList.remove("next");
     secondQuestion.classList.add("hide");
     resetCanvas();
-  }, 1000);
+  }, 500);
 }
 
 startBtn.addEventListener("mouseup", goTestPage);
