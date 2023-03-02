@@ -200,7 +200,7 @@ function goTestPage() {
 
 function goIntroPageInIphone() {
   firstQuestion.classList.add("hide");
-  h2.innerText = "Question 1";
+  h2.innerText = "Career Anchor";
   questionStatus.classList.add("hide");
   homeBtn.classList.remove("hide");
   previousBtn.classList.add("hide");
@@ -215,7 +215,7 @@ function goIntroPage() {
   drawTransitionEffect();
   setTimeout(() => {
     clearTransitionEffect();
-    h2.innerText = "Question 1";
+    h2.innerText = "Career Anchor";
     questionStatus.classList.add("hide");
     homeBtn.classList.remove("hide");
     previousBtn.classList.add("hide");
