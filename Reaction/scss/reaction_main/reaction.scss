@@ -74,7 +74,8 @@ body {
     justify-content: center;
     align-items: center;
     p {
-      text-shadow: none;
+      text-shadow: -1px 0px #181818, 0px 1px #181818, 1px 0px #181818,
+        0px -1px #181818;
       font-size: small;
       color: white;
       margin: 0;
