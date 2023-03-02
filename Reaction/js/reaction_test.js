@@ -70,11 +70,45 @@ function isEnd() {
     analyzeResult(avgResult);
     const result = document.createElement("div");
     result.classList.add("result");
-    result.innerHTML = `<p>당신의 평균 반응속도<br>${Math.round(
-      avgResult
-    )} ms </p>`;
+    printAvgSpeed(result, avgResult);
     container.prepend(result);
   }
+}
+
+//평균 반응속도 출력 함수 (count up 애니메이션)
+function printAvgSpeed(result, avgResult) {
+  let now = avgResult;
+  const handle = setInterval(() => {
+    if (avgResult - now < 150) {
+      result.style.color = "red";
+    }
+    if (avgResult - now >= 150 && avgResult - now < 200) {
+      result.style.color = "gold";
+    }
+    if (avgResult - now >= 200 && avgResult - now < 273) {
+      result.style.color = "purple";
+    }
+    if (avgResult - now >= 273 && avgResult - now < 300) {
+      result.style.color = "green";
+    }
+    if (avgResult - now >= 300 && avgResult - now < 370) {
+      result.style.color = "white";
+    }
+    if (avgResult - now >= 370 && avgResult - now < 400) {
+      result.style.color = "pink";
+    }
+    if (avgResult - now >= 400) {
+      result.style.color = "blue";
+    }
+
+    result.innerHTML = `<p>당신의 평균 반응속도<br>
+    ${Math.round(avgResult - now)} ms </p>`;
+    if (now < 1) {
+      clearInterval(handle);
+    }
+    const step = now / 10;
+    now -= step;
+  }, 50);
 }
 
 //결과 분석 함수
