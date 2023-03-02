@@ -1,3 +1,10 @@
+// 아이폰인지 확인
+let isIphone = false;
+const user = navigator.userAgent;
+if (user.includes("iPhone")) {
+  isIphone = true;
+}
+
 // 버튼
 const playBtn = document.querySelector(".play");
 const homeBtn = document.querySelector(".home");
@@ -35,7 +42,18 @@ homeBtn.addEventListener("touchend", () => {
   homeBtn.src = "./img/home.png";
 });
 
+// 햄버거 메뉴 활성화
+const bar = document.querySelector(".bar");
+const menu = document.querySelector(".menu");
+bar.addEventListener("click", () => {
+  if (menu.classList.contains("hide")) {
+    menu.classList.remove("hide");
+  } else {
+    menu.classList.add("hide");
+  }
+});
+
 //GamePage 이동
-document.querySelector(".playbtn").addEventListener("click", (e) => {
+document.querySelector(".play").addEventListener("click", (e) => {
   location.href = "./game-pg.html";
 });
