@@ -3,7 +3,7 @@ let time = 15;
 let paletteRow = 2;
 let paletteSize = paletteRow ** 2; //
 let targetIndex = 0;
-let targetOpacity = 0.6;
+let targetOpacity = 0.65;
 let color = {};
 
 let timer = 0;
@@ -145,7 +145,7 @@ function initGame() {
   paletteRow = 2;
   paletteSize = paletteRow ** 2;
   targetIndex = 0;
-  targetOpacity = 0.3;
+  targetOpacity = 0.65;
   color = {};
 }
 
