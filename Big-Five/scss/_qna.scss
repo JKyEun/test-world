@@ -1,5 +1,3 @@
-@import url("https://cdn.jsdelivr.net/npm/galmuri@latest/dist/galmuri.css");
-// font-family: 'Galmuri14'
 .all {
   position: relative;
   background-color: rgba(255, 255, 255, 0.5);
@@ -11,7 +9,7 @@
     display: flex;
     justify-content: center;
     .qna {
-      font-family: "Galmuri14", monospace;
+      font-family: "galmuri9", monospace;
       position: absolute;
       flex-direction: column;
       // justify-content: space-evenly;
@@ -20,10 +18,10 @@
       transition: 1s;
 
       &.prev {
-        transform: translateX(-450px);
+        transform: translateX(-500px);
       }
       &.next {
-        transform: translateX(450px);
+        transform: translateX(500px);
       }
       .qBox {
         margin-top: 50px;
@@ -32,10 +30,15 @@
       }
       .aBox {
         display: flex;
+        flex-direction: column;
         margin-top: 30px;
-        justify-content: center;
+        justify-content: space-evenly;
 
-        .col-2 {
+        .radio {
+          display: flex;
+          justify-content: space-evenly;
+        }
+        .select {
           width: 55px;
           height: 55px;
           margin: 10px;
@@ -69,16 +72,63 @@
         }
       }
     }
-    .status {
+    .question-status {
       position: absolute;
       bottom: 7vh;
-      width: 300px;
-      height: 20px;
-      background-color: rgb(255, 255, 255);
-      .statusBar {
-        height: 100%;
-        width: 20px;
-        background: plum;
+      left: 50%;
+      width: 70vw;
+      max-width: 431px;
+      transform: translateX(-50%);
+      .progress-bar {
+        display: none;
+      }
+      .percentage {
+        position: absolute;
+        width: 70vw;
+        height: 16px;
+        max-width: 431px;
+        background-color: #777;
+      }
+      .current-percentage {
+        position: absolute;
+        transition: width 1s;
+        left: 0;
+        width: 0%;
+        height: 16px;
+        background-color: green;
+      }
+      .question-count {
+        transform: translateY(16px);
+      }
+    }
+  }
+  .result {
+    height: 100%;
+    min-height: calc(100vh - 10px - 130px - 64px);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    padding: 0 20px;
+    .summary {
+      font-size: 20px;
+    }
+    .type {
+      display: flex;
+      align-items: center;
+      .type-name {
+        min-width: 100px;
+        width: 100px;
+        border: 1px solid black;
+        background-color: rgb(237, 237, 237);
+        font-size: 12px;
+      }
+      .type-graph {
+        // width: 78%;
+        width: 0%;
+        height: 32px;
+        transition: 2s;
+        transition-timing-function: ease-in-out;
+        background-color: pink;
       }
     }
   }
