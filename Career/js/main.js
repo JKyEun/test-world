@@ -1,3 +1,11 @@
+// 아이폰인지 확인
+let isIphone = false;
+const user = navigator.userAgent;
+if (user.includes("iPhone")) {
+  isIphone = true;
+}
+
+// 질문 리스트
 const questions = [
   "내가 리더가 되는 것을 즐긴다.",
   "특정 분야를 깊게 탐구하는 것을 좋아한다.",
@@ -149,6 +157,19 @@ function resetCanvas() {
   }, 500);
 }
 
+// 테스트 페이지와 인트로 페이지 간 이동
+function goTestPageInIphone() {
+  intro.classList.add("hide");
+  h2.innerText = "Qestion 1";
+  questionStatus.classList.remove("hide");
+  homeBtn.classList.add("hide");
+  previousBtn.classList.remove("hide");
+  firstQuestion.classList.add("on");
+  firstQuestion.classList.remove("hide");
+  secondQuestion.classList.add("next");
+  secondQuestion.classList.remove("hide");
+}
+
 function goTestPage() {
   intro.classList.add("hide");
   drawTransitionEffect();
@@ -164,6 +185,18 @@ function goTestPage() {
     secondQuestion.classList.remove("hide");
     resetCanvas();
   }, 500);
+}
+
+function goIntroPageInIphone() {
+  firstQuestion.classList.add("hide");
+  h2.innerText = "Qestion 1";
+  questionStatus.classList.add("hide");
+  homeBtn.classList.remove("hide");
+  previousBtn.classList.add("hide");
+  firstQuestion.classList.remove("on");
+  intro.classList.remove("hide");
+  secondQuestion.classList.remove("next");
+  secondQuestion.classList.add("hide");
 }
 
 function goIntroPage() {
@@ -183,7 +216,11 @@ function goIntroPage() {
   }, 500);
 }
 
-startBtn.addEventListener("mouseup", goTestPage);
+if (isIphone) {
+  startBtn.addEventListener("mouseup", goTestPageInIphone);
+} else {
+  startBtn.addEventListener("mouseup", goTestPage);
+}
 
 // 다음 페이지로 넘기기, 사용자 입력 값 받아오기
 let answerArr = new Array(questions.lenth).fill(0);
@@ -246,7 +283,11 @@ function goPrevPage() {
 
   // 첫번째 질문지일때
   if (currentPage === 0) {
-    goIntroPage();
+    if (isIphone) {
+      goIntroPageInIphone();
+    } else {
+      goIntroPage();
+    }
     return;
   }
 
@@ -353,22 +394,29 @@ function getResult() {
       setTimeout(() => {
         typeGraph.innerText = `${eachScore[i]}점`;
       }, 2000);
-    }, 2000);
+    }, 1000);
   }
 
   const prev = document.querySelector(".prev");
   prev.classList.add("hide");
   prev.classList.remove("prev");
   questionStatus.classList.add("hide");
-  drawTransitionEffect();
-  setTimeout(() => {
-    clearTransitionEffect();
+  if (isIphone) {
     h2.innerText = "Result";
     result.classList.remove("hide");
     homeBtn.classList.remove("hide");
     previousBtn.classList.add("hide");
-    resetCanvas();
-  }, 1000);
+  } else {
+    drawTransitionEffect();
+    setTimeout(() => {
+      clearTransitionEffect();
+      h2.innerText = "Result";
+      result.classList.remove("hide");
+      homeBtn.classList.remove("hide");
+      previousBtn.classList.add("hide");
+      resetCanvas();
+    }, 500);
+  }
 }
 
 // 각 유형 설명창 열어주는 함수
