@@ -109,7 +109,7 @@ body {
 }
 
 /* Tablet */
-@media screen and (max-width: 375px) {
+@media screen and (max-width: 390px) {
   .content-menu {
     display: flex;
     flex-direction: column;
