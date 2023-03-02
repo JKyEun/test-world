@@ -146,7 +146,7 @@ body {
   align-items: center;
   width: 70%;
   height: auto;
-  padding: 30px;
+  padding: 10px;
   z-index: 9999;
   border-radius: 5px;
   background-color: #fff;
@@ -179,7 +179,8 @@ body {
 
 .modal__content-close-button {
   width: 100%;
-  font-size: 10px;
+  margin-bottom: 20px;
+  font-size: 15px;
   font-family: "Galmuri9";
 }
 
@@ -193,8 +194,19 @@ body {
   opacity: 1;
 }
 
+.share {
+  font-family: "Galmuri9";
+  margin-top: 30px;
+}
+.share h5 {
+  font-size: 15px;
+}
+.share button {
+  font-size: 13px;
+}
+
 /* Tablet */
-@media screen and (min-width: 768px) {
+@media screen and (max-width: 390px) {
   .menu {
     font-size: 21px;
   }
@@ -215,20 +227,43 @@ body {
     padding: 3px;
   }
   .modal__content {
-    width: 50%;
+    width: 70%;
   }
   .modal__content-title--result {
-    margin-bottom: 15px;
+    margin-bottom: 5px;
   }
   .modal__content-title--stage {
-    font-size: 21px;
-    margin-bottom: 15px;
+    font-size: 16px;
+    margin-bottom: 12px;
   }
   .modal__content-title--desc {
     font-size: 18px;
   }
   .modal__content-close-button {
     font-size: 17px;
+  }
+  @keyframes vibrationEffect {
+    from {
+      left: 0;
+    }
+    to {
+      left: 3px;
+    }
+  }
+  .share {
+    font-family: "Galmuri9";
+    margin-top: 1px;
+  }
+  .share h5 {
+    font-size: 15px;
+  }
+  .share button {
+    font-family: "Galmuri9";
+    font-size: 9px;
+    width: 70px;
+    height: 45px;
+    padding: 0px;
+    line-height: 15px;
   }
 }
 /* Desktop */
@@ -238,6 +273,6 @@ body {
     padding: 4px;
   }
   .modal__content {
-    width: 20%;
+    width: 30%;
   }
 }/*# sourceMappingURL=game-pg-style.css.map */

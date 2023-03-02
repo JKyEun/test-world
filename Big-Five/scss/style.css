@@ -80,6 +80,7 @@ body .container-sm footer {
   width: 100%;
   height: 64px;
 }
+
 body .container-sm footer div {
   font-family: "galmuri9", monospace;
   color: white;
@@ -128,6 +129,7 @@ body .container-sm .home-indicator {
   flex-direction: column;
   margin-top: 30px;
   justify-content: space-evenly;
+
   margin: 7px;
 }
 .all .main .qna .aBox .radio {
@@ -207,6 +209,7 @@ body .container-sm .home-indicator {
   justify-content: space-evenly;
   padding: 0 20px;
 }
+
 .all .result .graph {
   display: flex;
   flex-direction: column;
@@ -220,13 +223,16 @@ body .container-sm .home-indicator {
 .all .result .graph .type div .type-name {
   justify-content: center;
   align-items: center;
+
   min-width: 100px;
   width: 100px;
   border: 1px solid black;
   background-color: rgb(237, 237, 237);
+
   font-size: 15px;
 }
 .all .result .graph .type div .type-graph {
+
   width: 0%;
   height: 32px;
   transition: 2s;

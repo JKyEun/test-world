@@ -1,3 +1,11 @@
+// 아이폰인지 확인
+let isIphone = false;
+const user = navigator.userAgent;
+if (user.includes("iPhone")) {
+  isIphone = true;
+}
+
+// 질문 리스트
 const questions = [
   "내가 리더가 되는 것을 즐긴다.",
   "특정 분야를 깊게 탐구하는 것을 좋아한다.",
@@ -99,6 +107,17 @@ previousBtn.addEventListener("touchend", () => {
   previousBtn.src = "./img/previousBtn.png";
 });
 
+// 햄버거 메뉴 활성화
+const bar = document.querySelector(".bar");
+const menu = document.querySelector(".menu");
+bar.addEventListener("click", () => {
+  if (menu.classList.contains("hide")) {
+    menu.classList.remove("hide");
+  } else {
+    menu.classList.add("hide");
+  }
+});
+
 // Canvas 활용 트랜지션
 const canvas = document.querySelector("canvas");
 const ctx = canvas.getContext("2d");
@@ -119,26 +138,55 @@ window.addEventListener("resize", () => {
 });
 ctx.fillStyle = "#181818";
 
-function goTestPage() {
-  intro.classList.add("hide");
+function drawTransitionEffect() {
   canvas.style.zIndex = 1;
-  for (let i = 0; i < 5000; i++) {
+  for (let i = 0; i < 1500; i++) {
     setTimeout(() => {
-      const num = 15;
+      const num = 30;
       x = Math.floor(Math.random() * (canvas.width / num)) * num;
       y = Math.floor(Math.random() * (canvas.height / num)) * num;
       locateArr.push([x, y]);
       ctx.fillRect(x, y, num, num);
     }, 10);
   }
+}
+
+function clearTransitionEffect() {
+  for (let i = 0; i < 1500; i++) {
+    setTimeout(() => {
+      const num = 30;
+      ctx.clearRect(locateArr[i][0], locateArr[i][1], num, num);
+    }, 10);
+  }
+}
+
+function resetCanvas() {
   setTimeout(() => {
-    for (let i = 0; i < 5000; i++) {
-      setTimeout(() => {
-        const num = 15;
-        ctx.clearRect(locateArr[i][0], locateArr[i][1], num, num);
-      }, 10);
-    }
-    h2.innerText = "Qestion 1";
+    locateArr = [];
+    canvas.style.zIndex = -1;
+    ctx.reset();
+  }, 500);
+}
+
+// 테스트 페이지와 인트로 페이지 간 이동
+function goTestPageInIphone() {
+  intro.classList.add("hide");
+  h2.innerText = "Question 1";
+  questionStatus.classList.remove("hide");
+  homeBtn.classList.add("hide");
+  previousBtn.classList.remove("hide");
+  firstQuestion.classList.add("on");
+  firstQuestion.classList.remove("hide");
+  secondQuestion.classList.add("next");
+  secondQuestion.classList.remove("hide");
+}
+
+function goTestPage() {
+  intro.classList.add("hide");
+  drawTransitionEffect();
+  setTimeout(() => {
+    clearTransitionEffect();
+    h2.innerText = "Question 1";
     questionStatus.classList.remove("hide");
     homeBtn.classList.add("hide");
     previousBtn.classList.remove("hide");
@@ -146,34 +194,28 @@ function goTestPage() {
     firstQuestion.classList.remove("hide");
     secondQuestion.classList.add("next");
     secondQuestion.classList.remove("hide");
-    setTimeout(() => {
-      locateArr = [];
-      canvas.style.zIndex = -1;
-      ctx.reset();
-    }, 1000);
-  }, 1000);
+    resetCanvas();
+  }, 500);
+}
+
+function goIntroPageInIphone() {
+  firstQuestion.classList.add("hide");
+  h2.innerText = "Question 1";
+  questionStatus.classList.add("hide");
+  homeBtn.classList.remove("hide");
+  previousBtn.classList.add("hide");
+  firstQuestion.classList.remove("on");
+  intro.classList.remove("hide");
+  secondQuestion.classList.remove("next");
+  secondQuestion.classList.add("hide");
 }
 
 function goIntroPage() {
   firstQuestion.classList.add("hide");
-  canvas.style.zIndex = 1;
-  for (let i = 0; i < 5000; i++) {
-    setTimeout(() => {
-      const num = 15;
-      x = Math.floor(Math.random() * (canvas.width / num)) * num;
-      y = Math.floor(Math.random() * (canvas.height / num)) * num;
-      locateArr.push([x, y]);
-      ctx.fillRect(x, y, num, num);
-    }, 10);
-  }
+  drawTransitionEffect();
   setTimeout(() => {
-    for (let i = 0; i < 5000; i++) {
-      setTimeout(() => {
-        const num = 15;
-        ctx.clearRect(locateArr[i][0], locateArr[i][1], num, num);
-      }, 10);
-    }
-    h2.innerText = "Qestion 1";
+    clearTransitionEffect();
+    h2.innerText = "Question 1";
     questionStatus.classList.add("hide");
     homeBtn.classList.remove("hide");
     previousBtn.classList.add("hide");
@@ -181,15 +223,15 @@ function goIntroPage() {
     intro.classList.remove("hide");
     secondQuestion.classList.remove("next");
     secondQuestion.classList.add("hide");
-    setTimeout(() => {
-      locateArr = [];
-      canvas.style.zIndex = -1;
-      ctx.reset();
-    }, 1000);
-  }, 1000);
+    resetCanvas();
+  }, 500);
 }
 
-startBtn.addEventListener("mouseup", goTestPage);
+if (isIphone) {
+  startBtn.addEventListener("mouseup", goTestPageInIphone);
+} else {
+  startBtn.addEventListener("mouseup", goTestPage);
+}
 
 // 다음 페이지로 넘기기, 사용자 입력 값 받아오기
 let answerArr = new Array(questions.lenth).fill(0);
@@ -240,7 +282,7 @@ function goNextPage(t) {
   }
 
   // 제목 변경
-  h2.innerText = `Qestion ${currentPage + 1}`;
+  h2.innerText = `Question ${currentPage + 1}`;
 }
 
 // 이전 페이지로 넘기기
@@ -252,7 +294,11 @@ function goPrevPage() {
 
   // 첫번째 질문지일때
   if (currentPage === 0) {
-    goIntroPage();
+    if (isIphone) {
+      goIntroPageInIphone();
+    } else {
+      goIntroPage();
+    }
     return;
   }
 
@@ -281,7 +327,7 @@ function goPrevPage() {
   document.querySelector(".current-percentage").style.width = `${
     2.5 * currentPage
   }%`;
-  h2.innerText = `Qestion ${currentPage + 1}`;
+  h2.innerText = `Question ${currentPage + 1}`;
   questionStatus.querySelector(
     ".question-count"
   ).innerText = `${currentPage}/${questions.length}`;
@@ -359,41 +405,29 @@ function getResult() {
       setTimeout(() => {
         typeGraph.innerText = `${eachScore[i]}점`;
       }, 2000);
-    }, 2000);
+    }, 1000);
   }
 
   const prev = document.querySelector(".prev");
   prev.classList.add("hide");
   prev.classList.remove("prev");
   questionStatus.classList.add("hide");
-
-  canvas.style.zIndex = 1;
-  for (let i = 0; i < 5000; i++) {
-    setTimeout(() => {
-      const num = 15;
-      x = Math.floor(Math.random() * (canvas.width / num)) * num;
-      y = Math.floor(Math.random() * (canvas.height / num)) * num;
-      locateArr.push([x, y]);
-      ctx.fillRect(x, y, num, num);
-    }, 10);
-  }
-  setTimeout(() => {
-    for (let i = 0; i < 5000; i++) {
-      setTimeout(() => {
-        const num = 15;
-        ctx.clearRect(locateArr[i][0], locateArr[i][1], num, num);
-      }, 10);
-    }
+  if (isIphone) {
     h2.innerText = "Result";
     result.classList.remove("hide");
     homeBtn.classList.remove("hide");
     previousBtn.classList.add("hide");
+  } else {
+    drawTransitionEffect();
     setTimeout(() => {
-      locateArr = [];
-      canvas.style.zIndex = -1;
-      ctx.reset();
-    }, 1000);
-  }, 1000);
+      clearTransitionEffect();
+      h2.innerText = "Result";
+      result.classList.remove("hide");
+      homeBtn.classList.remove("hide");
+      previousBtn.classList.add("hide");
+      resetCanvas();
+    }, 500);
+  }
 }
 
 // 각 유형 설명창 열어주는 함수

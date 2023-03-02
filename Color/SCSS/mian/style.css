@@ -11,6 +11,8 @@ body {
   text-align: center;
   font-family: "Galmuri9", "VT323";
   color: #181818;
+  text-shadow: -1px 0px #fff, 0px 1px #fff, 1px 0px #fff, 0px -1px #fff;
+  text-align: center;
   width: 100vw;
   height: 100vh;
 }
@@ -24,7 +26,7 @@ body {
   padding: 0, 0;
 }
 .container-sm .status-bar {
-  height: 59px;
+  height: 10px;
   width: 100%;
 }
 .container-sm header {
@@ -60,7 +62,7 @@ body {
 .container-sm .content {
   position: relative;
   width: 100%;
-  height: calc(100vh - 59px - 130px - 64px - 45px);
+  height: calc(100vh - 10px - 130px - 64px);
   background-color: rgba(255, 255, 255, 0.5);
   border: 3px solid black;
   overflow: hidden;
@@ -79,7 +81,7 @@ body {
   font-weight: bold;
 }
 .container-sm .play {
-  width: 200px;
+  width: 150px;
   transition: 0.2s;
 }
 .container-sm .play:hover {
@@ -91,14 +93,39 @@ body {
   justify-content: center;
   align-items: center;
   width: 100%;
-  height: 60px;
+  height: 64px;
 }
 .container-sm footer span {
-  font-size: 10px;
+  text-shadow: -1px 0px #181818, 0px 1px #181818, 1px 0px #181818, 0px -1px #181818;
+  font-size: 12px;
   letter-spacing: 1px;
   color: #fff;
 }
-.container-sm .home-indicator {
-  width: 100%;
-  height: 45px;
+.container-sm canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+
+/* Tablet */
+@media screen and (max-width: 375px) {
+  .content-menu {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    height: 100%;
+  }
+  .thumbnail {
+    width: 50%;
+  }
+  .play {
+    width: 70%;
+    transition: 0.2s;
+  }
+  .play:hover {
+    cursor: pointer;
+    transform: scale(1.1);
+  }
 }/*# sourceMappingURL=style.css.map */

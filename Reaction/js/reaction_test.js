@@ -17,6 +17,22 @@ const recordUl = document.querySelector(".content__record");
 const recordLi = recordUl.querySelectorAll("li");
 const recordBtn = document.querySelector(".content__submit img");
 
+//사용자 디바이스 확인
+function isMobile() {
+  const user = navigator.userAgent;
+  let CHECK = false;
+
+  if (
+    user.indexOf("iPhone") > -1 ||
+    user.indexOf("Android") > -1 ||
+    user.indexOf("iPad") > -1
+  ) {
+    CHECK = true;
+  }
+
+  return CHECK;
+}
+
 //패널,버튼 색깔 바꾸기
 function setYellowPanel() {
   testScreen.style.backgroundColor = YELLOW;
@@ -188,8 +204,8 @@ function touchEvent() {
 function setGame() {
   setYellowPanel();
   timer();
-  recordBtn.addEventListener("touchstart", touchEvent);
-  recordBtn.addEventListener("mousedown", touchEvent);
+  if (isMobile()) recordBtn.addEventListener("touchstart", touchEvent);
+  if (!isMobile()) recordBtn.addEventListener("mousedown", touchEvent);
 }
 
 window.onload = () => {
