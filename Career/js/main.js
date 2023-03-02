@@ -160,7 +160,7 @@ function resetCanvas() {
 // 테스트 페이지와 인트로 페이지 간 이동
 function goTestPageInIphone() {
   intro.classList.add("hide");
-  h2.innerText = "Qestion 1";
+  h2.innerText = "Question 1";
   questionStatus.classList.remove("hide");
   homeBtn.classList.add("hide");
   previousBtn.classList.remove("hide");
@@ -175,7 +175,7 @@ function goTestPage() {
   drawTransitionEffect();
   setTimeout(() => {
     clearTransitionEffect();
-    h2.innerText = "Qestion 1";
+    h2.innerText = "Question 1";
     questionStatus.classList.remove("hide");
     homeBtn.classList.add("hide");
     previousBtn.classList.remove("hide");
@@ -189,7 +189,7 @@ function goTestPage() {
 
 function goIntroPageInIphone() {
   firstQuestion.classList.add("hide");
-  h2.innerText = "Qestion 1";
+  h2.innerText = "Question 1";
   questionStatus.classList.add("hide");
   homeBtn.classList.remove("hide");
   previousBtn.classList.add("hide");
@@ -204,7 +204,7 @@ function goIntroPage() {
   drawTransitionEffect();
   setTimeout(() => {
     clearTransitionEffect();
-    h2.innerText = "Qestion 1";
+    h2.innerText = "Question 1";
     questionStatus.classList.add("hide");
     homeBtn.classList.remove("hide");
     previousBtn.classList.add("hide");
@@ -271,7 +271,7 @@ function goNextPage(t) {
   }
 
   // 제목 변경
-  h2.innerText = `Qestion ${currentPage + 1}`;
+  h2.innerText = `Question ${currentPage + 1}`;
 }
 
 // 이전 페이지로 넘기기
@@ -316,7 +316,7 @@ function goPrevPage() {
   document.querySelector(".current-percentage").style.width = `${
     2.5 * currentPage
   }%`;
-  h2.innerText = `Qestion ${currentPage + 1}`;
+  h2.innerText = `Question ${currentPage + 1}`;
   questionStatus.querySelector(
     ".question-count"
   ).innerText = `${currentPage}/${questions.length}`;
