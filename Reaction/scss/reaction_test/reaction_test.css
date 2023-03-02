@@ -91,6 +91,9 @@ body {
 .container-sm .content .result--analyze {
   padding: 30px 0px;
 }
+.container-sm .content .share {
+  margin-top: 10px;
+}
 .container-sm footer {
   width: 100%;
   height: 64px;
