@@ -103,8 +103,9 @@ body {
       justify-content: center;
       align-items: center;
       border-radius: 25px;
+
       p {
-        font-size: large;
+        font-size: medium;
         font-weight: bold;
       }
     }
@@ -134,8 +135,15 @@ body {
       align-items: center;
       height: 30vh;
       text-align: center;
-      .result--avg {
-        font-size: 30px;
+      @media (max-width: 375px) {
+        .result--avg {
+          font-size: large;
+        }
+      }
+      @media (min-width: 376) {
+        .result--avg {
+          font-size: 30px;
+        }
       }
 
       .result--max {
