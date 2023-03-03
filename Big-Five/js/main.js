@@ -16,20 +16,20 @@ const qList = [
   "나는 철학적인 대화를 좋아한다.",
 
   //성실성
-  "나는 일을 하기전에 계획을 세운다.",
+  "나는 일을 하기 전에 계획을 세운다.",
   "나는 일을 효율적으로 하는 사람이다.",
   "나는 일을 미루지 않고 바로 시작한다.",
-  "나는 나는 쉽게 산만해지지 않는다.",
+  "나는 쉽게 산만해지지 않는다.",
   "나는 신중하다는 소리를 많이 듣는다.",
   "나는 무모한 의사결정을 하지 않는다.",
 
   //외향성
   "나는 여러 모임이 있다.",
-  "나는 나는 새로운 만남을 즐긴다.",
-  "나는 나의 생각을 말하는 것을 좋아한다. ",
+  "나는 새로운 만남을 즐긴다.",
+  "나는 내 생각을 말하는 것을 좋아한다. ",
   "나는 당당한 편이다.",
   "나는 새로운 일을 좋아한다.",
-  "나는 안좋은일은 빨리 잊어 버린다.",
+  "나는 안 좋은 일은 빨리 잊어버린다.",
 
   //친화성
   "나는 남을 잘 믿는다.",
@@ -40,11 +40,11 @@ const qList = [
   "나는 다른 사람에게 관심이 많다. ",
 
   //감정민감성
-  "나는 실수했을 때 쉽게 당황해 한다.",
+  "나는 실수했을 때 쉽게 당황해한다.",
   "나는 종종 기분이 가라앉는다.",
   "나는 충동적인 소비가 많은 편이다.",
   "나는 팔랑귀라는 소리를 듣는 편이다.",
-  "나는 마감일자가 다가오면 불안하다.",
+  "나는 마감 일자가 다가오면 불안하다.",
   "나는 압박이 느껴지면 평정심을 유지하기 어렵다.",
 ];
 
@@ -311,7 +311,7 @@ function goNextPage(t) {
 
 //이전페이지
 function goPrevPage() {
-  const prevPrev = document.querySelector(`.qna:nth-child(${currentPage - 1})`);
+  const prevPrev = document.querySelector(`.test:nth-child(${currentPage})`);
   const prev = document.querySelector(".prev");
   const on = document.querySelector(".on");
   const next = document.querySelector(".next");
@@ -397,49 +397,11 @@ function getResult() {
   //각 유형의 점수로 나타냄
   let resultArr = new Array(5).fill(0);
 
-  //설명배열
-  // let explainArr = [
-  //   [
-  //     "당신은 창의적이고 호기심이 많으며 예술적 감수성이 풍부합니다. ",
-  //     "당신은 끊임없이 새로운 것을 시도하는 성향이 강합니다.",
-  //     "당신은 새로운 생각을 쉽게 수용하고 받아들이며 과거의 아이디어 보다 새로운 아이디어에 흥미를 느낍니다.",
-  //   ],
-  //   [
-  //     "당신은 즉흥적이 일보다는 계획적으로 움직이는 것을 좋아합니다.",
-  //     "당신은 집중력이 강합니다. 또한, 목적 이외의 다른 일들에 주의를 쉽게 빼앗길 확률이 낮습니다. ",
-  //     "당신은 생각을 행동으로 옮기기까지 많은 시간이 걸리는 편입니다. ",
-  //   ],
-  //   [
-  //     "당신은 처음보는 사람들을 편안하게 해주며 주변에는 항상 사람이 많습니다.",
-  //     "당신은 사회적 지배력이 뛰어나 리더로서 적합합니다.",
-  //     "당신은 일과 삶에 대한 높은 만족도를 나타냅니다.",
-  //   ],
-  //   [
-  //     "당신은 협력적이고 따뜻하며 남을 잘 믿습니다. ",
-  //     "당신은 경쟁보다는 공존을 추구하는 편입니다. ",
-  //     "당신은 타인의 행동에 쉽게 반응하는 편입니다. ",
-  //   ],
-  //   [
-  //     "당신은 난처한 상황에 크게 당황하고 부끄러워지는 편입니다.",
-  //     "당신은 작은 유혹에도 휩게 흔들려 깊이 빠지는 경향이 있습니다.",
-  //     "당신은 위기에 처했을 때 크게 스트레스를 받고 대처 과정에서 어려움을 겪곤 합니다. ",
-  //   ],
-  // ];
-
-  let explainList = [];
   for (let i = 0; i < 5; i++) {
     for (let j = 0; j < 3; j++) {
       resultArr[i] += eachScore[i][j];
-
-      // if (eachScore[i][j] >= 8) {
-      //   explainList.push(explainArr[i][j]);
-      // }
     }
   }
-  // const finalExplainList = explainList.join(" ");
-
-  // const explainText = document.querySelector(".result .explain");
-  // explainText.innerText = finalExplainList;
 
   // 각 유형의 합계 그래프 만들기
   for (let i = 0; i < resultArr.length; i++) {
@@ -470,15 +432,15 @@ function getResult() {
   // SUMMARY 내용 입력
   const userType = resultArr.indexOf(Math.max(...resultArr));
   if (userType === 0) {
-    summary.innerText = `당신은 개방성 성향이 높아요!.`;
+    summary.innerText = `당신은 개방성 성향이 높아요!`;
   } else if (userType === 1) {
-    summary.innerText = `당신은 성실성 성향이 높아요!.`;
+    summary.innerText = `당신은 성실성 성향이 높아요!`;
   } else if (userType === 2) {
-    summary.innerText = `당신은 외향성 성향이 높아요!.`;
+    summary.innerText = `당신은 외향성 성향이 높아요!`;
   } else if (userType === 3) {
-    summary.innerText = `당신은 친화성 성향이 높아요!.`;
+    summary.innerText = `당신은 친화성 성향이 높아요!`;
   } else if (userType === 4) {
-    summary.innerText = `당신은 감정민감성 성향이 높아요!.`;
+    summary.innerText = `당신은 감정민감성 성향이 높아요!`;
   }
   console.log(userType, resultArr);
   prev.classList.add("hide");
