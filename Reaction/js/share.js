@@ -73,6 +73,8 @@ function kakaoShare(img) {
     installTalk: true,
   });
 }
+
+// 디바이스 반별
 let isIphone = false;
 const user = navigator.userAgent;
 if (user.includes("iPhone") || user.includes("iPad")) {
@@ -89,7 +91,7 @@ function captureExport() {
       // 이미지를 jpg 파일 타입으로 변경하는 코드
       const el = document.createElement("a");
       el.href = canvas.toDataURL("image/jpeg");
-      el.download = "경력 유형 결과.jpg"; //다운로드 할 파일명 설정
+      el.download = "반응속도 테스트 결과.jpg"; //다운로드 할 파일명 설정
       el.click();
     });
   }
