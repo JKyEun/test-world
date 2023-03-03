@@ -85,7 +85,7 @@ function captureExport() {
       // 이미지를 jpg 파일 타입으로 변경하는 코드
       const el = document.createElement("a");
       el.href = canvas.toDataURL("image/jpeg");
-      el.download = "경력 유형 결과.jpg"; //다운로드 할 파일명 설정
+      el.download = "Big5 결과.jpg"; //다운로드 할 파일명 설정
       el.click();
     });
   }

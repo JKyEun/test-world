@@ -53,7 +53,7 @@ body .container-sm header .previous:hover {
   transform: scale(1.1);
 }
 body .container-sm header h2 {
-  font-size: 30px;
+  font-size: 25px;
 }
 body .container-sm header .bar {
   width: 30px;
@@ -107,8 +107,14 @@ body .container-sm .content .intro {
   height: 100%;
   padding: 20px;
 }
+body .container-sm .content .intro .text {
+  font-size: 17px;
+}
+body .container-sm .content .intro .text span {
+  font-size: 13px;
+}
 body .container-sm .content .intro .bigfive {
-  width: 320px;
+  width: 290px;
 }
 body .container-sm .content .intro p {
   margin: 0;
@@ -139,7 +145,7 @@ body .container-sm .content .test.next {
   transform: translateX(150%);
 }
 body .container-sm .content .test .question {
-  font-size: 27px;
+  font-size: 25px;
   padding: 0 20px;
 }
 body .container-sm .content .test .answer {
@@ -245,6 +251,9 @@ body .container-sm .content .result .capture-area {
 body .container-sm .content .result .explain {
   margin-bottom: 20px;
 }
+body .container-sm .content .result .explain .summary {
+  font-size: 20px;
+}
 body .container-sm .content .result .explain div {
   background-color: #fff;
   margin-bottom: 20px;
@@ -290,6 +299,7 @@ body .container-sm .content .result .graph .type .type-flex .type-graph {
 body .container-sm .content .result .graph .type .type-character {
   display: flex;
   justify-content: center;
+  align-items: center;
 }
 body .container-sm .content .result .graph .type .type-character div {
   font-size: 13px;
@@ -297,7 +307,7 @@ body .container-sm .content .result .graph .type .type-character div {
   height: 60px;
   margin: 10px;
   border-radius: 50%;
-  line-height: 2.2;
+  padding-top: 10px;
   background-color: rgba(245, 245, 245, 0.836);
 }
 body .container-sm .content .result .capture-area + div {
@@ -316,6 +326,7 @@ body .container-sm .content .result .share {
 body .container-sm .content .result .share div {
   display: flex;
   justify-content: space-evenly;
+  font-size: 13px;
 }
 body .container-sm .content .result .share div button {
   width: 100px;
@@ -342,12 +353,14 @@ body .container-sm .content .more-info .sub:nth-child(21) {
 }
 body .container-sm .content .more-info p {
   background-color: whitesmoke;
+  padding: 5px 15px;
+  font-size: 15px;
 }
 body .container-sm .content .more-info div {
   background-color: whitesmoke;
   text-align: left;
   font-size: 13px;
-  padding: 0 10px;
+  padding: 0 15px;
 }
 body .container-sm .content .more-info div:nth-child(5), body .container-sm .content .more-info div:nth-child(10), body .container-sm .content .more-info div:nth-child(15), body .container-sm .content .more-info div:nth-child(20), body .container-sm .content .more-info div:nth-child(25) {
   margin-bottom: 30px;
