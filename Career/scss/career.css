@@ -258,7 +258,7 @@ body .container-sm .content .result .type .type-graph {
   width: 0%;
   height: 32px;
   transition: 2s;
-  transition-timing-function: ease-in-out;
+  transition-timing-function: ease-out;
 }
 body .container-sm .content .result .type:nth-child(1) .type-graph {
   background-color: #2c3e50;
