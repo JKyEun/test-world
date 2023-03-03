@@ -140,11 +140,20 @@ body {
   padding: 20px 0px;
 }
 .container-sm .content .share {
-  width: 67%;
+  width: 60%;
   position: absolute;
   bottom: 4%;
   left: 50%;
   transform: translateX(-50%);
+}
+.container-sm .content .share div {
+  display: flex;
+  justify-content: space-evenly;
+}
+.container-sm .content .share div button {
+  font-size: 11px;
+  width: 120px;
+  height: 60px;
 }
 .container-sm footer {
   width: 100%;

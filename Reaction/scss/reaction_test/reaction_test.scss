@@ -148,11 +148,20 @@ body {
       }
     }
     .share {
-      width: 67%;
+      width: 60%;
       position: absolute;
       bottom: 4%;
       left: 50%;
       transform: translateX(-50%);
+      div {
+        display: flex;
+        justify-content: space-evenly;
+        button {
+          font-size: 11px;
+          width: 120px;
+          height: 60px;
+        }
+      }
     }
   }
   footer {
