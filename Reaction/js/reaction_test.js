@@ -16,6 +16,18 @@ const testScreenText = testScreen.querySelector("p");
 const recordUl = document.querySelector(".content__record");
 const recordLi = recordUl.querySelectorAll("li");
 const recordBtn = document.querySelector(".content__submit img");
+const share = document.querySelector(".share");
+const burger = document.querySelector(".header__burger");
+const burgerMenu = document.querySelector(".menu");
+
+//버거 메뉴 컨트롤
+burger.addEventListener("click", function () {
+  if (burgerMenu.classList.contains("hide")) {
+    burgerMenu.classList.remove("hide");
+  } else {
+    burgerMenu.classList.add("hide");
+  }
+});
 
 //사용자 디바이스 확인
 function isMobile() {
@@ -88,6 +100,7 @@ function isEnd() {
     result.classList.add("result");
     printAvgSpeed(result, avgResult);
     container.prepend(result);
+    share.classList.remove("hide");
   }
 }
 

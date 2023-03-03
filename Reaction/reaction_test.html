@@ -44,20 +44,33 @@
     <!-- MAIN STYLE -->
     <link rel="stylesheet" href="./scss/reaction_test/reaction_test.css" />
 
+    <!-- FAVICON -->
+
+    <link rel="icon" href="./img/favicon.png" />
     <!-- ICON -->
     <script
       src="https://kit.fontawesome.com/545748ece8.js"
       crossorigin="anonymous"
     ></script>
 
+    <!-- AXIOS -->
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+    <!-- KAKAO SDK -->
+    <script defer src="https://developers.kakao.com/sdk/js/kakao.js"></script>
+
+    <!-- HTML2CANVAS -->
+    <script src="./js/html2canvas.min.js"></script>
+
     <!-- MAIN JS -->
     <script defer src="./js/reaction_test.js"></script>
+    <script defer src="./js/share.js"></script>
   </head>
   <body>
     <div class="container-sm">
-      <div class="status-bar"></div>
-      <header>
-        <div class="header-container">
+      <div class="capture-area">
+        <div class="status-bar"></div>
+        <header>
           <a class="header__home" href="reaction.html"
             ><img src="./img/btn_back.png" alt="집 아이콘"
           /></a>
@@ -65,15 +78,33 @@
           <a class="header__burger" href="#"
             ><img src="./img/burger.png" alt="버거 메뉴"
           /></a>
-        </div>
-      </header>
-      <div class="content">
-        <div class="content__test-screen"><p></p></div>
-        <div class="content__submit">
-          <img src="./img/btn/btn_yellow.png" alt="기록 버튼" />
-          <ul class="content__record"></ul>
+          <div class="menu hide">
+            <a href="../Career/career.html">Career Type Test</a>
+            <a href="../Big-Five/bigFive.html">Big 5 Test</a>
+            <a href="./reaction.html">Reaction Time Test</a>
+            <a href="../Color/color.html">Find Color Test</a>
+          </div>
+        </header>
+        <div class="content">
+          <div class="content__test-screen"><p></p></div>
+          <div class="content__submit">
+            <img src="./img/btn/btn_yellow.png" alt="기록 버튼" />
+            <ul class="content__record"></ul>
+          </div>
+          <!-- 공유하기 -->
+          <div class="share hide">
+            <h5 align="center">친구에게 공유하기</h5>
+            <div>
+              <button onclick="capture()">카톡으로<br />결과 공유</button>
+              <button onclick="captureExport()">
+                이미지로 <br />결과 저장
+              </button>
+              <button onclick="copyToClipBoard()">URL<br />복사</button>
+            </div>
+          </div>
         </div>
       </div>
+
       <footer>
         <p>
           ⓒ 2023 Front-end Test-World Project.<br />

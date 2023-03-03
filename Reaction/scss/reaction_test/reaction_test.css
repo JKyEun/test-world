@@ -26,24 +26,44 @@ body {
   width: 100%;
 }
 .container-sm header {
+  position: relative;
   display: flex;
   align-items: center;
   height: 130px;
   width: 100%;
   border: 1px solid black;
   background-color: rgba(255, 255, 255, 0.5);
-}
-.container-sm header .header-container {
-  width: 100%;
-  display: flex;
   justify-content: space-evenly;
-  align-items: center;
 }
-.container-sm header .header-container img {
+.container-sm header .menu {
+  position: absolute;
+  top: 100px;
+  left: 100%;
+  transform: translateX(-205px);
+  width: 200px;
+  z-index: 1;
+  border: 3px solid black;
+  padding: 20px 10px;
+  background-color: rgba(255, 255, 255, 0.8);
+}
+.container-sm header .menu a {
+  color: black;
+  text-decoration: none;
+  display: block;
+  margin-bottom: 20px;
+}
+.container-sm header .menu a:hover {
+  cursor: pointer;
+  text-decoration: underline;
+}
+.container-sm header .menu a:last-child {
+  margin-bottom: 0px;
+}
+.container-sm header img {
   width: 30px;
   height: 30px;
 }
-.container-sm header .header-container .title {
+.container-sm header .title {
   font-size: 30px;
   font-weight: 700;
 }
@@ -52,6 +72,8 @@ body {
   width: 100%;
   height: calc(100vh - 10px - 130px - 64px);
   border: 1px solid black;
+  display: flex;
+  flex-direction: column;
 }
 .container-sm .content .content__test-screen {
   width: inherit;
@@ -91,6 +113,9 @@ body {
 .container-sm .content .result--analyze {
   padding: 30px 0px;
 }
+.container-sm .content .share {
+  margin-top: 10px;
+}
 .container-sm footer {
   width: 100%;
   height: 64px;
@@ -99,7 +124,7 @@ body {
   align-items: center;
 }
 .container-sm footer p {
-  text-shadow: none;
+  text-shadow: -1px 0px #181818, 0px 1px #181818, 1px 0px #181818, 0px -1px #181818;
   font-size: small;
   color: white;
   margin: 0;
