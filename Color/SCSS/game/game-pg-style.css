@@ -113,6 +113,18 @@ body {
   height: 100%;
 }
 
+.palette.vibration {
+  animation: vibration 0.025s;
+}
+
+@keyframes vibration {
+  from {
+    transform: rotate(1.5deg);
+  }
+  to {
+    transform: rotate(-1.5deg);
+  }
+}
 .palette-item {
   padding: 3px;
   border-radius: 10px;

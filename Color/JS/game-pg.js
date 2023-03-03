@@ -3,7 +3,7 @@ let time = 15;
 let paletteRow = 2;
 let paletteSize = paletteRow ** 2; //
 let targetIndex = 0;
-let targetOpacity = 0.65;
+let targetOpacity = 0.5;
 let color = {};
 
 let timer = 0;
@@ -83,9 +83,9 @@ function settingPlatteItem() {
 
 // 랜덤 색상 생성
 function createColor(color) {
-  color.red = Math.floor(Math.random() * 101) + 40;
-  color.green = Math.floor(Math.random() * 101) + 40;
-  color.blue = Math.floor(Math.random() * 101) + 40;
+  color.red = Math.floor(Math.random() * 101) + 100;
+  color.green = Math.floor(Math.random() * 101) + 100;
+  color.blue = Math.floor(Math.random() * 101) + 100;
 
   return color;
 }
@@ -107,17 +107,7 @@ function selectTargetItem() {
   createPlatteItem();
 }
 
-// 오답 처리
-function selectWrongItem() {
-  if (time - 3 < 0) {
-    time = 0;
-  } else {
-    time = time - 3;
-  }
-
-  playerTime.innerHTML = time;
-}
-
+// 정답 맞췄을 때 다음 설정값 변경
 function updateSettings() {
   palette.innerHTML = "";
 
@@ -138,6 +128,23 @@ function updateSettings() {
   playerStage.innerHTML = stage;
 }
 
+// 오답 처리
+function selectWrongItem() {
+  if (time - 3 < 0) {
+    time = 0;
+  } else {
+    time = time - 3;
+  }
+
+  palette.classList.add("vibration");
+
+  setTimeout(function () {
+    palette.classList.remove("vibration");
+  }, 300);
+
+  playerTime.innerHTML = time;
+}
+
 // 설정 값 초기화
 function initGame() {
   stage = 1;
@@ -145,7 +152,7 @@ function initGame() {
   paletteRow = 2;
   paletteSize = paletteRow ** 2;
   targetIndex = 0;
-  targetOpacity = 0.65;
+  targetOpacity = 0.5;
   color = {};
 }
 
@@ -158,13 +165,13 @@ function showGameResult() {
   } else if (stage > 5 && stage <= 10) {
     resultText = "조금만 더! 다시 도전해봐요!";
   } else if (stage > 10 && stage <= 15) {
-    resultText = "색깔 찾기 능력이 대단해요!";
+    resultText = "색깔 찾기 능력이 대단해요!<br />다시 도전해볼까요?";
   } else if (stage > 15 && stage <= 20) {
     resultText = "엄청난 눈을 가지고 있군요!!!";
   } else if (stage > 20 && stage <= 25) {
     resultText = "색깔 찾기의<br/>달인이 나타났다!";
   } else if (stage > 26 && stage <= 30) {
-    resultText = "와우!! 여기까지 온 당신,<br/>혹시 '절대색감'이신가요?";
+    resultText = "와우!! 여기까지 온 당신,<br/>혹시 '절대색감'??";
   } else if (stage > 30) {
     resultText = "탈인간의 능력을 가지셨습니다!!!";
   }
