@@ -117,7 +117,7 @@ body {
 }
 .container-sm .content .content__submit ul {
   margin-bottom: 0;
-  margin-top: 20px;
+  margin-top: 10px;
   padding: 0;
 }
 .container-sm .content .result {
@@ -140,7 +140,7 @@ body {
   padding: 20px 0px;
 }
 .container-sm .content .share {
-  width: 70%;
+  width: 67%;
   position: absolute;
   bottom: 4%;
   left: 50%;
