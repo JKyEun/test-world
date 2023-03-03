@@ -145,7 +145,7 @@ body .container-sm .content .test.next {
   transform: translateX(150%);
 }
 body .container-sm .content .test .question {
-  font-size: 25px;
+  font-size: 30px;
   padding: 0 20px;
 }
 body .container-sm .content .test .answer {
@@ -360,7 +360,7 @@ body .container-sm .content .more-info div {
   background-color: whitesmoke;
   text-align: left;
   font-size: 13px;
-  padding: 0 15px;
+  padding: 0 18px;
 }
 body .container-sm .content .more-info div:nth-child(5), body .container-sm .content .more-info div:nth-child(10), body .container-sm .content .more-info div:nth-child(15), body .container-sm .content .more-info div:nth-child(20), body .container-sm .content .more-info div:nth-child(25) {
   margin-bottom: 30px;
@@ -371,23 +371,14 @@ body .container-sm .content p {
 body .container-sm .content button {
   margin-top: 10px;
 }
-body .container-sm .content footer {
-  width: 100%;
-  height: 64px;
-}
-body .container-sm .content footer div {
-  font-family: "galmuri9", monospace;
-  color: white;
-  font-size: 12px;
-}
-body .container-sm .content footer {
+body .container-sm footer {
   display: flex;
   justify-content: center;
   align-items: center;
   width: 100%;
   height: 64px;
 }
-body .container-sm .content footer span {
+body .container-sm footer span {
   text-shadow: -1px 0px #181818, 0px 1px #181818, 1px 0px #181818, 0px -1px #181818;
   font-size: 12px;
   letter-spacing: 1px;

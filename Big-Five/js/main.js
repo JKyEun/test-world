@@ -425,7 +425,7 @@ function getResult() {
       let text = document.createElement("div");
       text.style.textAlign = "center";
       // text.style.backgroundColor = "pink";
-      text.innerText = `${characterArr[i][j]} \n ${eachScore[i][j] * 10}점 `;
+      text.innerText = `${characterArr[i][j]}\n${eachScore[i][j] * 10}점 `;
       character.appendChild(text);
     }
   }
