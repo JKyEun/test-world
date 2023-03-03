@@ -389,7 +389,7 @@ function getResult() {
   // 설명 입력
   const explain = document.querySelector(".result .explain");
   explain.querySelector("p").innerText = moreInfo
-    .querySelector(`.explain${1}`)
+    .querySelector(`.explain${userType + 1}`)
     .innerText.trim()
     .replaceAll("\n", "")
     .split(" ")
