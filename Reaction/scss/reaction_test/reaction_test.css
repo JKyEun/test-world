@@ -75,6 +75,7 @@ body {
   border: 1px solid black;
   display: flex;
   flex-direction: column;
+  overflow: hidden;
 }
 .container-sm .content .content__test-screen {
   width: inherit;

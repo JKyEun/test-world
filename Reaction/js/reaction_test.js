@@ -80,9 +80,11 @@ function getRecord() {
   const recordedTime = END_TIME - START_TIME;
   resultArr.push(recordedTime);
   const recordTimeList = document.createElement("li");
+  recordTimeList.classList.add("content__record__list");
   recordTimeList.textContent = `Trial ${
     recordUl.childElementCount + 1
   }: ${recordedTime} ms`;
+  recordTimeList.classList.add("animate__animated", "animate__bounceInLeft");
   recordUl.append(recordTimeList);
 }
 
