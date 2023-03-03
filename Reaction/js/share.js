@@ -12,7 +12,7 @@ console.log(Kakao.isInitialized());
 let img;
 
 function capture() {
-  // 카카오 버튼을 클릭하면 body 태지그 전체를 이미로 변경해 주는 함수
+  // 카카오 버튼을 클릭하면 body 태그 전체를 이미지로 변경해 주는 함수
   html2canvas(document.querySelector("body"), {}).then(function (canvas) {
     // 이미지를 jpg 파일 타입으로 변경하는 코드
     img = canvas.toDataURL("image/jpg").split(",")[1];
@@ -52,7 +52,7 @@ function kakaoShare(img) {
     objectType: "feed",
     content: {
       title: "Test-World",
-      description: "당신의 반응속도를 측정해보세요!",
+      description: "자신의 경력 지향을 찾아보세요!",
       // 받은 이미지 주소를 카카오 공유!
       imageUrl: img,
       link: {
@@ -62,7 +62,7 @@ function kakaoShare(img) {
     },
     buttons: [
       {
-        title: "테스트 하러가기!",
+        title: "내 경력 지향 알아보기",
         link: {
           mobileWebUrl: "https://posco-test-world.netlify.app",
           webUrl: "https://posco-test-world.netlify.app",
@@ -73,19 +73,26 @@ function kakaoShare(img) {
     installTalk: true,
   });
 }
-
+let isIphone = false;
+const user = navigator.userAgent;
+if (user.includes("iPhone") || user.includes("iPad")) {
+  isIphone = true;
+}
 // 이미지 캡쳐, 저장하기
 function captureExport() {
-  console.log("실행");
-  html2canvas(document.querySelector(".capture-area"), {}).then(function (
-    canvas
-  ) {
-    // 이미지를 jpg 파일 타입으로 변경하는 코드
-    const el = document.createElement("a");
-    el.href = canvas.toDataURL("image/jpeg");
-    el.download = "반응속도 테스트.jpg"; //다운로드 할 파일명 설정
-    el.click();
-  });
+  if (isIphone) {
+    alert("아이폰에서는 불가능한 기능입니다. 화면 캡쳐를 사용하세요!");
+  } else {
+    html2canvas(document.querySelector(".capture-area"), {}).then(function (
+      canvas
+    ) {
+      // 이미지를 jpg 파일 타입으로 변경하는 코드
+      const el = document.createElement("a");
+      el.href = canvas.toDataURL("image/jpeg");
+      el.download = "경력 유형 결과.jpg"; //다운로드 할 파일명 설정
+      el.click();
+    });
+  }
 }
 
 // URL 클립보드에 복사하기
@@ -95,7 +102,6 @@ function copyToClipBoard() {
   navigator.clipboard
     .writeText(url)
     .then(() => {
-      console.log("Text copied to clipboard...");
       alert("복사되었습니다!");
     })
     .catch((err) => {
