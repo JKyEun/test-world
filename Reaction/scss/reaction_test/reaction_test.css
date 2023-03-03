@@ -100,7 +100,7 @@ body {
   border-radius: 25px;
 }
 .container-sm .content .content__test-screen p {
-  font-size: large;
+  font-size: medium;
   font-weight: bold;
 }
 .container-sm .content .content__submit {
@@ -128,8 +128,15 @@ body {
   height: 30vh;
   text-align: center;
 }
-.container-sm .content .result .result--avg {
-  font-size: 30px;
+@media (max-width: 375px) {
+  .container-sm .content .result .result--avg {
+    font-size: large;
+  }
+}
+@media (min-width: 376px) {
+  .container-sm .content .result .result--avg {
+    font-size: 30px;
+  }
 }
 .container-sm .content .result .result--max {
   color: red;
