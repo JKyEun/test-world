@@ -69,6 +69,7 @@ function setRedPanel() {
 function timer() {
   const randomTime = Math.floor(Math.random() * 5 + 3) * 1000;
   timeOut = setTimeout(() => {
+    recordBtn.classList.add("animate__animated", "animate__bounceIn");
     setGreenPanel();
     START_TIME = new Date();
   }, randomTime);
@@ -208,6 +209,7 @@ function clearResult() {
 
 // 이벤트 리스너 함수
 function touchEvent() {
+  recordBtn.classList.remove("animate__animated", "animate__bounceIn");
   if (testScreen.style.backgroundColor === YELLOW) {
     setRedPanel();
     clearTimeout(timeOut);
