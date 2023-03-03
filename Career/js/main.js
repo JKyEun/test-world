@@ -337,9 +337,10 @@ previousBtn.addEventListener("click", goPrevPage);
 
 // 검사 결과 만들기
 const result = document.querySelector(".result");
+let eachScore = new Array(8).fill(0);
+let userType = 0;
 
 function getResult() {
-  let eachScore = new Array(8).fill(0);
   const summary = document.querySelector(".result .summary");
 
   // 점수 할당
@@ -367,7 +368,7 @@ function getResult() {
   }
 
   // SUMMARY 내용 입력
-  const userType = eachScore.indexOf(Math.max(...eachScore));
+  userType = eachScore.indexOf(Math.max(...eachScore));
   if (userType === 0) {
     summary.innerText = `당신은 "관리자 지향형" 입니다.`;
   } else if (userType === 1) {
@@ -452,3 +453,7 @@ function closeInfoOfType() {
 function restartTest() {
   location.reload();
 }
+
+// userType을 받아 kakaoShare 함수 실행
+const kakaoShareBtn = document.querySelector(".kakao-share");
+kakaoShareBtn.addEventListener("click", () => kakaoShare(userType));
