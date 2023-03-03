@@ -8,53 +8,75 @@ Kakao.init("e58306c7f515389029d75ba525fae068");
 // SDK 초기화 여부를 판단합니다.
 console.log(Kakao.isInitialized());
 
-// 이미지 정보 전달용 변수
-let img;
+// // 이미지 정보 전달용 변수
+// let img;
 
-function capture() {
-  // 카카오 버튼을 클릭하면 body 태그 전체를 이미지로 변경해 주는 함수
-  html2canvas(document.querySelector("body"), {}).then(function (canvas) {
-    // 이미지를 jpg 파일 타입으로 변경하는 코드
-    img = canvas.toDataURL("image/jpg").split(",")[1];
-    // 이미 정보를 imgur 업로드용 함수로 전달
-    uploadImageTest(img);
-  });
-}
+// function capture() {
+//   // 카카오 버튼을 클릭하면 body 태그 전체를 이미지로 변경해 주는 함수
+//   html2canvas(document.querySelector("body"), {}).then(function (canvas) {
+//     // 이미지를 jpg 파일 타입으로 변경하는 코드
+//     img = canvas.toDataURL("image/jpg").split(",")[1];
+//     // 이미 정보를 imgur 업로드용 함수로 전달
+//     uploadImageTest(img);
+//   });
+// }
 
-function uploadImageTest(img) {
-  // axios 라이브러리를 이용하여 imgur api 에 캡쳐한 이미지 업로드
-  axios
-    .post(
-      "https://api.imgur.com/3/image",
-      {
-        image: img,
-        type: "base64",
-      },
-      {
-        headers: {
-          Authorization: "Client-ID 6f7c913df440aaa",
-        },
-      }
-    )
-    .then((res) => {
-      // 이미지 업로드가 끝나면 이미지 업로드 주소를 응답으로 받아옴
-      console.log(res.data.data.link);
-      // 이미지 주소를 공유해야 하므로 카카오 공유 함수에 인자로 이미지 주소 전달
-      kakaoShare(res.data.data.link);
-    })
-    .catch((e) => {
-      console.log(e);
-    });
-}
+// function uploadImageTest(img) {
+//   // axios 라이브러리를 이용하여 imgur api 에 캡쳐한 이미지 업로드
+//   axios
+//     .post(
+//       "https://api.imgur.com/3/image",
+//       {
+//         image: img,
+//         type: "base64",
+//       },
+//       {
+//         headers: {
+//           Authorization: "Client-ID 6f7c913df440aaa",
+//         },
+//       }
+//     )
+//     .then((res) => {
+//       // 이미지 업로드가 끝나면 이미지 업로드 주소를 응답으로 받아옴
+//       console.log(res.data.data.link);
+//       // 이미지 주소를 공유해야 하므로 카카오 공유 함수에 인자로 이미지 주소 전달
+//       kakaoShare(res.data.data.link);
+//     })
+//     .catch((e) => {
+//       console.log(e);
+//     });
+// }
 
-function kakaoShare(img) {
+const eachTypeName = [
+  "관리자 지향형 - 경력 유형 검사",
+  "전문능력 지향형 - 경력 유형 검사",
+  "안전성 지향형 - 경력 유형 검사",
+  "사업가적 창의성 지향형 - 경력 유형 검사",
+  "자율성 지향형 - 경력 유형 검사",
+  "봉사 지향형 - 경력 유형 검사",
+  "순수한 도전 지향형 - 경력 유형 검사",
+  "라이프스타일 지향형 - 경력 유형 검사",
+];
+
+const eachTypeImgLink = [
+  "https://imgur.com/cCmxIiv.png",
+  "https://imgur.com/Ddz4dSh.png",
+  "https://imgur.com/Iz3KM5w.png",
+  "https://imgur.com/KvDqebr.png",
+  "https://imgur.com/io11RzN.png",
+  "https://imgur.com/65wEZcH.png",
+  "https://imgur.com/LzE3edD.png",
+  "https://imgur.com/zV3An88.png",
+];
+
+function kakaoShare(userType) {
   Kakao.Link.sendDefault({
     objectType: "feed",
     content: {
       title: "Test-World",
-      description: "자신의 경력 지향을 찾아보세요!",
+      description: eachTypeName[userType],
       // 받은 이미지 주소를 카카오 공유!
-      imageUrl: img,
+      imageUrl: eachTypeImgLink[userType],
       link: {
         mobileWebUrl: "https://posco-test-world.netlify.app",
         webUrl: "https://posco-test-world.netlify.app",
