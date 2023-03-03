@@ -1,7 +1,7 @@
 // 아이폰인지 확인
 let isIphone = false;
 const user = navigator.userAgent;
-if (user.includes("iPhone")) {
+if (user.includes("iPhone") || user.includes("iPad")) {
   isIphone = true;
 }
 
@@ -408,6 +408,7 @@ function getResult() {
     }, 1000);
   }
 
+  // 트랜지션 효과
   const prev = document.querySelector(".prev");
   prev.classList.add("hide");
   prev.classList.remove("prev");
