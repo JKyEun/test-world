@@ -11,6 +11,7 @@ let timeOut = null;
 
 //dom
 const container = document.querySelector(".content");
+const resultDiv = document.querySelector(".result");
 const testScreen = document.querySelector(".content__test-screen");
 const testScreenText = testScreen.querySelector("p");
 const recordUl = document.querySelector(".content__record");
@@ -79,33 +80,37 @@ function getRecord() {
   const recordedTime = END_TIME - START_TIME;
   resultArr.push(recordedTime);
   const recordTimeList = document.createElement("li");
+  recordTimeList.classList.add("content__record__list");
   recordTimeList.textContent = `Trial ${
     recordUl.childElementCount + 1
   }: ${recordedTime} ms`;
+  recordTimeList.classList.add("animate__animated", "animate__bounceInLeft");
   recordUl.append(recordTimeList);
 }
 
 //결과 호출 함수
 function isEnd() {
   if (recordUl.childElementCount === 5) {
+    resultDiv.classList.remove("hide");
     const avgResult =
       resultArr.reduce((acc, cur) => {
         return acc + cur;
       }) / resultArr.length;
-
+    const maxResult = Math.min(...resultArr);
     testScreen.style.display = "none";
     recordBtn.style.display = "none";
-    analyzeResult(avgResult);
-    const result = document.createElement("div");
-    result.classList.add("result");
-    printAvgSpeed(result, avgResult);
-    container.prepend(result);
+    printAnalyzeResult(avgResult);
+    printMaxResult(maxResult);
+    printAvgSpeed(avgResult);
     share.classList.remove("hide");
   }
 }
 
 //평균 반응속도 출력 함수 (count up 애니메이션)
-function printAvgSpeed(result, avgResult) {
+function printAvgSpeed(avgResult) {
+  const result = document.createElement("p");
+  result.classList.add("result--avg");
+
   let now = avgResult;
   const handle = setInterval(() => {
     if (avgResult - now < 150) {
@@ -130,21 +135,31 @@ function printAvgSpeed(result, avgResult) {
       result.style.color = "blue";
     }
 
-    result.innerHTML = `<p>당신의 평균 반응속도<br>
-    ${Math.round(avgResult - now)} ms </p>`;
+    result.innerHTML = `당신의 평균 반응속도<br>
+    ${Math.round(avgResult - now)} ms`;
+
     if (now < 1) {
       clearInterval(handle);
     }
     const step = now / 10;
     now -= step;
   }, 50);
+  resultDiv.prepend(result);
+}
+
+//최고 속도 출력 함수
+function printMaxResult(maxResult) {
+  const maxResultText = document.createElement("p");
+  maxResultText.classList.add("result--max");
+  maxResultText.textContent = `최고 속도: ${maxResult} ms`;
+  resultDiv.prepend(maxResultText);
 }
 
 //결과 분석 함수
-function analyzeResult(avgResult) {
-  const resultAnalyze = document.createElement("div");
+function printAnalyzeResult(avgResult) {
+  const resultAnalyze = document.createElement("p");
   resultAnalyze.classList.add("result--analyze");
-  container.prepend(resultAnalyze);
+  resultDiv.prepend(resultAnalyze);
   if (avgResult < 150) {
     resultAnalyze.innerHTML =
       "<p>손에 꼽히는 반응속도네요! 당신은 반응속도 랭커!</p>";
