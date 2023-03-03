@@ -388,9 +388,13 @@ function getResult() {
 
   // 설명 입력
   const explain = document.querySelector(".result .explain");
-  explain.querySelector("p").innerText = moreInfo.querySelector(
-    `.explain${userType + 1}`
-  ).innerText;
+  explain.querySelector("p").innerText = moreInfo
+    .querySelector(`.explain${1}`)
+    .innerText.trim()
+    .replaceAll("\n", "")
+    .split(" ")
+    .filter((x) => x != "")
+    .join(" ");
   explain.querySelector("div").innerText = moreInfo.querySelector(
     `.explain${userType + 1} + div`
   ).innerText;
