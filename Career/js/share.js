@@ -70,6 +70,7 @@ const eachTypeImgLink = [
 ];
 
 function kakaoShare(userType) {
+  kakaoShareBtn.innerText = "로딩 중 ..";
   Kakao.Link.sendDefault({
     objectType: "feed",
     content: {
@@ -94,6 +95,7 @@ function kakaoShare(userType) {
     // 카카오톡 미설치 시 카카오톡 설치 경로이동
     installTalk: true,
   });
+  kakaoShareBtn.innerText = "카톡으로\n결과 공유";
 }
 
 // 이미지 캡쳐, 저장하기
