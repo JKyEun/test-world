@@ -52,7 +52,7 @@ function kakaoShare(img) {
     objectType: "feed",
     content: {
       title: "Test-World",
-      description: "자신의 경력 지향을 찾아보세요!",
+      description: "당신의 반응속도를 체크해보세요!",
       // 받은 이미지 주소를 카카오 공유!
       imageUrl: img,
       link: {
@@ -62,7 +62,7 @@ function kakaoShare(img) {
     },
     buttons: [
       {
-        title: "내 경력 지향 알아보기",
+        title: "내 반응속도 체크하기",
         link: {
           mobileWebUrl: "https://posco-test-world.netlify.app",
           webUrl: "https://posco-test-world.netlify.app",
