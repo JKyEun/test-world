@@ -54,7 +54,7 @@ function kakaoShare(img) {
       title: "Test-World",
       description: "당신의 눈은 색감의 달인인가요?!",
       // 받은 이미지 주소를 카카오 공유!
-      imageUrl: img,
+      imageUrl: `https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FtIjd9%2Fbtr1Y7v5aq2%2FMJ68PA4zKgnpAHNXEAEvSk%2Fimg.png`,
       link: {
         mobileWebUrl: "https://posco-test-world.netlify.app",
         webUrl: "https://posco-test-world.netlify.app",
