@@ -454,6 +454,6 @@ function restartTest() {
   location.reload();
 }
 
-// userType을 받아 kakaoShare 함수 실행
+// 카카오톡 공유 버튼 클릭시 userType을 받아 kakaoShare 함수 실행
 const kakaoShareBtn = document.querySelector(".kakao-share");
 kakaoShareBtn.addEventListener("click", () => kakaoShare(userType));
