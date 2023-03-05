@@ -1,5 +1,5 @@
-//color
 const YELLOW = "rgb(255, 222, 57)";
+//color
 const GREEN = "rgb(52, 211, 53)";
 const RED = "rgb(249, 1, 21)";
 
@@ -158,47 +158,53 @@ function printMaxResult(maxResult) {
 
 //결과 분석 함수
 function printAnalyzeResult(avgResult) {
+  let content = " ";
   const resultAnalyze = document.createElement("p");
   resultAnalyze.classList.add("result--analyze");
   resultDiv.prepend(resultAnalyze);
+
   if (avgResult < 150) {
-    resultAnalyze.innerHTML =
-      "<p>손에 꼽히는 반응속도네요! 당신은 반응속도 랭커!</p>";
-    return;
+    content = "손에 꼽히는 반응속도네요! 당신은 반응속도 랭커!";
   }
 
   if (avgResult >= 150 && avgResult < 200) {
-    resultAnalyze.innerHTML =
-      "<p>수준급의 반응속도입니다! 혹시 프로게이머?</p>";
-    return;
+    content = "수준급의 반응속도입니다! 혹시 프로게이머?";
   }
 
   if (avgResult >= 200 && avgResult < 273) {
-    resultAnalyze.innerHTML = "<p>평균보다 좋은 반응속도를 가지셨군요!</p>";
-    return;
+    content = "평균보다 좋은 반응속도를 가지셨군요!";
   }
 
   if (avgResult >= 273 && avgResult < 300) {
-    resultAnalyze.innerHTML = "<p>평균정도의 반응속도 입니다!</p>";
-    return;
+    content = "평균정도의 반응속도 입니다!";
   }
 
   if (avgResult >= 300 && avgResult < 370) {
-    resultAnalyze.innerHTML =
-      "<p>평균보다 조금 느리시네요! 조금더 힘내봅시다!</p>";
-    return;
+    content = "평균보다 조금 느리시네요! 조금더 힘내봅시다!";
   }
 
   if (avgResult >= 370 && avgResult < 400) {
-    resultAnalyze.innerHTML =
-      "<p>아쉬운 속도에요 ㅠㅠ 한번 더 시도해보세요! </p>";
-    return;
+    content = "아쉬운 속도에요 ㅠㅠ 한번 더 시도해보세요!";
   }
 
   if (avgResult >= 400) {
-    resultAnalyze.innerHTML = "<p>세월이 야속하네요 ㅠㅠ 더 연습해볼까요? </p>";
-    return;
+    content = "세월이 야속하네요 ㅠㅠ 더 연습해볼까요?";
   }
+
+  //typing 효과
+  let i = 0;
+  function typingAnalyze() {
+    if (i < content.length) {
+      let text = content.charAt(i);
+      resultAnalyze.innerHTML += text;
+      i++;
+    }
+    if (content.length - 1 === i) {
+      clearInterval(typingAnalyze);
+    }
+  }
+
+  setInterval(typingAnalyze, 100);
 }
 
 //모든 기록 삭제 함수
