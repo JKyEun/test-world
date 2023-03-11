@@ -1,5 +1,5 @@
-const YELLOW = "rgb(255, 222, 57)";
 //color
+const YELLOW = "rgb(255, 222, 57)";
 const GREEN = "rgb(52, 211, 53)";
 const RED = "rgb(249, 1, 21)";
 
