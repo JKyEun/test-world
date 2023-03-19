@@ -1,4 +1,5 @@
-[결과물 페이지](https://posco-test-world.netlify.app/)
+[결과물 페이지 바로가기](https://posco-test-world.netlify.app/)
+<img width="1842" alt="스크린샷 2023-03-19 오후 3 18 00" src="https://user-images.githubusercontent.com/108623656/226157289-287e694a-2c47-4084-8f11-d0e645f0ffe2.png">
 
 ## 프로젝트 개요
 
