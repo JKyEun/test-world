@@ -162,7 +162,7 @@
 - 그 외 고민했던 점들
 
   - [노션 페이지](https://synonymous-island-173.notion.site/Test-World-Front-end-Team-Project-15c51b1b952e4d209a402dc32c98f460)
-ㅅ
+  
 ### 반응속도 테스트
 
 - 메인 페이지
